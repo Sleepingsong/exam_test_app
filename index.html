@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="dark-theme">
     <header class="app-header">
         <div class="header-container">
@@ -26,8 +30,8 @@
         <!-- 1. Launcher Screen -->
         <section id="launcher-screen" class="launcher-card glass-panel">
             <h2 class="section-title">เตรียมตัวสอบ PMP</h2>
-            <p class="section-desc">จำลองการทำข้อสอบ 134 ข้อ พร้อมคำอธิบายและวิเคราะห์ตัวเลือกอย่างละเอียดภาษาไทย</p>
-            
+            <p class="section-desc">จำลองการทำข้อสอบ 174 ข้อ พร้อมคำอธิบายและวิเคราะห์ตัวเลือกอย่างละเอียดภาษาไทย</p>
+
             <div class="launcher-grid">
                 <div class="mode-select-box">
                     <h3>เลือกโหมดการเล่น</h3>
@@ -37,11 +41,12 @@
                             <span class="mode-title">Practice Mode</span>
                             <span class="mode-desc">โหมดฝึกฝน: เฉลยข้อสอบและแสดงคำอธิบายภาษาไทยทันทีที่ตอบ</span>
                         </label>
-                        
+
                         <label class="mode-card" id="mode-exam-label">
                             <input type="radio" name="exam-mode" id="mode-exam" value="exam">
                             <span class="mode-title">Exam Mode</span>
-                            <span class="mode-desc">โหมดสอบจริง: จับเวลารวม ซ่อนเฉลย และสรุปผลคะแนนทั้งหมดในตอนท้าย</span>
+                            <span class="mode-desc">โหมดสอบจริง: จับเวลารวม ซ่อนเฉลย
+                                และสรุปผลคะแนนทั้งหมดในตอนท้าย</span>
                         </label>
                     </div>
                 </div>
@@ -67,12 +72,16 @@
                         <h4>แหล่งข้อมูลคำถาม</h4>
                         <div class="data-actions">
                             <button id="btn-load-default" class="btn btn-secondary">
-                                <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                                </svg>
                                 ใช้ข้อสอบภายในระบบ
                             </button>
                             <div class="file-upload-wrapper">
                                 <button class="btn btn-outline btn-upload">
-                                    <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+                                    </svg>
                                     อัปโหลดไฟล์ JSON เอง
                                 </button>
                                 <input type="file" id="json-file-input" accept=".json">
@@ -85,7 +94,9 @@
 
             <div class="launcher-footer">
                 <button id="btn-start-quiz" class="btn btn-primary btn-large disabled">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M5 3l14 9-14 9V3z" />
+                    </svg>
                     เริ่มทำข้อสอบ
                 </button>
             </div>
@@ -102,13 +113,15 @@
                             <span id="quiz-mode-indicator" class="badge">Practice Mode</span>
                             <span id="question-progress-text" class="progress-text">ข้อที่ 1 จาก 134</span>
                         </div>
-                        
+
                         <!-- Question Countdown Timer -->
                         <div class="question-timer-box">
                             <div class="circular-timer">
                                 <svg class="timer-svg" viewBox="0 0 36 36">
-                                    <path class="timer-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path id="timer-progress" class="timer-fg" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="timer-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path id="timer-progress" class="timer-fg" stroke-dasharray="100, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                                 </svg>
                                 <span id="timer-text" class="timer-text">75</span>
                             </div>
@@ -137,16 +150,22 @@
                     <!-- Navigation Action Bar -->
                     <div class="quiz-navigation-actions">
                         <button id="btn-prev-question" class="btn btn-secondary">
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
                             ย้อนกลับ
                         </button>
                         <button id="btn-flag-question" class="btn btn-outline">
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" />
+                            </svg>
                             ปักหมุดทบทวน
                         </button>
                         <button id="btn-next-question" class="btn btn-primary">
                             ข้ามข้อนี้
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -155,7 +174,7 @@
             <!-- Right Panel: Navigation Grid -->
             <aside class="quiz-sidebar-panel glass-panel">
                 <h3 class="sidebar-title">แผงควบคุมข้อสอบ</h3>
-                
+
                 <div class="quiz-navigation-grid" id="nav-grid">
                     <!-- Grid items 1-134 will be injected dynamically -->
                 </div>
@@ -163,10 +182,14 @@
                 <div class="sidebar-legends">
                     <h4>สัญลักษณ์สถานะ</h4>
                     <div class="legend-list">
-                        <div class="legend-item"><span class="status-indicator current"></span><span>กำลังทำอยู่</span></div>
-                        <div class="legend-item"><span class="status-indicator answered"></span><span>ตอบแล้ว</span></div>
-                        <div class="legend-item"><span class="status-indicator flagged"></span><span>ปักหมุดทบทวน</span></div>
-                        <div class="legend-item"><span class="status-indicator unanswered"></span><span>ยังไม่ได้ตอบ</span></div>
+                        <div class="legend-item"><span class="status-indicator current"></span><span>กำลังทำอยู่</span>
+                        </div>
+                        <div class="legend-item"><span class="status-indicator answered"></span><span>ตอบแล้ว</span>
+                        </div>
+                        <div class="legend-item"><span class="status-indicator flagged"></span><span>ปักหมุดทบทวน</span>
+                        </div>
+                        <div class="legend-item"><span
+                                class="status-indicator unanswered"></span><span>ยังไม่ได้ตอบ</span></div>
                     </div>
                 </div>
 
@@ -183,7 +206,9 @@
 
                 <div class="sidebar-actions">
                     <button id="btn-submit-exam" class="btn btn-danger btn-full">
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                         ส่งกระดาษคำตอบ
                     </button>
                 </div>
@@ -201,8 +226,10 @@
                     <div class="results-score-circle-container">
                         <div class="score-radial-progress">
                             <svg viewBox="0 0 36 36" class="radial-svg">
-                                <path class="radial-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path id="result-radial-fg" class="radial-fg" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="radial-bg"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path id="result-radial-fg" class="radial-fg" stroke-dasharray="0, 100"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                             </svg>
                             <div class="radial-text-content">
                                 <span id="result-percentage" class="score-percent">0%</span>
@@ -235,11 +262,16 @@
 
                 <div class="result-navigation-actions">
                     <button id="btn-review-answers" class="btn btn-secondary">
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8zM12 15a3 3 0 100-6 3 3 0 000 6z"/></svg>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8zM12 15a3 3 0 100-6 3 3 0 000 6z" />
+                        </svg>
                         ดูผลตรวจและคำอธิบาย
                     </button>
                     <button id="btn-restart-exam" class="btn btn-primary">
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path
+                                d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+                        </svg>
                         เริ่มสอบใหม่อีกครั้ง
                     </button>
                 </div>
@@ -271,4 +303,5 @@
     <!-- App Logic -->
     <script src="app.js"></script>
 </body>
+
 </html>
