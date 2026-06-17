@@ -2084,5 +2084,617 @@
                     ],
         "correct_answer":  "b",
         "explanation":  "ตัวเลือก b ถูกต้อง: ข้อมูลและเงื่อนไขการเงินการจัดซื้อจัดจ้างมีระเบียบข้อสัญญาและเงื่อนไขระบุไว้อย่างมั่นคงและมีผลบังคับใช้ (Signed contract) รวมถึงระบุไว้ในแผนจัดการจัดซื้อจัดจ้าง (Procurement Management Plan) PM จึงต้องทำตามเงื่อนไขที่เซ็นสัญญากันไว้เคร่งครัดเพื่อความเป็นระบบ\n- ตัวเลือก a ผิด: การด่วนอนุมัติจ่ายโดยข้ามขั้นตอนการสืบพยานและตรวจสอบเกณฑ์สัญญาส่งผลเสียต่อระดับความรับผิดชอบและการคุมงบประมาณ\n- ตัวเลือก c ผิด: การนัดหารือใหม่เพื่อต่อรองเงื่อนไขการจ่ายที่เซ็นสัญญาตกลงไปแล้วเป็นการทำลายความเชื่อมั่นและละเมิดข้อตกลงทางกฎหมาย\n- ตัวเลือก d ผิด: การจ่ายเงินควรเป็นไปตามผลงานที่ผ่านเกณฑ์รับมอบตามสัญญาจริง ไม่ใช่ดูจากงบประมาณคงเหลือในโครงการว่าสะดวกจ่ายวันใด"
+    },
+    {
+        "file_name":  "2026-06-15_21-57-10.png",
+        "question":  "A hybrid virtual reality project is running an agile software track and a predictive electronics track. Halfway into the project, delays are accumulating due to misaligned deliverable releases between the two tracks. Which two elements should the project manager combine to produce a common network diagram? (Choose TWO.)",
+        "options":  [
+                        "a. Definition of ready with dependency milestones.",
+                        "b. Definition of done with exit criteria.",
+                        "c. Product backlog with critical path task sequence.",
+                        "d. Epic breakdown with work breakdown structure.",
+                        "e. Definition of ready with work breakdown structure."
+                    ],
+        "correct_answer":  "ac",
+        "explanation":  "ตัวเลือก a และ c ถูกต้อง: ในโครงการแบบไฮบริด (Hybrid project) การเชื่อมโยงระหว่างทีมซอฟต์แวร์ (Agile) และทีมฮาร์ดแวร์/อิเล็กทรอนิกส์ (Predictive) สามารถทำได้โดย:\n- เชื่อมโยง Definition of Ready (DoR) ของทีมซอฟต์แวร์เข้ากับหลักชัยของงานที่ต้องขึ้นต่อกัน (Dependency milestones) ของฝั่งฮาร์ดแวร์ เพื่อให้มั่นใจว่าข้อมูลหรืออุปกรณ์ฝั่งฮาร์ดแวร์มีความพร้อมก่อนทีมซอฟต์แวร์จะหยิบไปทำ (a)\n- เชื่อมโยง Product Backlog ของฝั่งซอฟต์แวร์เข้ากับลำดับงานบนเส้นทางวิกฤต (Critical path task sequence) ของแผนฝั่งฮาร์ดแวร์ เพื่อจัดลำดับความสำคัญและกำหนดวันเวลาส่งมอบให้สอดคล้องกัน (c)\n- ตัวเลือก b ผิด: Definition of Done และ Exit criteria เป็นเกณฑ์ความสำเร็จของงานเฉพาะส่วน ไม่ได้ช่วยสร้างแผนภูมิเครือข่ายเชื่อมโยงระหว่างสองแทร็กโดยตรง\n- ตัวเลือก d และ e ผิด: Epic breakdown หรือ DoR กับ WBS มีความละเอียดที่แตกต่างกันมากเกินไป และไม่ช่วยแสดงความสัมพันธ์เชิงเส้นทางวิกฤตหรือลำดับการขึ้นต่อกันของงานได้อย่างเป็นรูปธรรม"
+    },
+    {
+        "file_name":  "2026-06-15_21-58-21.png",
+        "question":  "During work on a government project, stakeholders exert pressure on the project manager to comply with their preferred actions because they have extremely complex regulations and constraints. The project manager wants to build a successful relationship with these stakeholders because the company hopes to win more contracts with the government. Which two approaches should the project manager take? (Choose TWO.)",
+        "options":  [
+                        "a. Invite these stakeholders to team meetings to assure them that the project team takes their work seriously.",
+                        "b. Send a questionnaire out to this stakeholder group, asking about their needs.",
+                        "c. Use servant leadership to build a relationship based on stakeholder needs.",
+                        "d. Share the stakeholder engagement matrix with the team.",
+                        "e. Assess and categorize these stakeholders using the Salience model."
+                    ],
+        "correct_answer":  "ae",
+        "explanation":  "ตัวเลือก a และ e ถูกต้อง: ในการสร้างความสัมพันธ์ที่ประสบความสำเร็จกับผู้มีส่วนได้ส่วนเสียจากภาครัฐที่มีอำนาจและกฎระเบียบซับซ้อน:\n- การเชิญผู้มีส่วนได้ส่วนเสียเข้าร่วมประชุมทีม (เช่น Sprint Review หรือการประชุมสถานะ) (a) จะช่วยสร้างความโปร่งใสและแสดงให้เห็นว่าทีมใส่ใจกฎระเบียบอย่างจริงจัง\n- การใช้แบบจำลองความเด่นชัด (Salience model) (e) ในการประเมินและจัดประเภทผู้มีส่วนได้ส่วนเสียตามอำนาจ (Power) ความเร่งด่วน (Urgency) และความชอบธรรม (Legitimacy) ช่วยให้ PM สามารถวางกลยุทธ์การจัดการและให้ความสำคัญกับกลุ่มนี้ได้อย่างเหมาะสม\n- ตัวเลือก b ผิด: การส่งแบบสอบถามเป็นการสื่อสารที่เป็นทางการเกินไปและไม่ได้สร้างสัมพันธ์เชิงลึก\n- ตัวเลือก c ผิด: Servant leadership มุ่งเน้นไปที่ทีมงานภายในโครงการเป็นหลัก ไม่ใช่การปฏิบัติต่อสปอนเซอร์หรือผู้มีส่วนได้ส่วนเสียภายนอกที่มีอำนาจสูงโดยตรง\n- ตัวเลือก d ผิด: เมทริกซ์การมีส่วนร่วมของ Stakeholder มักเป็นเอกสารภายในของ PM ไม่ควรนำไปเผยแพร่อย่างสุ่มสี่สุ่มห้าโดยไม่จำเป็น"
+    },
+    {
+        "file_name":  "2026-06-15_21-58-33.png",
+        "question":  "In response to slippage on some scheduled tasks, the project manager reprioritized a number of subsequent tasks to try to fix the problem. This did NOT work, so the project manager needs to escalate the issue. Which two items will the project manager need to consult? (Choose TWO.)",
+        "options":  [
+                        "a. Change management plan",
+                        "b. Communications management plan",
+                        "c. Stakeholder engagement plan",
+                        "d. Risk management plan",
+                        "e. Configuration management plan"
+                    ],
+        "correct_answer":  "bc",
+        "explanation":  "ตัวเลือก b และ c ถูกต้อง: เมื่อความล่าช้าในโครงการไม่สามารถแก้ไขได้ด้วยการปรับเปลี่ยนเนื้องานภายใน และ PM จำเป็นต้องยกระดับปัญหา (escalate) ไปยังผู้บริหารหรือผู้เกี่ยวข้อง:\n- Communications management plan (b) จะระบุกระบวนการยกระดับปัญหา (escalation path) ว่าต้องแจ้งใคร ช่องทางใด และเมื่อใด\n- Stakeholder engagement plan (c) จะระบุระดับความเกี่ยวข้องและความคาดหวังของผู้มีส่วนได้ส่วนเสียหลักที่จะมารับทราบและตัดสินใจในประเด็นที่ยกระดับขึ้นไป\n- ตัวเลือก a ผิด: แผนการจัดการการเปลี่ยนแปลงมีไว้เพื่อจัดการขอแก้ไขขอบเขตงานหรือต้นทุน ไม่ใช่เส้นทางการส่งเรื่องยกระดับ\n- ตัวเลือก d ผิด: แผนการจัดการความเสี่ยงใช้ระบุและตอบสนองความเสี่ยง ไม่ใช่คู่มือระบุโครงสร้างการรายงานปัญหาขึ้นไป\n- ตัวเลือก e ผิด: แผนการจัดการคอนฟิกูเรชันเกี่ยวข้องกับการควบคุมรุ่นเอกสารและผลิตภัณฑ์"
+    },
+    {
+        "file_name":  "2026-06-15_21-59-48.png",
+        "question":  "Members of a virtual agile team are separated by seven (7) time zones. Daily meetings are too long, and the problem is made worse when laptop cameras switch between the speaking members. Which two measures should the project manager take to achieve shorter, more efficient daily meetings? (Choose TWO.)",
+        "options":  [
+                        "a. Ask the team members to raise blockers off-line.",
+                        "b. Use the iteration reviews to discuss the Kanban board.",
+                        "c. Limit speakers to only members who have made progress.",
+                        "d. Place a single webcam to face the Kanban boards and teams.",
+                        "e. Require all members to stand during the full meeting."
+                    ],
+        "correct_answer":  "de",
+        "explanation":  "ตัวเลือก d และ e ถูกต้อง: เพื่อให้การประชุมสแตนด์อัพประจำวัน (Daily Standup) ของทีมเสมือน (Virtual team) สั้นลงและมีประสิทธิภาพ:\n- การติดตั้งกล้องเว็บแคมตัวเดียวที่โฟกัสบอร์ดคันบังและทีมฝั่งที่อยู่ร่วมกัน (d) จะลดปัญหากล้องสลับไปมาตามคนพูด ซึ่งลดการรบกวนทางสายตาและความล่าช้าของระบบ\n- การกำหนดให้สมาชิกทุกคนต้องยืนขึ้นในระหว่างประชุม (e) (เป็นที่มาของคำว่า Stand-up meeting) จะเป็นตัวช่วยตามธรรมชาติที่ทำให้สมาชิกไม่พูดยืดเยื้อและกระชับเวลา\n- ตัวเลือก a ผิด: การแจ้งปัญหาติดขัด (blockers) ควรทำในการประชุมสแตนด์อัพเพื่อหาทางช่วยเหลือร่วมกัน ไม่ควรแยกไปทำออฟไลน์ทั้งหมด\n- ตัวเลือก b ผิด: การทบทวนผลงานรอบการวิ่ง (Iteration review) ใช้สาธิตผลงาน ไม่ใช่เวลามาเปิดบอร์ดคันบังไล่ดูงานประจำวัน\n- ตัวเลือก c ผิด: สมาชิกทุกคนควรมีส่วนร่วมในการอัปเดต ไม่ใช่เลือกเฉพาะคนที่งานก้าวหน้าเท่านั้น"
+    },
+    {
+        "file_name":  "2026-06-15_22-00-51.png",
+        "question":  "Quarterly results show competitors are driving prices down. The company is losing market share, and midway into a product development project, it appears the sponsoring unit is unlikely to get a return on their investment. Which two actions should the project manager take to adapt the project to these new conditions? (Choose TWO.)",
+        "options":  [
+                        "a. Split out an agile track to incrementally maximize value within a fixed budget.",
+                        "b. Incrementally replace local staff with outside expert staff at a lower hourly rate.",
+                        "c. Fast-track the project to deliver the intended scope with lower overhead costs.",
+                        "d. Make a cost/benefit analysis of deliverables to optimize delivery cost and speed.",
+                        "e. Re-scope the project to deliver the same features as competitors to match their pricing."
+                    ],
+        "correct_answer":  "ad",
+        "explanation":  "ตัวเลือก a และ d ถูกต้อง: เมื่อคู่แข่งลดราคาและโครงการมีความเสี่ยงที่จะไม่ได้รับผลตอบแทนคุ้มค่า:\n- การแยกกลุ่มทำงานแบบอไจล์ (agile track) (a) ออกมาจะช่วยส่งมอบส่วนงานที่สร้างมูลค่าสูงทีละส่วน (incremental value) ภายใต้งบประมาณที่จำกัดได้อย่างมีประสิทธิภาพ\n- การวิเคราะห์ต้นทุน/ผลประโยชน์ของงานส่งมอบ (d) จะช่วยให้ PM จำแนกได้ว่างานส่วนใดควรทำเพื่อความคุ้มค่า และงานส่วนใดควรตัดออกเพื่อเพิ่มความเร็วในการส่งมอบ\n- ตัวเลือก b ผิด: การเปลี่ยนพนักงานอาจส่งผลเสียต่อขวัญกำลังใจและคุณภาพของงานพัฒนาเชิงสร้างสรรค์\n- ตัวเลือก c ผิด: การทำ Fast-tracking (ทำกิจกรรมขนานกัน) ช่วยเพิ่มความเร็วแต่อาจเพิ่มความเสี่ยงและงานแก้ (rework) ซึ่งอาจส่งผลเสียต่อต้นทุน\n- ตัวเลือก e ผิด: การทำฟีเจอร์เลียนแบบคู่แข่งทั้งหมดอาจไม่ได้ผลตอบแทนที่คุ้มทุนในตลาดที่ราคาตกต่ำลง"
+    },
+    {
+        "file_name":  "2026-06-15_22-02-12.png",
+        "question":  "Some agile approaches have recently been added to an infrastructure company's predictive processes. The team is NOT completing the planned story points, and they are becoming passive. The project manager is concerned and wants to improve productivity. Which two actions should the project manager take? (Choose TWO.)",
+        "options":  [
+                        "a. Gain the needed time for story point completion by adding more iterations to the project.",
+                        "b. Speed up the project by reducing the backlog.",
+                        "c. Provide team training, so the team can do a better job of estimating story points.",
+                        "d. Use burndown and burnup charts to evaluate team performance and show story point completion."
+                    ],
+        "correct_answer":  "cd",
+        "explanation":  "ตัวเลือก c และ d ถูกต้อง: เมื่อทีมพัฒนาไม่มีความกระตือรือร้นและไม่สามารถจบ Story point ตามแผนที่วางไว้ในสภาวะแวดล้อมที่ผสมผสานอไจล์:\n- การจัดฝึกอบรมแก่ทีม (c) จะช่วยให้พวกเขามีความเข้าใจและสามารถประเมิน Story points ได้อย่างแม่นยำยิ่งขึ้นตามความสามารถจริง\n- การใช้แผนภูมิ Burndown และ Burnup (d) ในการติดตามผลงานจะช่วยแสดงความคืบหน้าให้ทีมเห็นภาพเชิงประจักษ์ กระตุ้นความรับผิดชอบ และประเมินสมรรถนะการทำงานจริงของทีมได้\n- ตัวเลือก a ผิด: การเพิ่มรอบการทำงาน (iterations) โดยไม่มีการแก้ไขกระบวนการจะสร้างนิสัยผัดวันประกันพรุ่งและไม่ได้แก้ต้นตอปัญหาสมรรถนะทีม\n- ตัวเลือก b ผิด: การเร่งงานโดยลด Backlog ไม่ใช่มาตรการแก้ปัญหาความเฉื่อยชาและความเข้าใจในการประเมินงานของทีม"
+    },
+    {
+        "file_name":  "2026-06-15_22-04-14.png",
+        "question":  "The agile team is composed of highly skilled product design engineers. Their reputation for quality and speed has earned them new duties in concept development for new products, but team output in this new role has fallen steeply compared to their design work. Which two measures are most effective to improve team productivity in this case? (Choose TWO.)",
+        "options":  [
+                        "a. Plan a creativity spike in the next iteration.",
+                        "b. Seek creative thinkers to mentor the team.",
+                        "c. Hire more T-shaped profiles into the team.",
+                        "d. Prolong the iterations to adjust to new tasks.",
+                        "e. Boost motivation with a team-building event."
+                    ],
+        "correct_answer":  "ab",
+        "explanation":  "ตัวเลือก a และ b ถูกต้อง: เมื่อทีมวิศวกรออกแบบเก่งกาจได้รับบทบาทใหม่ในการพัฒนาคอนเซปต์สร้างสรรค์แต่ผลงานกลับลดฮวบ:\n- การจัดให้ทำ \"Creativity Spike\" (รอบเวลาสั้น ๆ เพื่อทดลองงานสร้างสรรค์) (a) จะช่วยให้ทีมได้ค้นหาไอเดียและคลายความกดดันในรอบถัดไป\n- การจัดหาที่ปรึกษา (mentors) ที่มีความคิดสร้างสรรค์ (b) เข้ามาประกบทีมจะช่วยถ่ายทอดทักษะการคิดนอกกรอบให้กับทีมงานที่ติดกับดักการทำงานเชิงโครงสร้างแบบเดิม\n- ตัวเลือก c ผิด: ทีมมีบุคลากรที่มีทักษะสูงอยู่แล้ว การจ้างคนเพิ่มไม่ใช่การแก้ปัญหาเรื่องทักษะแนวคิดสร้างสรรค์ของทีมที่มีอยู่\n- ตัวเลือก d ผิด: การยืดระยะเวลารอบ (iterations) ให้ยาวขึ้นขัดแย้งกับหลักการลีน/อไจล์และไม่ได้ปรับปรุงขีดความสามารถการคิดของทีม\n- ตัวเลือก e ผิด: ปัญหาเกิดจากช่องว่างด้านทักษะและความคุ้นเคยในงานรูปแบบใหม่ ไม่ใช่ปัญหาเรื่องระดับแรงจูงใจของทีม"
+    },
+    {
+        "file_name":  "2026-06-16_22-12-13.png",
+        "question":  "The marketing director is displeased that the agile innovation team is producing too many novelty products with too little business value. Which two approaches should the project manager take to correct the team's approach? (Choose TWO.)",
+        "options":  [
+                        "a. Survey end users and integrate resulting value rank into the product backlog.",
+                        "b. Add a process so the marketing director can approve each story.",
+                        "c. Increase the story sizes to integrate more valuable features.",
+                        "d. Ask the team to take a training course on direct response marketing.",
+                        "e. Work with the product owners to tighten value criteria in the Definition of Ready."
+                    ],
+        "correct_answer":  "ae",
+        "explanation":  "ตัวเลือก a และ e ถูกต้อง: เมื่อฝ่ายการตลาดพบว่าสินค้าที่ส่งมอบเน้นแต่ของแปลกใหม่แต่ขาดมูลค่าธุรกิจที่แท้จริง:\n- การออกไปทำผลสำรวจผู้ใช้งานจริงและนำความชอบ/มูลค่ามาจัดลำดับความสำคัญใน Backlog (a) จะช่วยปรับปรุงการจัดลำดับความสำคัญของฟีเจอร์ให้ตรงความต้องการตลาด\n- การร่วมมือกับ PO เพื่อขันเกณฑ์ของ \"คุณค่า\" (value criteria) ใน Definition of Ready (DoR) (e) ให้เข้มงวดขึ้น จะช่วยกลั่นกรองและบล็อกไม่ให้เรื่องงานที่ไร้ประโยชน์ผ่านเข้าสู่ขั้นตอนสปรินต์ได้\n- ตัวเลือก b ผิด: การเพิ่มกระบวนการให้ผู้อำวยการอนุมัติทุก user story เป็นการเพิ่มขั้นตอนและขัดต่อการจัดระเบียบตัวเองของอไจล์\n- ตัวเลือก c ผิด: การเพิ่มขนาดของ Story ยิ่งเพิ่มความเสี่ยงและทำลายความยืดหยุ่นในการส่งมอบงาน\n- ตัวเลือก d ผิด: การส่งทีมไปฝึกอบรมด้านการตลาดไม่สอดคล้องกับปัญหาการวางทิศทางผลิตภัณฑ์ของ PO"
+    },
+    {
+        "file_name":  "2026-06-16_22-12-17.png",
+        "question":  "A company is constructing recycling plants in 15 countries around the world. The lead in the project management office (PMO) wants more timely progress reporting and experience sharing between project managers in each of the geographically distant projects. Which two agile practices might the PMO use to fulfill this need? (Choose TWO.)",
+        "options":  [
+                        "a. Electronic Kanban board",
+                        "b. Backlog refinement",
+                        "c. Virtual daily stand-up meetings",
+                        "d. Definition of Done",
+                        "e. 2-week retrospective"
+                    ],
+        "correct_answer":  "ac",
+        "explanation":  "ตัวเลือก a และ c ถูกต้อง: เพื่อแบ่งปันความก้าวหน้าและบทเรียนอย่างรวดเร็วระหว่าง PM ที่อยู่ใน 15 ประเทศห่างไกลกัน:\n- บอร์ดคันบังอิเล็กทรอนิกส์ (Electronic Kanban board) (a) จะช่วยแสดงภาพรวมความก้าวหน้าของทุกพื้นที่แบบเรียลไทม์\n- การประชุมสถานะสั้นประจำวันผ่านช่องทางเสมือน (Virtual daily stand-up meetings) (c) ช่วยให้ PM ในแต่ละประเทศแชร์งานที่ทำ ปัญหา และอัปเดตข้อมูลได้อย่างรวดเร็วใน 15 นาที\n- ตัวเลือก b, d, e ผิด: การจัดการ Backlog, การกำหนดความเสร็จสิ้น (DoD) หรือ Retrospective ราย 2 สัปดาห์ ไม่ใช่เครื่องมือหลักที่เน้นการทำรายงานผลรายงานความก้าวหน้าด่วนและการแชร์ปัญหาระหว่าง PM ของแต่ละโครงการย่อยทั่วโลกเป็นประจำทุกวัน"
+    },
+    {
+        "file_name":  "2026-06-16_22-15-17.png",
+        "question":  "A consultant has advised an IT director to use a development and operations (DevOps) approach to a migration project. The IT director wants to understand how the necessary speed can be achieved in a safe way. Which two examples could demonstrate how DevOps can reduce incidents and speed up deployment at the same time? (Choose TWO.)",
+        "options":  [
+                        "a. Virtualization of all systems and software containers.",
+                        "b. Machine Learning-based development and deployment.",
+                        "c. Automation of operations and development.",
+                        "d. Developers test at deployment sites before operations.",
+                        "e. Early collaboration between operations and development."
+                    ],
+        "correct_answer":  "ce",
+        "explanation":  "ตัวเลือก c และ e ถูกต้อง: การใช้ DevOps มุ่งเน้นการส่งมอบระบบอย่างรวดเร็วและปลอดภัยโดย:\n- การทำให้งานด้านพัฒนาและงานด้านระบบปฏิบัติการเป็นไปอย่างอัตโนมัติ (Automation of operations and dev) (c) เช่น การทดสอบและ deploy อัตโนมัติ (CI/CD) ช่วยลดความผิดพลาดจากฝีมือมนุษย์และเพิ่มความเร็วอย่างมาก\n- การสร้างความร่วมมืออย่างใกล้ชิดระหว่างทีมพัฒนาและทีมระบบตั้งแต่เนิ่น ๆ (Early collaboration) (e) ช่วยให้สามารถระบุสถาปัตยกรรมและประเด็นความมั่นคงปลอดภัยได้ตั้งแต่เริ่มต้น ทำให้การ deploy ราบรื่น\n- ตัวเลือก a ผิด: การทำ Virtualization เป็นเพียงเทคโนโลยีสนับสนุน ไม่ใช่แก่นกระบวนการ DevOps ที่ลดอุบัติการณ์ร่วมกับการทำงานที่รวดเร็ว\n- ตัวเลือก b ผิด: การใช้ Machine learning ยังไม่ใช่วิธีการมาตรฐานหลักในการแก้ปัญหาความเร็วและเสถียรภาพของการ deploy\n- ตัวเลือก d ผิด: การให้ Developer ไปทดสอบที่หน้างานก่อนฝ่ายปฏิบัติการเป็นการแยกหน้าที่กันทำงานแบบเดิม ซึ่งไม่ใช่แนวคิด DevOps ที่เน้นระบบอัตโนมัติและการทำงานรวมกัน"
+    },
+    {
+        "file_name":  "2026-06-16_22-17-14.png",
+        "question":  "A project manager needs stakeholder involvement to identify strategic and operational assumptions and constraints. However, it has been challenging to obtain consistent input due to lack of participation. In which two ways can the project manager encourage stakeholder participation and collaboration? (Choose TWO.)",
+        "options":  [
+                        "a. Use effective facilitation techniques",
+                        "b. Use political awareness techniques",
+                        "c. Timebox meetings",
+                        "d. Be a servant leader"
+                    ],
+        "correct_answer":  "ab",
+        "explanation":  "ตัวเลือก a และ b ถูกต้อง: เพื่อจูงใจและรับประกันการมีส่วนร่วมของ Stakeholder ในการประเมินสมมติฐานและข้อจำกัดเชิงยุทธศาสตร์:\n- การใช้เทคนิคการอำนวยความสะดวกที่มีประสิทธิภาพ (Facilitation techniques) (a) ช่วยให้เกิดกิจกรรมสร้างสรรค์และทำให้ผู้เข้าร่วมรู้สึกว่าความคิดเห็นของพวกเขามีค่า\n- การใช้เทคนิคการตระหนักรู้ทางการเมือง (Political awareness techniques) (b) ช่วยให้ PM เข้าใจแรงจูงใจ พลังอำนาจ และขั้วอิทธิพลในองค์กร ทำให้สามารถเข้าหาและชักชวนผู้มีส่วนได้ส่วนเสียแต่ละคนได้อย่างถูกวิธี\n- ตัวเลือก c ผิด: การจำกัดเวลาประชุม (Timeboxing) ช่วยกระชับการประชุม แต่ไม่ได้แก้ปัญหานิสัยการไม่เข้าร่วมหรือขาดความร่วมมือโดยตรง\n- ตัวเลือก d ผิด: Servant leadership มุ่งเน้นสร้างขวัญกำลังใจให้ทีมงานภายใน ไม่ใช่เครื่องมือหลักในการดึงดูดผู้มีส่วนได้ส่วนเสียภายนอกองค์กรให้มีส่วนร่วมในการทำความเข้าใจ Assumptions"
+    },
+    {
+        "file_name":  "2026-06-16_22-18-42.png",
+        "question":  "A key stakeholder voices a concern during the planning stage about whether the available resources are adequate to meet the objectives of the project. After further discussion about the requirements and the number of resources identified, the project manager is hesitant about the original plan. Which two steps should the project manager take next? (Choose TWO.)",
+        "options":  [
+                        "a. Ensure that the impact of the shortage of required resources is fully documented.",
+                        "b. Engage in negotiations for more resources.",
+                        "c. Review the bounds of the negotiations for stakeholder agreement.",
+                        "d. Re-evaluate the project objectives, review the planned activities, and recalculate the resource needs.",
+                        "e. Determine the project's ultimate objectives after carefully evaluating project priorities."
+                    ],
+        "correct_answer":  "ce",
+        "explanation":  "ตัวเลือก c และ e ถูกต้อง: เมื่อเกิดความลังเลเกี่ยวกับความเพียงพอของทรัพยากรเมื่อเทียบกับวัตถุประสงค์ของโครงการ:\n- การทบทวนขอบเขตข้อจำกัดของการเจรจา (Review bounds of negotiations) (c) ช่วยให้ทราบว่า PM มีอำนาจในการเจรจาขอสิ่งใดหรือปรับเปลี่ยนแผนได้มากน้อยเพียงใด\n- การประเมินเพื่อหาวัตถุประสงค์สูงสุดและแท้จริงของโครงการ (Determine ultimate objectives) (e) ร่วมกับลำดับความสำคัญ ช่วยให้ PM ทราบว่าหากต้องประนีประนอมหรือตัดฟังก์ชันบางส่วนออก ฟังก์ชันใดที่มีความสำคัญวิกฤตที่สุด\n- ตัวเลือก a ผิด: การบันทึกปัญหาทรัพยากรขาดแคลนเป็นการบันทึกประเด็นเฉย ๆ ไม่ใช่แนวทางถัดไปในการรับมือเชิงกลยุทธ์ร่วมกับ Stakeholder\n- ตัวเลือก b ผิด: การรีบกระโจนเข้าสู่การเจรจาทรัพยากรโดยไม่วิเคราะห์ข้อมูลขอบเขตข้อจำกัดและเป้าหมายสูงสุดก่อนจะทำให้เจรจาล้มเหลว\n- ตัวเลือก d ผิด: การคำนวณใหม่เพียงอย่างเดียวไม่ช่วยให้ตกลงกับความเห็นขัดแย้งของ Stakeholder ที่ห่วงเรื่องความสมเหตุสมผลของวัตถุประสงค์โครงการได้"
+    },
+    {
+        "file_name":  "2026-06-16_22-19-48.png",
+        "question":  "A key stakeholder voices a concern during the planning stage about whether the available resources are adequate to meet the objectives of the project. After further discussion about the requirements and the number of resources identified, the project manager is hesitant about the original plan. Which two steps should the project manager take next? (Choose TWO.)",
+        "options":  [
+                        "a. Ensure that the impact of the shortage of required resources is fully documented.",
+                        "b. Engage in negotiations for more resources.",
+                        "c. Review the bounds of the negotiations for stakeholder agreement.",
+                        "d. Re-evaluate the project objectives, review the planned activities, and recalculate the resource needs.",
+                        "e. Determine the project's ultimate objectives after carefully evaluating project priorities."
+                    ],
+        "correct_answer":  "ce",
+        "explanation":  "ตัวเลือก c และ e ถูกต้อง: เมื่อเกิดความลังเลเกี่ยวกับความเพียงพอของทรัพยากรเมื่อเทียบกับวัตถุประสงค์ของโครงการ (คำถามข้อนี้ซ้ำกับข้อก่อนหน้าเพื่อความคงเส้นคงวาของระบบจำลอง):\n- การทบทวนขอบเขตข้อจำกัดของการเจรจา (Review bounds of negotiations) (c) ช่วยให้ทราบว่า PM มีอำนาจในการเจรจาขอสิ่งใดหรือปรับเปลี่ยนแผนได้มากน้อยเพียงใด\n- การประเมินเพื่อหาวัตถุประสงค์สูงสุดและแท้จริงของโครงการ (Determine ultimate objectives) (e) ร่วมกับลำดับความสำคัญ ช่วยให้ PM ทราบว่าหากต้องประนีประนอมหรือตัดฟังก์ชันบางส่วนออก ฟังก์ชันใดที่มีความสำคัญวิกฤตที่สุด\n- ตัวเลือก a ผิด: การบันทึกปัญหาทรัพยากรขาดแคลนเป็นการบันทึกประเด็นเฉย ๆ ไม่ใช่แนวทางถัดไปในการรับมือเชิงกลยุทธ์ร่วมกับ Stakeholder\n- ตัวเลือก b ผิด: การรีบกระโจนเข้าสู่การเจรจาทรัพยากรโดยไม่วิเคราะห์ข้อมูลขอบเขตข้อจำกัดและเป้าหมายสูงสุดก่อนจะทำให้เจรจาล้มเหลว\n- ตัวเลือก d ผิด: การคำนวณใหม่เพียงอย่างเดียวไม่ช่วยให้ตกลงกับความเห็นขัดแย้งของ Stakeholder ที่ห่วงเรื่องความสมเหตุสมผลของวัตถุประสงค์โครงการได้"
+    },
+    {
+        "file_name":  "2026-06-16_22-20-33.png",
+        "question":  "A start-up company needs to quickly expand its product portfolio to meet market demand. Recently, staff members are working on two or three agile teams, each dedicated to a different product line. Output is diminishing, and defect rates are rising in all teams. In which two ways can the project manager help the agile teams improve their work? (Choose TWO.)",
+        "options":  [
+                        "a. Perform root-cause analysis in the next retrospectives.",
+                        "b. Appoint dedicated test teams to offload the agile teams.",
+                        "c. Organize dedicated teams to reduce context-switching.",
+                        "d. Influence the product owners to right-size their portfolios.",
+                        "e. Train the agile teams to improve time and focus management."
+                    ],
+        "correct_answer":  "ac",
+        "explanation":  "ตัวเลือก a และ c ถูกต้อง: เมื่อพนักงานทำงานสลับกันไปมาในหลายทีม (multi-teaming) จนทำให้ผลผลิตตกต่ำและข้อผิดพลาดเพิ่มสูงขึ้น:\n- การทำ Root-cause analysis (การวิเคราะห์หาสาเหตุที่แท้จริง) (a) ในการประชุมทบทวนผลงานช่วยให้ทีมค้นพบปัญหาร่วมกันและปรับปรุงคุณภาพงานส่งมอบ\n- การจัดการโครงสร้างทีมใหม่ให้เป็นทีมที่มีสมาชิกอุทิศเวลาเต็มตัว (dedicated teams) (c) จะช่วยลดอัตราการสลับบริบทการทำงาน (context-switching) ซึ่งเป็นสาเหตุสำคัญของงานที่ล่าช้าและข้อผิดพลาดทางเทคนิค\n- ตัวเลือก b ผิด: การแยกทีมทดสอบออกมาต่างหากขัดต่อหลักการอไจล์ที่ต้องการทีมที่ทำงานจบในตัวแบบครอสฟังก์ชัน\n- ตัวเลือก d ผิด: การปรับพอร์ตโฟลิโอผลิตภัณฑ์เป็นสิทธิ์ของ PO และผู้บริหารระดับสูง ซึ่งไม่ได้แก้ไขปัญหาเชิงปฏิบัติการเรื่องคนทำงานสลับบริบท\n- ตัวเลือก e ผิด: การแก้ปัญหาด้วยการฝึกอบรมการบริหารเวลาเป็นการโยนความรับผิดชอบให้พนักงาน แทนที่ผู้นำจะปรับโครงสร้างการทำงานเชิงระบบให้เอื้อต่อการโฟกัส"
+    },
+    {
+        "file_name":  "2026-06-16_22-25-40.png",
+        "question":  "The atmosphere is tense in the sprint planning review. The agile team members are visibly unhappy—one of them kicks a chair and shouts at the product owner, \"That just doesn't make sense!\" Which two actions should the project manager take in this situation? (Choose TWO.)",
+        "options":  [
+                        "a. Calm all present by asking them to call on their emotional intelligence.",
+                        "b. Remind the team of the product owner's responsibilities and authority.",
+                        "c. Intervene, giving one uninterrupted minute to each person present to state their position.",
+                        "d. Reprimand the member who kicked the chair with a warning.",
+                        "e. Facilitate by asking the team to suggest ways to resolve the points of dispute."
+                    ],
+        "correct_answer":  "ce",
+        "explanation":  "ตัวเลือก c และ e ถูกต้อง: ในสถานการณ์ขัดแย้งรุนแรงระหว่างสปรินต์แพลนรูปธรรม:\n- การแทรกแซงและกำหนดเวลาให้ทุกคนพูดแบบไม่มีการขัดจังหวะคนละ 1 นาที (c) ช่วยลดอุณหภูมิความโกรธของทุกคนลงทันที และเปิดให้ทุกคนระบายมุมมองของตนอย่างเป็นระเบียบ\n- การอำนวยความสะดวกให้ทีมเป็นผู้เสนอแนวทางในการประนีประนอมแก้ไขความเห็นที่ขัดแย้งเชิงเทคนิค (e) เป็นวิธีการแบบอไจล์ที่เคารพความคิดของทีมและได้ข้อสรุปที่เกิดจากการยอมรับร่วมกัน\n- ตัวเลือก a ผิด: การสั่งให้ทุกคนเรียกใช้ความฉลาดทางอารมณ์ไม่ช่วยคลี่คลายอารมณ์ที่ปะทุไปแล้ว\n- ตัวเลือก b ผิด: การสั่งตักเตือนบทบาทของ PO เป็นการสร้างอำนาจบาตรใหญ่และไม่ช่วยลดความตึงเครียดของสถานการณ์\n- ตัวเลือก d ผิด: การเตือนหรือลงโทษเป็นทางการทันทีอาจทำให้บรรยากาศเสียไปมากกว่าเดิมและปิดกั้นการมีส่วนร่วม (ควรแยกไปพูดคุยแบบส่วนตัวหลังจบการประชุม)"
+    },
+    {
+        "file_name":  "2026-06-16_22-26-30.png",
+        "question":  "The success of an ongoing agile project is measured as follows: Sprint Stories Planned Stories Completed Planned Value Earned Value. What two conclusions can be drawn from these figures? (Choose TWO)",
+        "options":  [
+                        "a. The team worked less efficiently over time.",
+                        "b. The table shows that value increases over time (meaning late time to value) when dividing planned value/stories planned.",
+                        "c. The backlog was NOT prioritized for time to value.",
+                        "d. The SPI above 1 (stories completed/stories planned) shows that the team completed more stories faster over time."
+                    ],
+        "correct_answer":  "bc",
+        "explanation":  "ตัวเลือก b และ c ถูกต้อง: จากข้อมูลตัวเลข:\n- สปรินต์ 1: Planned Value ต่อ Story = 450K / 15 = 30K. สปรินต์ 4: Planned Value ต่อ Story = 1100K / 22 = 50K. จะเห็นว่ามูลค่าเฉลี่ยต่อชิ้นงานสูงขึ้นในสปรินต์ท้าย ๆ ซึ่งสะท้อนว่ามูลค่าผลิตภัณฑ์ถูกนำส่งช้า (late time to value) (b)\n- ข้อเท็จจริงดังกล่าวแสดงว่า Backlog ไม่ได้ถูกจัดลำดับความสำคัญตามมูลค่าทางธุรกิจตั้งแต่ต้น (NOT prioritized for time to value) (c) เนื่องจากมูลค่าเฉลี่ยของงานในช่วงแรกต่ำกว่าช่วงหลัง\n- ตัวเลือก a ผิด: ทีมทำงานเสร็จมากขึ้นและได้ Earned Value สูงขึ้นตามสปรินต์ สะท้อนประสิทธิภาพที่สูงขึ้นไม่ใช่ลดลง\n- ตัวเลือก d ผิด: อัตราส่วน Stories completed/Stories planned ไม่ใช่คำนิยามหรือสูตรคำนวณดัชนีประสิทธิภาพของกำหนดการ (SPI) ทางทฤษฎี"
+    },
+    {
+        "file_name":  "2026-06-16_22-26-59.png",
+        "question":  "A medium-sized company is expanding into a new market. However, the company does NOT have previous experience in that market. A project manager needs to collect requirements. Which two tools or techniques should the project manager use? (Choose TWO.)",
+        "options":  [
+                        "a. Create a requirements traceability matrix",
+                        "b. Prototypes",
+                        "c. Expert judgment",
+                        "d. Product analysis"
+                    ],
+        "correct_answer":  "bc",
+        "explanation":  "ตัวเลือก b และ c ถูกต้อง: เมื่อบริษัทต้องการเข้าสู่ตลาดใหม่ที่ไม่มีประสบการณ์มาก่อน:\n- การใช้ต้นแบบ (Prototypes) (b) ช่วยให้ลูกค้าในตลาดใหม่ได้สัมผัสผลิตภัณฑ์จริงและให้ข้อเสนอแนะเพื่อปรับปรุงข้อกำหนดได้ตรงจุด\n- การใช้ความคิดเห็นของผู้เชี่ยวชาญ (Expert judgment) (c) เช่น ผู้เชี่ยวชาญการตลาดหรือที่ปรึกษาด้านพฤติกรรมผู้บริโภค ช่วยนำทางและแนะนำข้อกำหนดที่จำเป็นและประเด็นต้องระวังในตลาดนั้น ๆ\n- ตัวเลือก a ผิด: เมทริกซ์การติดตามความต้องการ (RTM) ใช้ในการติดตามข้อกำหนด ไม่ใช่การเก็บรวบรวม (collect) ข้อกำหนดใหม่\n- ตัวเลือก d ผิด: การวิเคราะห์ผลิตภัณฑ์ใช้ในการอธิบายคุณสมบัติเมื่อมีแนวคิดข้อกำหนดแล้ว ไม่เหมาะกับการทำแผนบุกเบิกตลาดใหม่ที่ยังไม่มีโครงข่ายข้อมูลอ้างอิงชัดเจน"
+    },
+    {
+        "file_name":  "2026-06-16_22-33-53.png",
+        "question":  "A new resource joins a working project team and is assigned to a small project that is critical to a larger program milestone. Unfortunately, the new resource is under-skilled and very nervous. The team dynamic has become awkward, and work has slowed on the small project. Which are two possible ways for the project manager to handle this situation? (Choose TWO.)",
+        "options":  [
+                        "a. Assess the new resource's communication skills to evaluate their ability to perform acceptably as part of the project team.",
+                        "b. Meet with the functional manager of the new resource to understand their background better.",
+                        "c. Privately ask the project management office (PMO) to assign a different resource with better skills.",
+                        "d. Solicit the team about integrating and coaching the new team member.",
+                        "e. Talk with the new resource about their skills and then determine how they can contribute to the project."
+                    ],
+        "correct_answer":  "de",
+        "explanation":  "ตัวเลือก d และ e ถูกต้อง: ในการจัดการพนักงานใหม่ที่ทักษะยังน้อยและมีความตื่นตระหนกเพื่อฟื้นฟูระบบทีม:\n- การชักชวนทีมในการโอบรับและช่วยสอนงาน (coaching) แก่พนักงานใหม่ (d) ช่วยปรับปรุงบรรยากาศและยกระดับความสามารถของสมาชิก\n- การเปิดอกคุยแบบส่วนตัวกับพนักงานใหม่เกี่ยวกับระดับทักษะจริง (e) เพื่อทำความเข้าใจประเด็นและวางบทบาทการทำงานที่สอดคล้องกับความสามารถของเขาเพื่อเพิ่มความมั่นใจ\n- ตัวเลือก a ผิด: การประเมินทักษะการสื่อสารเพียงอย่างเดียวไม่ได้ช่วยลดช่องว่างเรื่องทักษะการปฏิบัติงานที่ขาดแคลน\n- ตัวเลือก b ผิด: การไปคุยกับผู้จัดการสายงานควรเป็นขั้นตอนรองลงไปจากการพยายามปรับและทำความเข้าใจตรงกับพนักงานก่อน\n- ตัวเลือก c ผิด: การขอเปลี่ยนตัวพนักงานทันทีเป็นการแก้ปัญหาที่ขัดแย้งกับหลักการเป็นผู้นำรับใช้ที่เน้นการพัฒนาและช่วยเหลือผู้ร่วมงาน"
+    },
+    {
+        "file_name":  "2026-06-16_22-36-30.png",
+        "question":  "A product owner in an agile project complains of too many meetings in their monthly schedule, leaving insufficient time for project work. They instruct the project manager to prioritize some meetings and decrease the frequency of others. Which two of the product owner's meetings could the project manager deprioritize so that they attend less frequently? (Choose TWO.)",
+        "options":  [
+                        "a. Team performance reviews",
+                        "b. Product SME consultations",
+                        "c. Daily stand-up meetings",
+                        "d. Sprint retrospectives",
+                        "e. End-user feedback sessions"
+                    ],
+        "correct_answer":  "ac",
+        "explanation":  "ตัวเลือก a และ c ถูกต้อง: สำหรับบทบาทของ Product Owner (PO):\n- Daily Standup (c): PO ไม่จำเป็นต้องเข้าร่วมการประชุมสแตนด์อัพประจำวันทุกวัน เนื่องจากเป็นการประชุมของฝั่งทีมพัฒนา (Development Team) เพื่อประสานงานรอบประจำวันเป็นหลัก\n- Team performance reviews (a): การรีวิวผลงานสมรรถนะของพนักงานเป็นเรื่องการบริหารภายในผู้จัดการโครงการ ไม่ใช่บทบาทหน้าที่หลักของ PO\n- ตัวเลือก b, d, e ผิด: งานให้คำปรึกษาของ SME, การประชุมย้อนหลังสปรินต์ (Retrospective) เพื่อปรับปรุงระบบงาน และกิจกรรมแสดงผลงานขอความคิดเห็นของลูกค้า (End-user feedback sessions) เป็นหน้าที่วิกฤตที่ PO ต้องเข้าร่วมเพื่อวางทิศทางและรับฟีดแบ็กความต้องการของสินค้า"
+    },
+    {
+        "file_name":  "2026-06-16_22-41-30.png",
+        "question":  "A project has the following characteristics: Schedule performance issues occur due to low expertise levels of project resources. Junior-level resources are NOT completing tasks in a timely manner. Highly-experienced resources report that their junior colleagues are performing unnecessary tasks. In what two ways can the project manager enhance the performance of this team? (Choose TWO.)",
+        "options":  [
+                        "a. Design a checklist for all team members.",
+                        "b. Set up mentoring sessions within the team so that the experienced resources can coach the junior resources and work collaboratively.",
+                        "c. Implement a whole-team training program to address efficient working and task completion.",
+                        "d. Meet with the team leader to discuss the situation and decide if escalation to the project sponsor is necessary.",
+                        "e. Work collaboratively with the team to design training and a checklist for task completion aligned with project goals."
+                    ],
+        "correct_answer":  "be",
+        "explanation":  "ตัวเลือก b และ e ถูกต้อง: ในการพัฒนาสมรรถนะของทีมที่มีทั้งทรัพยากรระดับจูเนียร์และผู้เชี่ยวชาญ โดยพบปัญหาทำงานซ้ำซ้อนและไร้ประสิทธิภาพ:\n- การจัดให้มีระบบ Mentoring (b) ช่วยให้สมาชิกผู้มีประสบการณ์ทำหน้าที่โค้ชจูเนียร์และส่งเสริมการทำงานร่วมกันอย่างเป็นระบบ\n- การทำงานร่วมกันกับทีมเพื่อออกแบบหลักสูตรฝึกอบรมและจัดทำเช็คลิสต์การทำงาน (e) ที่สอดคล้องกับเป้าหมายโครงการ ช่วยลดการทำงานที่สูญเปล่าและสร้างมาตรฐานความเข้าใจร่วมกัน\n- ตัวเลือก a ผิด: การที่ PM ออกแบบเช็คลิสต์และส่งให้พนักงานโดยตรงโดยไม่รับฟังและไม่มีส่วนร่วมของทีม ขัดต่อแนวทางการมีส่วนร่วมและแนวคิดอไจล์\n- ตัวเลือก c ผิด: การจัดอบรมคนทั้งทีมอาจเป็นการเสียเวลาของกลุ่มผู้มีประสบการณ์สูงที่ไม่ได้ประสบปัญหาทักษะเชิงลึก\n- ตัวเลือก d ผิด: การยกระดับปัญหาไปหาสปอนเซอร์แสดงถึงความล้มเหลวในการจัดการปัญหาภายในทีมของ PM"
+    },
+    {
+        "file_name":  "2026-06-16_22-43-18.png",
+        "question":  "A project manager is preparing the charter for a project to automate 30% of product testing. The project sponsor advises assigning senior test engineers to identify the tests for automation. However, the test department manager is NOT cooperative, believing the project will lead to downsizing. Which two actions are suitable in this scenario? (Choose TWO.)",
+        "options":  [
+                        "a. Present data-driven, cost-benefit evidence of test automation to the test department manager.",
+                        "b. Raise the risk that the senior testing engineers will NOT be available for the testing.",
+                        "c. Request the project sponsor provide a rationale for test automation.",
+                        "d. Meet with the test department manager to discuss mutual expectations.",
+                        "e. Work with the project sponsor to create a project charter that will not be perceived as threatening."
+                    ],
+        "correct_answer":  "de",
+        "explanation":  "ตัวเลือก d และ e ถูกต้อง: ในการแก้ไขความขัดแย้งกับผู้จัดการแผนกทดสอบที่กลัวว่าการทำงานอัตโนมัติจะทำให้เกิดการเลย์ออฟ:\n- การพบปะพูดคุยโดยตรงกับผู้จัดการแผนก (d) เพื่อทำความเข้าใจความคาดหวังที่ร่วมกันและรับฟังความกังวลของเขาเป็นก้าวแรกที่สำคัญ\n- การปรับปรุงร่างโครงโครงการ (Project charter) ร่วมกับสปอนเซอร์ (e) เพื่อปรับแนวคิดและเป้าหมายไม่ให้ถูกมองว่าเป็นการคุกคามตำแหน่งงานของพนักงาน แต่เน้นที่การเพิ่มประสิทธิภาพและการยกระดับบทบาทหน้าที่ของทีมทดสอบ\n- ตัวเลือก a ผิด: การส่งหลักฐานข้อมูลตัวเลขความคุ้มค่าทางการเงินอาจไม่สามารถแก้ปัญหาระดับอารมณ์ความรู้สึกเรื่องความมั่นคงปลอดภัยในหน้าที่การงานของพนักงานได้\n- ตัวเลือก b ผิด: การบันทึกความเสี่ยงเชิงลบไว้ในเอกสารไม่ได้ช่วยคลี่คลายปัญหาการร่วมมือและการต่อต้านในทางปฏิบัติ\n- ตัวเลือก c ผิด: การขอให้สปอนเซอร์เป็นคนอธิบายเป็นการเลี่ยงงานแก้ปัญหาความสัมพันธ์ของ PM"
+    },
+    {
+        "file_name":  "2026-06-16_22-44-18.png",
+        "question":  "An agile team member solved a problem that had blocked work for several weeks. After the release of the software, it appears that the solution caused a function to fail. The quality director demands an explanation. In which two ways should the project manager react? (Choose TWO.)",
+        "options":  [
+                        "a. Respond to the director that mistakes are inevitable but will be remedied.",
+                        "b. Work with the team to identify gaps in the Definition of Done.",
+                        "c. Work with the team to identify gaps in the Definition of Ready.",
+                        "d. Issue a warning to the team member about not taking risky initiatives.",
+                        "e. Ask the team member to present their rationale and lessons learned."
+                    ],
+        "correct_answer":  "be",
+        "explanation":  "ตัวเลือก b และ e ถูกต้อง: เมื่อมีผลลัพธ์การทำงานพลาดหลังการปล่อยซอฟต์แวร์จากการแก้ไขปัญหาของพนักงาน:\n- การอัปเดตและปรับปรุง Definition of Done (DoD) ของทีม (b) ร่วมกัน เพื่อดูว่ามีช่องโหว่ด้านการทดสอบจุดใดที่ทำให้เกิดการหลุดรอดของข้อผิดพลาด\n- การเปิดโอกาสให้สมาชิกทีมผู้แก้ปัญหาได้นำเสนอแนวคิดและบทเรียนที่ได้รับ (e) เพื่อสร้างสภาพแวดล้อมแห่งการเรียนรู้ (blameless environment) และแบ่งปันบทเรียนร่วมกัน\n- ตัวเลือก a ผิด: การชี้แจงกับฝ่ายบริหารเพียงว่าความผิดพลาดหลีกเลี่ยงไม่ได้ ไม่ใช่วิธีการแก้ไขเชิงวิชาชีพเชิงระบบ\n- ตัวเลือก c ผิด: Definition of Ready เป็นเงื่อนไขในการเริ่มงาน ไม่เกี่ยวข้องกับความบกพร่องในระบบทดสอบความถูกต้องก่อนปล่อยงาน\n- ตัวเลือก d ผิด: การตักเตือนพนักงานที่พยายามทำสิ่งที่ท้าทายจะสร้างความกลัวและขัดแย้งกับหลักการสร้างความกระตือรือร้นของทีมอไจล์"
+    },
+    {
+        "file_name":  "2026-06-16_22-46-37.png",
+        "question":  "As part of an organizational change program, an experienced project manager with agile experience and certification is hired by a company with a strong predictive culture. Which two actions can the project manager take to start helping the company adopt agile methodologies? (Choose TWO.)",
+        "options":  [
+                        "a. Train project teams to be more self-reliant and cross-functional.",
+                        "b. Show stakeholders how agile can increase quality and decrease risk.",
+                        "c. Ensure that the MOSCOW method is used to write all project requirements.",
+                        "d. Identify opportunities for incremental business value delivery.",
+                        "e. Analyze all planned projects to pick the appropriate agile model."
+                    ],
+        "correct_answer":  "ab",
+        "explanation":  "ตัวเลือก a และ b ถูกต้อง: ในการเริ่มต้นช่วยเปลี่ยนผ่านองค์กรที่มีวัฒนธรรมแบบ Predictive มาสู่อไจล์:\n- การฝึกอบรมและสนับสนุนให้ทีมมีความพึ่งพาตนเองและข้ามสายงาน (cross-functional) (a) เป็นรากฐานสำคัญในการส่งเสริมทัศนคติแบบจัดตั้งตัวเอง\n- การอธิบายและแสดงให้ผู้มีส่วนได้ส่วนเสียเห็นภาพถึงข้อดีของอไจล์ในการยกระดับคุณภาพและควบคุมความเสี่ยง (b) เป็นเรื่องจำเป็นในการสร้างความเข้าใจและดึงดูดใจผู้บริหารให้สนับสนุน\n- ตัวเลือก c ผิด: วิธีจัดลำดับความสำคัญแบบ MoSCoW เป็นเครื่องมือชิ้นหนึ่ง ไม่ได้ตอบโจทย์การเปลี่ยนแปลงวัฒนธรรมและขีดความสามารถการรับอไจล์ในขั้นแรกเริ่ม\n- ตัวเลือก d และ e ผิด: การเลือกใช้หรือวิเคราะห์โครงการเชิงลึกควรเกิดขึ้นหลังจากที่วางโครงสร้างทีมและปรับความเข้าใจกับ Stakeholder หลักไปแล้ว"
+    },
+    {
+        "file_name":  "2026-06-16_22-52-36.png",
+        "question":  "A company authorizes an internal scrum project to develop a reporting tool for senior management. Due to a limited budget, the company requests the technical lead to also act asa product owner. The lead works with the management to develop user stories. At the sprint review, the management representative is disappointed as the tool is not what they expected. What is the technical leads best course of action going forward?",
+        "options":  [
+                        "a. Ask the scrum master to fill in for the product owner",
+                        "b. Continue to perform the duties of both the technical lead and product owner",
+                        "c. Delegate the product owner responsibilities to the team members",
+                        "d. Ask the company to provide a dedicated product owner"
+                    ],
+        "correct_answer":  "d",
+        "explanation":  "ตัวเลือก d ถูกต้อง: การสวมบทบาทควบสองตำแหน่ง (Technical Lead และ Product Owner) ก่อให้เกิดผลประโยชน์ทับซ้อนและภาระงานที่หนักเกินไป ทำให้ไม่สามารถปฏิบัติภารกิจของ PO ในการมีปฏิสัมพันธ์และทำความเข้าใจความต้องการของสปอนเซอร์ได้อย่างมีประสิทธิภาพ ทางออกที่ดีที่สุดคือขอให้มี PO ที่อุทิศเวลาเต็มร้อยเพื่อความโปร่งใสและสร้างความคุ้มค่าสูงสุดแก่ผลิตภัณฑ์"
+    },
+    {
+        "file_name":  "2026-06-16_22-54-03.png",
+        "question":  "An agile practitioner recommends that the initial development effort of a new electronic device concentrate solely on features absolutely necessary for the successful deployment of the product. He also suggests exposing an early release of the product to a subset of the target users, stressing how collecting relevant product data would help determine if the company should move forward with full-blown development. What is the best course of action for the project team to create?",
+        "options":  [
+                        "a. Utilize an agile model",
+                        "b. Develop a prototype",
+                        "c. Create the minimum viable product",
+                        "d. Build a wireframe"
+                    ],
+        "correct_answer":  "c",
+        "explanation":  "ตัวเลือก c ถูกต้อง: การปล่อยผลิตภัณฑ์เวอร์ชันแรกเริ่มที่มีเฉพาะฟังก์ชันที่จำเป็นอย่างยิ่งยวด (absolutely necessary) ออกไปสู่ตลาดกลุ่มทดลอง เพื่อเรียนรู้และนำฟีดแบ็กจริงมาประกอบการพิจารณาว่าจะลงทุนโครงการนี้ต่อดีหรือไม่ เป็นคำนิยามของการสร้างผลิตภัณฑ์ขั้นต่ำที่ใช้งานได้จริง (Minimum Viable Product - MVP)"
+    },
+    {
+        "file_name":  "2026-06-16_22-55-51.png",
+        "question":  "An agile team has decided to use a brand-new technology to develop a high priority user story. However, after several unsuccessful attempts, they concluded they could not proceed. The team tried out other approaches, brought external experts but nothing worked. What is the next step for the team to take?",
+        "options":  [
+                        "a. Create an alternative user story of similar size that can be developed properly",
+                        "b. Implement appropriate risk response from the project risk management plan",
+                        "c. Give up, inform the project stakeholders, and reset expectations accordingly",
+                        "d. Escalate the issue to the scrum master and request them to provide a solution"
+                    ],
+        "correct_answer":  "b",
+        "explanation":  "ตัวเลือก b ถูกต้อง: เมื่อทีมเผชิญกับอุปสรรคทางเทคนิคใหม่ล่าสุดจนไม่สามารถพัฒนาเรื่องเล่าของผู้ใช้เป้าหมายสำคัญได้ และพยายามทดสอบวิธีการต่าง ๆ ร่วมกับผู้เชี่ยวชาญแล้วยังไม่สำเร็จ PM และทีมควรทบทวนแผนจัดการความเสี่ยงและนำมาตรการตอบสนองความเสี่ยงที่ระบุไว้ (Risk response) มาปรับใช้จริง\n- ตัวเลือก a ผิด: การเปลี่ยนไปสร้าง user story อื่นโดยพลการไม่ช่วยคลี่คลายปัญหาความต้องการสำคัญที่ดำเนินการค้างคาอยู่\n- ตัวเลือก c ผิด: การยอมแพ้เป็นหนทางที่ไม่กระตือรือร้นและสะท้อนความไม่มีระเบียบแบบแผนการจัดการ\n- ตัวเลือก d ผิด: Scrum Master เป็นเพียงผู้ช่วยเหลือขจัดสิ่งติดขัด ไม่ใช่ฝ่ายเทคนิคที่ต้องแก้โจทย์หรือนำเสนอข้อสรุปทางสถาปัตยกรรมระบบให้"
+    },
+    {
+        "file_name":  "2026-06-16_22-58-39.png",
+        "question":  "An agile team has just finished an iteration in which one of the user stories is only partially complete. Which of the following is true regarding incomplete user stories?",
+        "options":  [
+                        "a. The project team must complete the user story with the next iteration",
+                        "b. Partially completed stories represent partial value for the customer",
+                        "c. Partially completed stories are included in velocity estimates",
+                        "d. Incomplete user stories are excluded from velocity estimates"
+                    ],
+        "correct_answer":  "d",
+        "explanation":  "ตัวเลือก d ถูกต้อง: ตามหลักการอไจล์ ผลงานที่ยังไม่ตรงตาม Definition of Done (DoD) หรือไม่เสร็จสมบูรณ์ จะไม่ถูกนำไปนับในประมาณการความเร็วของทีม (velocity estimates) และจะไม่มีคำว่า \"เสร็จบางส่วนแล้วนับแต้มบางส่วน\"\n- ตัวเลือก a ผิด: งานที่ไม่เสร็จไม่จำเป็นต้องเข้าสู่อรอบการวิ่งถัดไปทันที ขึ้นอยู่กับความสำคัญและลำดับที่ PO จะจัดในคลังงานใหม่\n- ตัวเลือก b ผิด: สำหรับลูกค้า งานที่เสร็จบางส่วนไม่ใช่คุณค่าที่ส่งมอบและพร้อมใช้งาน (ในอไจล์ให้ยึดหลัก 100% done เท่านั้น)\n- ตัวเลือก c ผิด: งานที่ไม่เสร็จห้ามนำแต้มมานับรวมใน velocity โดยเด็ดขาด"
+    },
+    {
+        "file_name":  "2026-06-16_22-59-45.png",
+        "question":  "An agile practitioner was explaining the differences and similarities between agile and traditional project management approaches to a senior manager. After the conversation, the practitioner realized that she had misstated one important point. Which of the following points would that likely be?",
+        "options":  [
+                        "a. Agile methods are iterative and non incremental.",
+                        "b. Too much planning on agile projects introduces risk.",
+                        "c. Both traditional and agile methods allow for changes throughout the project.",
+                        "d. Both agile and traditional methods are value-driven."
+                    ],
+        "correct_answer":  "a",
+        "explanation":  "ตัวเลือก a ถูกต้อง: วิธีการแบบอไจล์ (Agile) มีลักษณะสำคัญคือเป็นทั้งแบบ Iterative (ทำซ้ำเป็นรอบ) และ Incremental (สะสมส่วนพัฒนาเพิ่มทีละส่วน) การกล่าวว่าอไจล์ไม่ใช่แบบ Incremental จึงเป็นคำพูดที่คลาดเคลื่อนและผิดความจริง"
+    },
+    {
+        "file_name":  "2026-06-16_23-01-04.png",
+        "question":  "An agile team has to implement a new payroll system. The product owner is a payroll expert but is not familiar with agile planning. What advice should an agile coach offer to the product owner?",
+        "options":  [
+                        "a. Develop a Gantt chart listing project deliverables to get necessary resources from the project sponsor",
+                        "b. Generate a requirements document for the team to develop the product exactly per customer specifications",
+                        "c. Create an environment that facilitates face-to-face planning events involving all project stakeholders",
+                        "d. Draft a project plan and send it to stakeholders for approval to ensure everybody are on the same page"
+                    ],
+        "correct_answer":  "c",
+        "explanation":  "ตัวเลือก c ถูกต้อง: เพื่อช่วยกระตุ้นความตระหนักและการมีส่วนร่วมของ PO ที่ไม่มีความคุ้นเคยกับระบบอไจล์ โค้ชควรแนะนำให้สร้างสิ่งแวดล้อมที่เอื้อต่อการประชุมวางแผนต่อหน้าร่วมกัน (face-to-face planning events) ระหว่างทีมและ Stakeholder เพื่อปรับแนวคิดและแผนการจัดทำ Backlog ร่วมกันได้อย่างเข้าใจตรงกัน"
+    },
+    {
+        "file_name":  "2026-06-16_23-01-48.png",
+        "question":  "An agile practitioner was working on a project that had a very high exploration factor of 10. What should the agile practitioner do in response?",
+        "options":  [
+                        "a. Specify all stable requirements as early as possible",
+                        "b. Opt for a waterfall approach",
+                        "c. Focus on the technology involved in the project",
+                        "d. Plan for longer iterations"
+                    ],
+        "correct_answer":  "c",
+        "explanation":  "ตัวเลือก c ถูกต้อง: โครงการที่มี Exploration Factor สูง (เช่น ระดับ 10) มักใช้เทคโนโลยีที่ใหม่และมีความผันผวนสูงมาก (Bleeding-edge technology) การให้ความสำคัญและมุ่งเน้นไปที่การเรียนรู้และทดสอบตัวเทคโนโลยีที่ใช้ตั้งแต่เนิ่น ๆ (Focus on technology) จึงเป็นสิ่งจำเป็นในการลดความเสี่ยงทางเทคนิค\n- ตัวเลือก a ผิด: การกำหนดข้อกำหนดที่เสถียรทั้งหมดตั้งแต่เนิ่น ๆ (upfront requirement specification) ไม่สามารถทำได้จริงในโครงการที่มีการสำรวจและเปลี่ยนแปลงตลอดเวลา\n- ตัวเลือก b ผิด: วิธีการแบบ Waterfall ไม่เหมาะกับโครงการที่มีความไม่แน่นอนสูงมากเช่นนี้\n- ตัวเลือก d ผิด: การวางแผนสำหรับ Iterations ที่ยาวขึ้นจะทำให้การรับฟีดแบ็กและการปรับปรุงช้าลง ซึ่งขัดแย้งกับหลักการของโครงการที่มีความเสี่ยงสูงที่ต้องการวงรอบสั้น ๆ เพื่อทดลองและเรียนรู้"
+    },
+    {
+        "file_name":  "2026-06-17_22-37-28.png",
+        "question":  "An agile team has to provide a rough estimate of their velocity for an upcoming project. The project is expected to be very similar to the last three projects that the team delivered recently in terms of the domain, environment, and tools. Is it advisable for the team to use historical velocities in order to estimate their velocity on the new project if the technology to be used would be different?",
+        "options":  [
+                        "a. No, agile projects are characterized by constant change, which makes initial estimations useless.",
+                        "b. No, using historical velocities based on previously delivered projects is always bad practice in agile.",
+                        "c. Yes, the team may use historical velocities, but the range of the estimate should reflect the underlying uncertainty.",
+                        "d. Yes, the team may use historical velocities because the new project is almost identical to the last three projects that they delivered."
+                    ],
+        "correct_answer":  "c",
+        "explanation":  "ตัวเลือก c ถูกต้อง: แม้ว่าโครงการจะมีความคล้ายคลึงกันในหลายด้าน แต่การเปลี่ยนเทคโนโลยีที่ใช้จะนำความไม่แน่นอนและกระบวนการเรียนรู้ใหม่ (learning curve) เข้ามา ดังนั้น ทีมสามารถนำค่าความเร็วในอดีต (historical velocities) มาอ้างอิงเป็นจุดเริ่มต้นได้ แต่ช่วงของประมาณการ (range of the estimate) ต้องสะท้อนถึงความไม่แน่นอนของเทคโนโลยีใหม่นั้นด้วย\n- ตัวเลือก a ผิด: การคาดการณ์เบื้องต้นยังมีประโยชน์ในการวางแผนระดับสูงและไม่ได้ไร้ค่าเสียทีเดียว\n- ตัวเลือก b ผิด: การใช้ความเร็วในอดีตมาคาดการณ์โครงการที่คล้ายกันเป็นแนวปฏิบัติที่ดี (historical baseline) ไม่ได้เป็นแนวปฏิบัติที่แย่เสมอไป\n- ตัวเลือก d ผิด: การบอกว่าใช้ได้เลยโดยตรงเพราะคล้ายคลึงกัน 3 โครงการล่าสุดนั้นมองข้ามความเสี่ยงของการเปลี่ยนเทคโนโลยีซึ่งอาจทำให้ความเร็วของทีมลดลงอย่างมากในช่วงแรก"
+    },
+    {
+        "file_name":  "2026-06-17_22-38-28.png",
+        "question":  "An agile project manager is trying to get buy in from his companys senior management team to use an agile approach for some upcoming projects. He wants to use the MoSCoW prioritization scheme as an example of an agile tool to illustrate to senior management how customers can easily prioritize which features should be included in each release of the product being developed. What does MoSCoW stand for in terms of its relationship as a prioritization scheme based on customer value?",
+        "options":  [
+                        "a. Must have features, simple features, common features, wont have features",
+                        "b. Must have features, should have features, could have features, wont have features",
+                        "c. Must have features, seldom used features, commonly used features, wanted features",
+                        "d. Most features, some features, common features, work in progress features"
+                    ],
+        "correct_answer":  "b",
+        "explanation":  "ตัวเลือก b ถูกต้อง: MoSCoW เป็นเทคนิคการจัดลำดับความสำคัญตามคุณค่าของลูกค้า โดยย่อมาจาก Must have (ต้องมี), Should have (ควรมี), Could have (อาจจะมีถ้าไม่กระทบส่วนอื่น), และ Won't have (จะยังไม่มีในรอบนี้)\n- ตัวเลือก a, c, d ผิด: เป็นคำนิยามหรือการตีความตัวย่อของ MoSCoW ที่ไม่ถูกต้องตามหลักการบริหารจัดการอไจล์"
+    },
+    {
+        "file_name":  "2026-06-17_22-39-38.png",
+        "question":  "A company's senior management has realized that although a lot of work is being accomplished by their agile development teams on various projects, few product components are being delivered. The company has hired an experienced agile practitioner to examine the company's practices. The agile practitioner determined that the teams are having challenges with their throughput. Which of the following might have the agile practitioner identified as a cause of the throughput issue?",
+        "options":  [
+                        "a. Allowing staff members to multitask",
+                        "b. Assigning dedicated staff to projects",
+                        "c. Increased staffing on projects",
+                        "d. Reduction in the number of projects"
+                    ],
+        "correct_answer":  "a",
+        "explanation":  "ตัวเลือก a ถูกต้อง: การปล่อยให้พนักงานทำหลายงานพร้อมกัน (multitasking) นำไปสู่การสลับบริบทการทำงาน (context switching) ซึ่งทำให้เกิดการสูญเสียเวลาและพลังงานสมอง ส่งผลให้งานที่ทำไม่เสร็จสมบูรณ์และลดอัตราการส่งมอบงานจริง (throughput) ของทีม\n- ตัวเลือก b ผิด: การกำหนดให้พนักงานโฟกัสเฉพาะโครงการใดโครงการหนึ่ง (dedicated staff) ช่วยเพิ่มประสิทธิภาพและ throughput\n- ตัวเลือก c ผิด: การเพิ่มกำลังพลอาจเพิ่มทรัพยากรการส่งมอบ (แม้ว่าอาจนำมาซึ่งประสานงานที่เพิ่มขึ้น แต่ไม่ใช่ต้นเหตุหลักของงานที่ค้างคาโดยไม่ถูกส่งมอบเมื่อเทียบกับ multitasking)\n- ตัวเลือก d ผิด: การลดจำนวนโครงการช่วยลดความซับซ้อนและเพิ่มโฟกัสให้ทีม ซึ่งช่วยเพิ่ม throughput"
+    },
+    {
+        "file_name":  "2026-06-17_22-42-24.png",
+        "question":  "A company is looking to outsource some work for an agile project. What is most important to emphasize and ensure when selecting and contracting with prospective vendors?",
+        "options":  [
+                        "a. Maintaining regular contact and feedback with customers",
+                        "b. Enforcing strict coding standards",
+                        "c. Establishing contracts as fixed-cost with incentives",
+                        "d. Ensuring vendors are all agile certified"
+                    ],
+        "correct_answer":  "a",
+        "explanation":  "ตัวเลือก a ถูกต้อง: ภายใต้หลักการ Agile Manifesto \"Customer collaboration over contract negotiation\" สิ่งที่สำคัญที่สุดในการทำงานร่วมกับผู้ขาย (vendor) ในโครงการแบบอไจล์ คือการรักษาความร่วมมือและการให้ฟีดแบ็กอย่างสม่ำเสมอ เพื่อลดความเสี่ยงของการส่งมอบสิ่งที่ไม่ตรงความต้องการของลูกค้า\n- ตัวเลือก b ผิด: แม้ว่ามาตรฐานโค้ดที่เข้มงวดจะมีความสำคัญทางเทคนิค แต่ก็ไม่ใช่สิ่งที่สำคัญที่สุดในการพิจารณาด้านสัญญาและการเลือกซัพพลายเออร์ในภาพรวมอไจล์\n- ตัวเลือก c ผิด: สัญญาแบบ Fixed-cost อาจไม่ยืดหยุ่นต่อการเปลี่ยนแปลงข้อกำหนดตามธรรมชาติของอไจล์\n- ตัวเลือก d ผิด: การรับรองแบบอไจล์ (agile certification) เป็นเพียงใบประกาศ ไม่ได้รับประกันถึงการมีส่วนร่วมและการทำงานร่วมกันที่แท้จริง"
+    },
+    {
+        "file_name":  "2026-06-17_22-44-07.png",
+        "question":  "An agile team is comprised of eighteen team members. Half of them are co-located, while the others are distributed globally. The team lead has made several suggestions to an experienced agile practitioner to help the team deliver effective results. However, the agile practitioner indicates that one of the suggestions may be problematic. Which of the following did the agile practitioner View as problematic?",
+        "options":  [
+                        "a. Implement automated build reports sent over email in real-time, to communicate status",
+                        "b. Utilize a lightweight agile methodology for teams of a bigger size, to reduce overhead",
+                        "c. Establish caves and commons, to improve osmotic communication while allowing privacy when needed",
+                        "d. Use webcams, to establish a feeling of presence and awareness with fellow teammates"
+                    ],
+        "correct_answer":  "b",
+        "explanation":  "ตัวเลือก b ถูกต้อง: ทีมขนาดใหญ่ (มีสมาชิกถึง 18 คน) มีความซับซ้อนในการประสานงานสูงมาก การใช้วิธีแบบอไจล์ที่มีโครงสร้างเบาเกินไป (lightweight methodology) โดยไม่มีกรอบการสเกล (scaling frameworks) หรือโครงสร้างการกำกับดูแลที่เหมาะสม จะทำให้เกิดความวุ่นวายและลดประสิทธิภาพการทำงาน\n- ตัวเลือก a ผิด: การส่งรายงานผลการ build อัตโนมัติแบบเรียลไทม์เป็นเรื่องทางเทคนิคที่ดีเพื่อสื่อสารสถานะการรวมโค้ด\n- ตัวเลือก c ผิด: การจัดพื้นที่แบบ Caves (ส่วนตัว) และ Commons (พื้นที่ร่วมกัน) ช่วยอำนวยความสะดวกในการสื่อสารแบบดูดซึม (osmotic communication) และรักษาความเป็นส่วนตัวได้ดี\n- ตัวเลือก d ผิด: การใช้เว็บแคมช่วยสร้างความรู้สึกในการมีตัวตนและการมีส่วนร่วมของสมาชิกที่ทำงานห่างไกลกัน"
+    },
+    {
+        "file_name":  "2026-06-17_22-45-10.png",
+        "question":  "An agile project sponsor has requested to see the impact of the scope changes requested by the customer throughout the lifecycle of the project. What information radiator would an agile practitioner recommend to the sponsor to examine?",
+        "options":  [
+                        "a. Scope baseline",
+                        "b. Burndown chart",
+                        "c. Velocity chart",
+                        "d. Burnup chart"
+                    ],
+        "correct_answer":  "d",
+        "explanation":  "ตัวเลือก d ถูกต้อง: แผนภูมิ Burnup chart แสดงผลงานที่ทำเสร็จแล้วเปรียบเทียบกับขอบเขตงานทั้งหมด (total scope) ซึ่งมีเส้นแสดงขอบเขตงานด้านบน หากมีการเปลี่ยนแปลงขอบเขตงานหรือมีงานเพิ่มเข้ามา เส้นขอบเขตนี้จะขยับสูงขึ้น ทำให้สปอนเซอร์เห็นผลกระทบของการเพิ่ม/ลดขอบเขตงานได้อย่างชัดเจน\n- ตัวเลือก a ผิด: Scope baseline เป็นการจัดการแบบดั้งเดิม (predictive) ไม่ใช่เครื่องมือสื่อสารข้อมูลแบบอไจล์ (information radiator) ที่สะท้อนการเปลี่ยนแปลงแบบพลวัต\n- ตัวเลือก b ผิด: Burndown chart แสดงเฉพาะงานที่เหลืออยู่ จึงมองไม่เห็นการเปลี่ยนแปลงขอบเขตงานที่ขยับขึ้นได้อย่างชัดเจนเท่า Burnup\n- ตัวเลือก c ผิด: Velocity chart แสดงเฉพาะปริมาณเนื้องานที่ทีมทำได้เสร็จในแต่ละรอบเท่านั้น ไม่สะท้อนผลกระทบขอบเขตงานรวมของโครงการ"
+    },
+    {
+        "file_name":  "2026-06-17_22-47-14.png",
+        "question":  "An agile team is developing custom manufacturing equipment for a client. After three iterations, a functional prototype is ready, but it lacks critical safety features as well as several enhancements that can be installed onsite in future releases. To get early feedback from the client, the product owner requests that the team deliver an MVP as soon as possible. What should the team do to address the product owner's request?",
+        "options":  [
+                        "a. Install safety features and enhancements on the prototype and deliver it to the client",
+                        "b. Install only the enhancements on the prototype and deliver it to the client",
+                        "c. Deliver the prototype to the client in its current condition as it is already functional",
+                        "d. Install only the safety features on the prototype and deliver it to the client"
+                    ],
+        "correct_answer":  "d",
+        "explanation":  "ตัวเลือก d ถูกต้อง: ผลิตภัณฑ์ขั้นต่ำที่ใช้งานได้ (Minimum Viable Product - MVP) ต้องสามารถใช้งานได้อย่างปลอดภัย การส่งมอบอุปกรณ์ผลิตโดยไม่มีคุณลักษณะความปลอดภัยที่สำคัญ (critical safety features) ถือเป็นความเสี่ยงต่อชีวิตและทรัพย์สินของลูกค้าอย่างยอมรับไม่ได้ ดังนั้น ทีมต้องติดตั้งฟีเจอร์ความปลอดภัยก่อนส่งมอบ ในขณะที่การปรับแต่งระดับสูง (enhancements) อื่นๆ สามารถติดตั้งเพิ่มเติมภายหลังได้\n- ตัวเลือก a ผิด: การใส่คุณลักษณะปรับแต่งเพิ่มเติมทั้งหมดไม่ใช่หลักการของ MVP ที่เน้นความเรียบง่ายและรวดเร็ว\n- ตัวเลือก b ผิด: การใส่เฉพาะตัวเสริมโดยไม่มีฟีเจอร์ความปลอดภัยไม่ตอบโจทย์ความปลอดภัยขั้นวิกฤต\n- ตัวเลือก c ผิด: การส่งมอบผลิตภัณฑ์ที่ขาดความปลอดภัยในการใช้งานจริงแก่ลูกค้าเพื่อรับฟีดแบ็กเป็นแนวทางที่ไม่ถูกต้องและผิดจรรยาบรรณ"
+    },
+    {
+        "file_name":  "2026-06-17_22-48-27.png",
+        "question":  "An agile project team has been working together in the same building and have enjoyed the benefits of high-touch/low-tech methods of team interaction. The company has hired a group of developers that will be working in another city, who will be joining the team to work on a project. An agile practitioner has been tasked with bringing this team together and fostering healthy team interaction. What would be the most effective first action for the agile practitioner to take?",
+        "options":  [
+                        "a. Provide an opportunity for a face-to-face meeting through a kickoff or group activity if the budget allows it.",
+                        "b. Set up everyone with a text-based instant messenger so they can stay in touch.",
+                        "c. Insist that everyone make use of email in order to establish a trackable communication thread for all conversations.",
+                        "d. Convert as many information radiators to online versions in order to maximize virtual communication."
+                    ],
+        "correct_answer":  "a",
+        "explanation":  "ตัวเลือก a ถูกต้อง: การจัดกิจกรรมเพื่อพบปะกันต่อหน้า (face-to-face meeting) ในช่วงแรกเริ่มของโครงการหรือการเริ่มทำงานร่วมกัน (kickoff) เป็นวิธีที่ดีที่สุดในการสร้างความไว้วางใจ ความเข้าใจร่วมกัน และทลายช่องว่างของการทำงานข้ามพื้นที่ตั้งแต่เริ่มแรก\n- ตัวเลือก b ผิด: การใช้ระบบส่งข้อความช่วยได้ในระหว่างการดำเนินงาน แต่การสื่อสารแบบข้อความอย่างเดียวไม่สามารถทดแทนการสร้างสัมพันธ์เริ่มต้นได้ดีเท่าการพบปะจริง\n- ตัวเลือก c ผิด: การยืนกรานให้ใช้เฉพาะอีเมลจะทำให้การสื่อสารช้าลง ขัดแย้งกับหลักการอไจล์ที่เน้นการมีปฏิสัมพันธ์ระหว่างบุคคล\n- ตัวเลือก d ผิด: การปรับรูปแบบบอร์ดเป็นแบบออนไลน์มีความจำเป็นในระยะถัดไป แต่ไม่ใช่กิจกรรมแรกสุดที่ช่วยกระชับมิตรและสร้างทีม"
+    },
+    {
+        "file_name":  "2026-06-17_22-49-16.png",
+        "question":  "An agile team is discussing a user story planned for the next iteration. Although the user story appears to be clear, the product owner has yet to address a few related questions on the user story. The agile coach recommends redefining the final requirements with the product owner before making the decision. Which of the following agile principle is described in this scenario?",
+        "options":  [
+                        "a. The last possible moment",
+                        "b. The last responsible moment",
+                        "c. Use a release plan",
+                        "d. Respect the decision of a self-organizing team"
+                    ],
+        "correct_answer":  "b",
+        "explanation":  "ตัวเลือก b ถูกต้อง: หลักการ \"The last responsible moment\" (ช่วงเวลาสุดท้ายที่รับผิดชอบได้) สนับสนุนให้ทีมชะลอการตัดสินใจสำคัญออกไปจนถึงจุดสุดท้ายก่อนที่จะเกิดความเสียหาย เพื่อให้มีเวลาในการรวบรวมข้อมูลที่ถูกต้องและครบถ้วนที่สุด การทบทวนและกำหนดข้อกำหนดสุดท้ายร่วมกับ PO ให้ชัดเจนก่อนตัดสินใจทำเนื้อหางานในอักษรเป็นตัวอย่างที่ดีของหลักการนี้\n- ตัวเลือก a ผิด: ไม่มีหลักการที่ชื่อ \"The last possible moment\" ในแนวทางปฏิบัติเชิงอไจล์/ลีน (มีแต่คำว่า responsible)\n- ตัวเลือก c ผิด: การใช้แผนการปล่อยผลิตภัณฑ์ (release plan) ไม่ได้เกี่ยวกับการตัดสินใจในจังหวะเวลาที่เหมาะสมสำหรับความกังขาใน user story เฉพาะข้อนี้โดยตรง\n- ตัวเลือก d ผิด: ความร่วมมือกับ Product Owner ไม่ใช่เรื่องของสิทธิ์การตัดสินใจของทีมที่จัดตั้งตัวเองเท่านั้น"
+    },
+    {
+        "file_name":  "2026-06-17_22-50-43.png",
+        "question":  "An agile project team is conducting a release retrospective. The current discussion is focused on some disruptive risk events that occurred in the last few weeks, prior to the release, that were difficult to resolve and threatened the release date. These risks were identified early in the planning process but were associated with user stories that were relatively low in value to the customer. What could have been done to avoid having these risks occur so close to the scheduled release date?",
+        "options":  [
+                        "a. The product owner could have written the user stories in the backlog in such a way as to minimize or remove any risk.",
+                        "b. The product owner could have scheduled the completion of high risk user stories in the product backlog sooner rather than later in the release cycle.",
+                        "c. The product owner could have authorized overtime and added additional resources in the weeks leading up to the release to mitigate the impact of the high-risk user stories.",
+                        "d. There is really nothing the product owner could have done because risk events always occur just before the scheduled release date."
+                    ],
+        "correct_answer":  "b",
+        "explanation":  "ตัวเลือก b ถูกต้อง: การจัดการความเสี่ยงแบบอไจล์แนะนำให้สร้าง \"Risk-Adjusted Product Backlog\" โดยการนำงานที่มีความเสี่ยงสูงไปพัฒนาและแก้ไขให้เสร็จสิ้นตั้งแต่ช่วงแรก ๆ ของวงรอบพัฒนา (sooner rather than later) แม้ว่างานชิ้นนั้นอาจจะมีมูลค่าทางธุรกิจน้อยกว่า เพื่อลดความเสี่ยงที่จะมาระเบิดใส่โครงการในช่วงใกล้ถึงกำหนดปล่อยตัวจริง\n- ตัวเลือก a ผิด: การเขียน user story ให้ไม่มีความเสี่ยงเป็นเรื่องที่เป็นไปไม่ได้ เนื่องจากความเสี่ยงเกิดจากกระบวนการและระบบจริง\n- ตัวเลือก c ผิด: การสั่งให้ทำงานล่วงเวลาและเพิ่มคนในช่วงสัปดาห์สุดท้ายเป็นการแก้ไขปัญหาเฉพาะหน้าที่ก่อให้เกิดต้นทุนและสะท้อนความล้มเหลวของการวางแผนเชิงป้องกัน\n- ตัวเลือก d ผิด: คำตอบนี้ยอมแพ้ต่อความเสี่ยง ซึ่งขัดกับหลักการจัดการความเสี่ยงเชิงรุกของอไจล์"
+    },
+    {
+        "file_name":  "2026-06-17_22-52-06.png",
+        "question":  "An agile team is holding a retrospective session. Which order of steps would be most logical for the team to follow?",
+        "options":  [
+                        "a. Create working agreement; use facilitation technique such as mad, sad, glad, or color code dots; ask why; create story cards or backlog items; perform a retrospective on the retrospective",
+                        "b. Create story cards or backlog items; ask why; create working agreement; use facilitation technique such as mad, sad, glad, or color code dots; perform a retrospective on the retrospective",
+                        "c. Ask why; create working agreement; use facilitation technique such as mad, sad, glad, or color code dots; perform a retrospective on the retrospective; create story cards or backlog items",
+                        "d. Use facilitation technique such as mad, sad, glad, or color code dots; ask why; create story cards or backlog items; perform a retrospective on the retrospective; create working agreement"
+                    ],
+        "correct_answer":  "a",
+        "explanation":  "ตัวเลือก a ถูกต้อง: ลำดับขั้นตอนการจัด Retrospective ที่ถูกต้องตามแนวทางปฏิบัติสากล (ของ Diana Larsen และ Esther Derby) ประกอบด้วย:\n1. Set the Stage (เช่น ตกลงกติกาหรือทบทวนกติกาทำงาน - Create working agreement)\n2. Gather Data (เช่น การใช้เทคนิค Mad, Sad, Glad หรือจุดสี - use facilitation technique)\n3. Generate Insights (เช่น ถามหาสาเหตุของปัญหา - ask why)\n4. Decide What to Do (เช่น สร้าง Action items หรือเขียนลงการ์ดงาน - create story cards or backlog items)\n5. Close the Retrospective (เช่น ทำประเมินและทบทวนการประชุม - perform a retrospective on the retrospective)\n- ตัวเลือก b, c, d ผิด: เรียงลำดับขั้นตอนได้ไม่เป็นตรรกะและขัดต่อกระบวนการคิดวิเคราะห์เชิงกลุ่ม"
+    },
+    {
+        "file_name":  "2026-06-17_22-52-58.png",
+        "question":  "An agile project to build a new company website is being implemented using a lean product development approach. The project manager has delegated some of the duties to the team lead as well as encouraged the team members to make local decisions. This is an example of which of the following lean core concepts?",
+        "options":  [
+                        "a. Delivering fast",
+                        "b. Visualizing the workflow",
+                        "c. Eliminating waste",
+                        "d. Empowering the team"
+                    ],
+        "correct_answer":  "d",
+        "explanation":  "ตัวเลือก d ถูกต้อง: การกระจายอำนาจตัดสินใจให้ผู้นำทีมและสนับสนุนให้สมาชิกตัดสินใจด้วยตัวเองในระดับปฏิบัติการ (local decisions) สอดคล้องโดยตรงกับหลักการลีนในการให้อำนาจแก่ทีม (Empower the team) ซึ่งช่วยประหยัดเวลาและลดการรออนุมัติจากผู้จัดการระดับสูง\n- ตัวเลือก a, b, c ผิด: แม้จะเป็นเป้าหมายของการพัฒนาแบบลีนเช่นกัน แต่กิจกรรมการมอบหมายและการกระจายอำนาจในการตัดสินใจอธิบายหลักการนี้ได้ดีที่สุดผ่านหัวข้อ \"Empowering the team\""
+    },
+    {
+        "file_name":  "2026-06-17_22-54-03.png",
+        "question":  "A cross-functional team on Project B reports a delay in developing a prototype. The project manager believes that the cause is a lack of knowledge in a specific, required skill on the team. In which three ways can the project manager prevent this situation on future projects? (Choose THREE.)",
+        "options":  [
+                        "a. Ask the team leader to recommend a solution.",
+                        "b. Identify required skills and organize the team based on the strength of those skills.",
+                        "c. Make a list of required, specific skills for the project.",
+                        "d. Outsource the task to a skilled expert.",
+                        "e. Identify the skill deficiency as a project risk."
+                    ],
+        "correct_answer":  "bce",
+        "explanation":  "ตัวเลือก b, c, และ e ถูกต้อง: ในการป้องกันปัญหาความล่าช้าจากทักษะขาดแคลนในโครงการอนาคต:\n- การจัดทำรายการทักษะเฉพาะด้านที่จำเป็นสำหรับโครงการ (c) จะช่วยชี้ชัดความต้องการทรัพยากรล่วงหน้า\n- การประเมินและจัดสรรทีมตามระดับความถนัดในทักษะนั้น ๆ (b) ทำให้มั่นใจว่าคนทำงานมีทักษะสอดคล้องกับงานจริง\n- การบันทึกปัญหาทักษะขาดแคลนเป็นความเสี่ยงของโครงการ (e) เพื่อสร้างแผนการสำรองและการอบรมรองรับ\n- ตัวเลือก a และ d ผิด: การขอให้หัวหน้าทีมเสนอวิธีแก้ไข (a) และการจ้างผู้เชี่ยวชาญภายนอก (d) เป็นการแก้ไขปัญหาเฉพาะหน้า (reactive corrective actions) สำหรับโครงการปัจจุบัน ไม่ใช่การป้องกันเชิงรับสำหรับโครงการในอนาคต"
+    },
+    {
+        "file_name":  "2026-06-17_22-59-36.png",
+        "question":  "A multi-year, hybrid pharmaceutical project adds new fixed-date activities for the team to run Machine Learning (ML) processing of medical scans. The output from the ML analysis is used by an agile team of doctors to determine next steps in a patient case. The project manager has updated the scope statement and schedule. In which three other documents should the project manager record this new process? (Choose THREE.)",
+        "options":  [
+                        "a. Resource Management Plan",
+                        "b. Stakeholder Register",
+                        "c. Sprint Backlog",
+                        "d. Definition of Ready",
+                        "e. Risk Register"
+                    ],
+        "correct_answer":  "ade",
+        "explanation":  "ตัวเลือก a, d, และ e ถูกต้อง: เมื่อมีการเพิ่มกระบวนการใหม่ เช่น การรันระบบประมวลผลทางการแพทย์ด้วย AI/ML ในโครงการไฮบริด:\n- Resource Management Plan (a): ต้องได้รับการอัปเดตเพื่อบันทึกบทบาท หน้าที่ความรับผิดชอบ และการจัดการทรัพยากรใหม่\n- Definition of Ready (DoR) (d): ในส่วนอไจล์ ผลผลิตจาก ML เป็นข้อมูลนำเข้าที่ทีมแพทย์ต้องใช้อ้างอิง จึงต้องถูกระบุใน DoR ว่าข้อเท็จจริงทางการแพทย์ต้องรันผ่านระบบเสร็จก่อนที่จะเริ่มวางแผนเคสผู้ป่วยได้\n- Risk Register (e): ต้องถูกอัปเดตเพื่อบันทึกความเสี่ยงใหม่ ๆ ที่อาจเกิดขึ้นจากเทคโนโลยี ML และการเชื่อมโยงระบบที่มีวันที่ที่ถูกกำหนดตายตัว (fixed-date activities)\n- ตัวเลือก b ผิด: ทะเบียนผู้มีส่วนได้ส่วนเสียไม่ได้ใช้บันทึกกระบวนการทำงานหรือขั้นตอนเทคนิคการปฏิบัติงาน\n- ตัวเลือก c ผิด: Sprint Backlog เป็นของทีมในช่วงเวลานั้น ไม่ใช่เอกสารของโครงการระดับสูงที่ผู้จัดการโครงการจะอัปเดตเพื่อบันทึกกระบวนการหลัก"
+    },
+    {
+        "file_name":  "2026-06-17_23-01-00.png",
+        "question":  "A project manager experienced in predictive methods is taking on an agile project for the first time. To help in making a successful transition, the project manager makes a list of situations that may arise from inadequate action as a servant leader. Which three situations would be on this list? (Choose THREE.)",
+        "options":  [
+                        "a. Project stakeholders express skepticism of agile methods.",
+                        "b. Team members avoid direct communication with other departments.",
+                        "c. High performers in the team move to more senior positions.",
+                        "d. Team members avoid taking on challenging tasks.",
+                        "e. Team members raise impediments they are unable to eliminate."
+                    ],
+        "correct_answer":  "bde",
+        "explanation":  "ตัวเลือก b, d, และ e ถูกต้อง: เมื่อผู้จัดการโครงการแบบดั้งเดิมขาดบทบาทการเป็น Servant Leader ในโปรเจกต์อไจล์:\n- การหลีกเลี่ยงการติดต่อโดยตรงกับแผนกอื่น (b) จะเกิดขึ้นเนื่องจากขาดผู้คอยประสานและเอื้ออำนวยความสะดวกในการทลายกำแพงระหว่างแผนก\n- การหลีกเลี่ยงภารกิจที่ท้าทาย (d) เกิดจากสภาพแวดล้อมที่ขาดความปลอดภัยทางใจ (psychological safety) ที่ทำให้พนักงานกลัวความผิดพลาด\n- การแจ้งปัญหาติดขัดที่พนักงานช่วยเหลือตัวเองไม่ได้ (e) หาก PM ไม่ได้ทำหน้าที่ช่วยเหลือขจัดอุปสรรคเหล่านี้ให้สำเร็จ ปัญหาเหล่านั้นจะยังคงค้างคาและทีมจะระบุแต่จุดติดขัดโดยไม่ได้รับการแก้ไข\n- ตัวเลือก a ผิด: ความคลางแคลงใจของ Stakeholder เกิดจากการเปลี่ยนผ่านระเบียบวิธีขององค์กรมากกว่าจะสะท้อนความบกพร่องในรายละเอียดบทบาทผู้นำรับใช้ระดับทีมโครงการ\n- ตัวเลือก c ผิด: การเลื่อนตำแหน่งของคนทำงานที่มีศักยภาพสูงเป็นเรื่องน่ายินดีและเป็นธรรมชาติของการพัฒนาบุคลากร ไม่ใช่เรื่องล้มเหลวจากผู้นำ"
+    },
+    {
+        "file_name":  "2026-06-17_23-02-19.png",
+        "question":  "An agile project is structured without timeboxing. Tasks are grouped by high-level goal but CANNOT be predictably scheduled. In which three ways can the work be distributed for efficient execution? (Choose THREE.)",
+        "options":  [
+                        "a. Use a task board to group tasks into rows and track progress across columns.",
+                        "b. Set deadlines to ensure that the team completes work within acceptable limits.",
+                        "c. Pre-identify blockers to determine the order of execution.",
+                        "d. Track readiness status to help the team initiate tasks at the right time.",
+                        "e. Maintain a to-do task pool to limit the number of tasks in progress."
+                    ],
+        "correct_answer":  "abd",
+        "explanation":  "ตัวเลือก a, b, และ d ถูกต้อง: เมื่อโครงการดำเนินงานในรูปแบบ Flow-based agile (เช่น Kanban) ที่ปราศจากการกำหนดเวลารอบวิ่งแบบ Timeboxing:\n- การใช้บอร์ดทำงาน (a) ช่วยจัดกลุ่มงานตามแถว (rows/swimlanes) เพื่อแยกตามเป้าหมายและจัดประเภทตามคอลัมน์เพื่อดูสถานะความคืบหน้า\n- การกำหนดเส้นตายกว้าง ๆ (b) ช่วยรักษาขอบเขตรอบการทำงานที่เหมาะสมเพื่อให้ควบคุมได้และกระตุ้นแรงขับการส่งมอบงาน\n- การติดตามความพร้อมก่อนเริ่มงาน (d) ทำให้แน่ใจว่าทีมสามารถหยิบหรือ Pull งานใหม่ไปทำได้ทันทีเมื่อพร้อมโดยไม่คั่งค้าง\n- ตัวเลือก c ผิด: การระบุตัวกีดขวางก่อนทำไม่ใช่เครื่องมือหลักในการกระจายหรือควบคุมการทำงานแบบดึงงาน\n- ตัวเลือก e ผิด: การควบคุมปริมาณงานกำลังพัฒนา (WIP limit) เป็นเทคนิคการลดปริมาณงานค้าง ไม่ใช่การให้พนักงานเก็บประดองงานใน To-do pool ไปเรื่อย ๆ อย่างไม่มีที่สิ้นสุด"
+    },
+    {
+        "file_name":  "2026-06-17_23-03-14.png",
+        "question":  "The project sponsor is NOT convinced that an agile track should be used in a new R&D project because the company needs to be certain that specific features will be ready for mass production by a specific date. Which three agile methods can ensure that the sponsor's needs can be fulfilled in a hybrid project approach? (Choose THREE.)",
+        "options":  [
+                        "a. Stories can be broken down into granular epics.",
+                        "b. Incremental development reduces risk of quality delays.",
+                        "c. Requirement priorities are confirmed at each iteration.",
+                        "d. Impact mapping can be used to group related stories.",
+                        "e. A product roadmap can provide a detailed breakdown."
+                    ],
+        "correct_answer":  "bce",
+        "explanation":  "ตัวเลือก b, c, และ e ถูกต้อง: ในโครงการประเภทวิจัยและพัฒนา (R&D) ที่เปลี่ยนผ่านสู่สายการผลิตจริง:\n- การพัฒนาแบบสะสมทีละส่วน (b) ช่วยลดความล่าช้าด้านคุณภาพโดยหาจุดผิดปกติเจอได้ตั้งแต่เนิ่น ๆ\n- การให้ทวนสอบลำดับความสำคัญของข้อกำหนดงาน (c) ทุก ๆ วงรอบช่วยให้สปอนเซอร์วางใจได้ว่าฟีเจอร์การผลิตขั้นวิกฤตจะได้รับการทำก่อนและเสร็จสิ้นตามกำหนด\n- การใช้แผนภาพโรดแมปผลิตภัณฑ์ (e) เป็นตัวแสดงโครงข่ายภาพรวมระดับมหภาคและทิศทางการเปิดตัว ช่วยให้สปอนเซอร์คาดการณ์ได้อย่างมีประสิทธิภาพ\n- ตัวเลือก a ผิด: คอนเซ็ปต์ของอไจล์คือการย่อย Epic ขนาดใหญ่ลงไปสู่ Story ย่อยที่ใช้งานได้จริง ไม่ใช่การนำ Story ไปประกอบเป็น Epic ที่สับสน\n- ตัวเลือก d ผิด: แผนผังผลกระทบ (Impact mapping) เป็นเทคนิคระดมสมองหารูปแบบแนวคิด ไม่ได้ช่วยวางกำหนดการความมั่นใจต่อเวลาปล่อยสายการผลิตให้กับสปอนเซอร์ได้โดยตรง"
+    },
+    {
+        "file_name":  "2026-06-17_23-04-16.png",
+        "question":  "An agile team is in the process of estimating the level of effort needed to complete the user stories for their project. After the team presents the effort expressed in story points to the project manager, the project manager is shocked, stating that the number of story points is much higher than the one completed by another team in a similar project. What does the project manager most likely not understand?",
+        "options":  [
+                        "a. Each agile team has its own capacity.",
+                        "b. The team is using padding to secure its estimates.",
+                        "c. Estimates in story points always look high.",
+                        "d. The two projects are not similar."
+                    ],
+        "correct_answer":  "a",
+        "explanation":  "ตัวเลือก a ถูกต้อง: ค่า story points และ velocity ในแต่ละทีมถือเป็นค่าจำเพาะประจำกลุ่ม (team-specific) และสะท้อนขีดความสามารถการตีความร่วมกันในทีมนั้น ๆ (capacity) จึงห้ามนำไปเปรียบเทียบข้ามทีมโดยเด็ดขาด เพราะแต่ละทีมจะมีมาตรวัดและขีดความสามารถในการพัฒนาที่เป็นตัวของตัวเอง\n- ตัวเลือก b ผิด: การใส่ค่าเผื่อไม่ควรเดาว่าเป็นพฤติกรรมดั้งเดิมในการประเมินเชิงสัมพัทธ์ของอไจล์\n- ตัวเลือก c ผิด: แต้มของงานอไจล์อาจมองว่าสูงหรือต่ำขึ้นกับฐานวัดของทีม ไม่ใช่มองว่าต้องดูสูงตลอดเวลา\n- ตัวเลือก d ผิด: ต่อให้เป็นโครงการประเภทเดียวกัน ทักษะและการกำหนดระดับ Story point ของทีมแต่ละชุดก็มีความต่างกันอยู่ดี"
+    },
+    {
+        "file_name":  "2026-06-17_23-05-42.png",
+        "question":  "An agile retrospective meeting is an ideal time for the self-assessment of a team, where members reflect on how they are doing and find ways to improve their performance. Agile best practices indicate that three specific questions should be asked during a retrospective meeting to make the meeting as productive as possible. Which of the following represents one of the questions, which should be asked during an iteration retrospective?",
+        "options":  [
+                        "a. What didn't we understand during the current iteration?",
+                        "b. What has been accomplished since the last meeting?",
+                        "c. What improvements do we make during the next iteration?",
+                        "d. Are there any impediments to progress?"
+                    ],
+        "correct_answer":  "c",
+        "explanation":  "ตัวเลือก c ถูกต้อง: การประชุม Retrospective มีวัตถุประสงค์เพื่อหามาตรการในการพัฒนาและปรับปรุงประสิทธิภาพการทำงานในอนาคต ดังนั้น คำถามเกี่ยวกับสิ่งที่ทีมควรทำการปรับเปลี่ยนหรือปรับปรุงสำหรับรอบการวิ่งถัดไป (What improvements do we make during the next iteration?) จึงเป็นแก่นสำคัญของการทบทวนบทเรียน\n- ตัวเลือก a ผิด: ความไม่เข้าใจไม่ใช่คำถามหลักที่มุ่งเน้นในกระบวนการทบทวนภาพรวมความสำเร็จ\n- ตัวเลือก b และ d ผิด: คำถามเหล่านี้เป็นคำถามปกติของ Daily Standup (ทำอะไรไปบ้าง มีอะไรติดขัด) ไม่ใช่คำถามหลักของการประชุม Retrospective ที่เน้นย้อนคิดและตั้งรับการพัฒนา"
     }
 ]

@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showPracticeFeedback(letter, q.correct_answer, q.explanation);
             
             // Play Beep
-            if (letter === q.correct_answer) {
+            if (q.correct_answer.split('').includes(letter)) {
                 playSuccessSound();
             } else {
                 playErrorSound();
@@ -382,17 +382,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showPracticeFeedback(selected, correct, explanation) {
         // Highlight correct/incorrect option cards
-        const correctBtn = document.getElementById(`option-${correct}`);
-        const selectedBtn = document.getElementById(`option-${selected}`);
+        const correctLetters = correct.split('');
+        const isSelectedCorrect = correctLetters.includes(selected);
         
-        if (selected === correct) {
-            if (selectedBtn) selectedBtn.classList.add('correct');
+        const selectedBtn = document.getElementById(`option-${selected}`);
+        if (selectedBtn) {
+            if (isSelectedCorrect) {
+                selectedBtn.classList.add('correct');
+            } else {
+                selectedBtn.classList.add('incorrect');
+            }
+        }
+        
+        // Highlight correct answers that were not selected (or all correct if selected is wrong)
+        correctLetters.forEach(letter => {
+            if (letter !== selected) {
+                const btn = document.getElementById(`option-${letter}`);
+                if (btn) btn.classList.add('unanswered-correct');
+            }
+        });
+        
+        if (isSelectedCorrect) {
             explanationStatus.textContent = "ถูกต้อง";
             explanationStatus.className = "explanation-badge correct";
         } else {
-            if (selectedBtn) selectedBtn.classList.add('incorrect');
-            if (correctBtn) correctBtn.classList.add('unanswered-correct');
-            explanationStatus.textContent = "คำตอบที่ถูกคือ " + correct.toUpperCase();
+            explanationStatus.textContent = "คำตอบที่ถูกคือ " + correct.toUpperCase().split('').join(', ');
             explanationStatus.className = "explanation-badge incorrect";
         }
         
@@ -557,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const ans = state.answers[idx];
             if (ans === null || ans === 'timeout') {
                 skipped++;
-            } else if (ans === q.correct_answer) {
+            } else if (q.correct_answer.split('').includes(ans)) {
                 correct++;
             } else {
                 wrong++;
@@ -612,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         state.shuffledQuestions.forEach((q, idx) => {
             const selected = state.answers[idx];
-            const isCorrect = selected === q.correct_answer;
+            const isCorrect = q.correct_answer.split('').includes(selected);
             const isFlagged = state.flags[idx];
             
             // Filter evaluation
@@ -653,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const optText = opt.substring(2).trim();
                         let optClass = 'review-option-item';
                         
-                        if (letter === q.correct_answer) {
+                        if (q.correct_answer.split('').includes(letter)) {
                             optClass += ' correct';
                         } else if (letter === selected) {
                             optClass += ' chosen';
