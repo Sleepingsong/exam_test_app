@@ -55,6 +55,12 @@
                     <h3>การตั้งค่าระบบ</h3>
                     <div class="settings-group">
                         <div class="setting-item">
+                            <label for="question-set-select">เลือกชุดข้อสอบ (ชุดละ 60 ข้อ):</label>
+                            <select id="question-set-select">
+                                <option value="all">โหลดข้อสอบเพื่อแบ่งชุด...</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
                             <label for="per-question-timer-limit">เวลาทำข้อสอบต่อข้อ (วินาที):</label>
                             <input type="number" id="per-question-timer-limit" value="75" min="10" max="600">
                         </div>

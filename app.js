@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const perQuestionTimerLimit = document.getElementById('per-question-timer-limit');
     const enableTimeOutLock = document.getElementById('enable-time-out-lock');
     const shuffleQuestions = document.getElementById('shuffle-questions');
+    const questionSetSelect = document.getElementById('question-set-select');
     
     const btnLoadDefault = document.getElementById('btn-load-default');
     const jsonFileInput = document.getElementById('json-file-input');
@@ -142,6 +143,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function populateQuestionSetSelect(questions) {
+        if (!questionSetSelect) return;
+        questionSetSelect.innerHTML = '';
+        
+        // Default "All Questions" option
+        const allOption = document.createElement('option');
+        allOption.value = 'all';
+        allOption.textContent = `ข้อสอบทั้งหมด (${questions.length} ข้อ)`;
+        questionSetSelect.appendChild(allOption);
+        
+        // Chunk by 60
+        const chunkSize = 60;
+        const total = questions.length;
+        const setTerms = Math.ceil(total / chunkSize);
+        
+        for (let i = 0; i < setTerms; i++) {
+            const start = i * chunkSize;
+            const end = Math.min((i + 1) * chunkSize, total);
+            
+            const opt = document.createElement('option');
+            opt.value = `${start}-${end}`;
+            opt.textContent = `ชุดที่ ${i + 1} (ข้อ ${start + 1} - ${end})`;
+            questionSetSelect.appendChild(opt);
+        }
+    }
+
     function setupQuizQuestions(data) {
         if (!Array.isArray(data) || data.length === 0) {
             dataStatusMsg.textContent = "ล้มเหลว: โครงสร้างไฟล์ข้อสอบไม่ถูกต้อง";
@@ -154,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dataStatusMsg.textContent = `โหลดข้อสอบสำเร็จทั้งหมด ${data.length} ข้อ พร้อมสอบแล้ว!`;
         dataStatusMsg.className = "status-msg success";
         btnStartQuiz.classList.remove('disabled');
+        populateQuestionSetSelect(data);
     }
 
     // Default load from relative questions.json path on click
@@ -190,11 +218,23 @@ document.addEventListener('DOMContentLoaded', () => {
         state.enableTimeoutLock = enableTimeOutLock.checked;
         state.shuffleEnabled = shuffleQuestions.checked;
         
+        // Get selected subset of questions
+        let selectedQuestions = [...state.questions];
+        let forceShuffle = false;
+        
+        if (questionSetSelect && questionSetSelect.value !== 'all') {
+            const range = questionSetSelect.value.split('-');
+            const start = parseInt(range[0], 10);
+            const end = parseInt(range[1], 10);
+            selectedQuestions = state.questions.slice(start, end);
+            forceShuffle = true; // Always shuffle subsets as per instructions
+        }
+        
         // Prepare questions order
-        if (state.shuffleEnabled) {
-            state.shuffledQuestions = [...state.questions].sort(() => Math.random() - 0.5);
+        if (state.shuffleEnabled || forceShuffle) {
+            state.shuffledQuestions = selectedQuestions.sort(() => Math.random() - 0.5);
         } else {
-            state.shuffledQuestions = [...state.questions];
+            state.shuffledQuestions = selectedQuestions;
         }
         
         const qCount = state.shuffledQuestions.length;

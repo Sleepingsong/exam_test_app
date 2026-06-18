@@ -346,7 +346,8 @@ h1, h2, h3, h4 {
     color: var(--text-secondary);
 }
 
-.setting-item input[type="number"] {
+.setting-item input[type="number"],
+.setting-item select {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
     padding: 0.75rem;
@@ -358,8 +359,14 @@ h1, h2, h3, h4 {
     transition: border-color 0.2s ease;
 }
 
-.setting-item input[type="number"]:focus {
+.setting-item input[type="number"]:focus,
+.setting-item select:focus {
     border-color: var(--color-primary);
+}
+
+.setting-item select option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
 }
 
 .checkbox-item {
