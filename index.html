@@ -73,32 +73,11 @@
                             <label for="shuffle-questions">สุ่มลำดับคำถาม (Shuffle Questions)</label>
                         </div>
                     </div>
-
-                    <div class="data-source-box">
-                        <h4>แหล่งข้อมูลคำถาม</h4>
-                        <div class="data-actions">
-                            <button id="btn-load-default" class="btn btn-secondary">
-                                <svg class="icon" viewBox="0 0 24 24">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                                </svg>
-                                ใช้ข้อสอบภายในระบบ
-                            </button>
-                            <div class="file-upload-wrapper">
-                                <button class="btn btn-outline btn-upload">
-                                    <svg class="icon" viewBox="0 0 24 24">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
-                                    </svg>
-                                    อัปโหลดไฟล์ JSON เอง
-                                </button>
-                                <input type="file" id="json-file-input" accept=".json">
-                            </div>
-                        </div>
-                        <p id="data-status-msg" class="status-msg">พร้อมทำงาน เลือกใช้วิธีโหลดข้อสอบที่ต้องการ</p>
-                    </div>
                 </div>
             </div>
 
             <div class="launcher-footer">
+                <p id="data-status-msg" class="status-msg">กำลังโหลดข้อสอบ...</p>
                 <button id="btn-start-quiz" class="btn btn-primary btn-large disabled">
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M5 3l14 9-14 9V3z" />

@@ -35,8 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const shuffleQuestions = document.getElementById('shuffle-questions');
     const questionSetSelect = document.getElementById('question-set-select');
     
-    const btnLoadDefault = document.getElementById('btn-load-default');
-    const jsonFileInput = document.getElementById('json-file-input');
     const dataStatusMsg = document.getElementById('data-status-msg');
     const btnStartQuiz = document.getElementById('btn-start-quiz');
     const totalQuestionsCount = document.getElementById('total-questions-count');
@@ -190,29 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Default load from relative questions.json path on click
-    btnLoadDefault.addEventListener('click', () => {
-        loadQuestionsData('../questions.json');
-    });
 
-    // File Upload Handler
-    jsonFileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = function(evt) {
-            try {
-                const data = JSON.parse(evt.target.result);
-                setupQuizQuestions(data);
-            } catch(err) {
-                dataStatusMsg.textContent = "ล้มเหลว: รูปแบบไฟล์ JSON ไม่ถูกต้อง";
-                dataStatusMsg.className = "status-msg error";
-                btnStartQuiz.classList.add('disabled');
-            }
-        };
-        reader.readAsText(file, "UTF-8");
-    });
 
     // --- Quiz Start & Configuration ---
     btnStartQuiz.addEventListener('click', () => {
@@ -754,5 +730,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Automatically load default questions on startup
-    loadQuestionsData('../questions.json');
+    loadQuestionsData('questions.json');
 });
