@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const jsonFileInput = document.getElementById('json-file-input');
     const dataStatusMsg = document.getElementById('data-status-msg');
     const btnStartQuiz = document.getElementById('btn-start-quiz');
+    const totalQuestionsCount = document.getElementById('total-questions-count');
     
     const globalTimer = document.getElementById('global-timer');
     const globalTimeVal = document.getElementById('global-time-val');
@@ -182,11 +183,16 @@ document.addEventListener('DOMContentLoaded', () => {
         dataStatusMsg.className = "status-msg success";
         btnStartQuiz.classList.remove('disabled');
         populateQuestionSetSelect(data);
+        
+        // Update total questions count in description dynamically
+        if (totalQuestionsCount) {
+            totalQuestionsCount.textContent = data.length;
+        }
     }
 
     // Default load from relative questions.json path on click
     btnLoadDefault.addEventListener('click', () => {
-        loadQuestionsData('questions.json');
+        loadQuestionsData('../questions.json');
     });
 
     // File Upload Handler
@@ -746,4 +752,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsScreen.classList.add('hidden');
         launcherScreen.classList.remove('hidden');
     });
+
+    // Automatically load default questions on startup
+    loadQuestionsData('../questions.json');
 });
