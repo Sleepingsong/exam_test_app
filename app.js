@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         state.questions = data;
-        dataStatusMsg.textContent = `โหลดข้อสอบสำเร็จทั้งหมด ${data.length} ข้อ พร้อมสอบแล้ว!`;
+        dataStatusMsg.textContent = "";
         dataStatusMsg.className = "status-msg success";
         btnStartQuiz.classList.remove('disabled');
         populateQuestionSetSelect(data);
