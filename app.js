@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const enableTimeOutLock = document.getElementById('enable-time-out-lock');
     const shuffleQuestions = document.getElementById('shuffle-questions');
     const questionSetSelect = document.getElementById('question-set-select');
+    const questionSetContainer = document.getElementById('question-set-container');
     
     const dataStatusMsg = document.getElementById('data-status-msg');
     const btnStartQuiz = document.getElementById('btn-start-quiz');
@@ -117,12 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
     modePractice.addEventListener('change', () => {
         modePracticeLabel.classList.add('active');
         modeExamLabel.classList.remove('active');
+        if (questionSetContainer) {
+            questionSetContainer.style.display = '';
+        }
     });
     
     modeExam.addEventListener('change', () => {
         modeExamLabel.classList.add('active');
         modePracticeLabel.classList.remove('active');
+        if (questionSetContainer) {
+            questionSetContainer.style.display = 'none';
+        }
     });
+
+    // Initial display setup for Question Set container based on selected mode
+    if (document.querySelector('input[name="exam-mode"]:checked').value === 'exam') {
+        if (questionSetContainer) questionSetContainer.style.display = 'none';
+    }
 
     // --- Loading JSON Data ---
     async function loadQuestionsData(url) {
@@ -200,23 +212,30 @@ document.addEventListener('DOMContentLoaded', () => {
         state.enableTimeoutLock = enableTimeOutLock.checked;
         state.shuffleEnabled = shuffleQuestions.checked;
         
-        // Get selected subset of questions
-        let selectedQuestions = [...state.questions];
-        let forceShuffle = false;
-        
-        if (questionSetSelect && questionSetSelect.value !== 'all') {
-            const range = questionSetSelect.value.split('-');
-            const start = parseInt(range[0], 10);
-            const end = parseInt(range[1], 10);
-            selectedQuestions = state.questions.slice(start, end);
-            forceShuffle = true; // Always shuffle subsets as per instructions
-        }
-        
-        // Prepare questions order
-        if (state.shuffleEnabled || forceShuffle) {
-            state.shuffledQuestions = selectedQuestions.sort(() => Math.random() - 0.5);
+        // Prepare questions list based on Mode
+        if (state.examMode === 'exam') {
+            // Exam Mode: Shuffle all questions and take exactly 180
+            const shuffledAll = [...state.questions].sort(() => Math.random() - 0.5);
+            state.shuffledQuestions = shuffledAll.slice(0, Math.min(180, shuffledAll.length));
         } else {
-            state.shuffledQuestions = selectedQuestions;
+            // Practice Mode: Check selected question subset
+            let selectedQuestions = [...state.questions];
+            let forceShuffle = false;
+            
+            if (questionSetSelect && questionSetSelect.value !== 'all') {
+                const range = questionSetSelect.value.split('-');
+                const start = parseInt(range[0], 10);
+                const end = parseInt(range[1], 10);
+                selectedQuestions = state.questions.slice(start, end);
+                forceShuffle = true; // Always shuffle subsets as per instructions
+            }
+            
+            // Prepare questions order
+            if (state.shuffleEnabled || forceShuffle) {
+                state.shuffledQuestions = selectedQuestions.sort(() => Math.random() - 0.5);
+            } else {
+                state.shuffledQuestions = selectedQuestions;
+            }
         }
         
         const qCount = state.shuffledQuestions.length;

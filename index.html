@@ -45,7 +45,7 @@
                         <label class="mode-card" id="mode-exam-label">
                             <input type="radio" name="exam-mode" id="mode-exam" value="exam">
                             <span class="mode-title">Exam Mode</span>
-                            <span class="mode-desc">โหมดสอบจริง: จับเวลารวม ซ่อนเฉลย
+                            <span class="mode-desc">โหมดสอบจริง: สุ่มข้อสอบ 180 ข้อจากทั้งหมด จับเวลารวม ซ่อนเฉลย
                                 และสรุปผลคะแนนทั้งหมดในตอนท้าย</span>
                         </label>
                     </div>
@@ -54,7 +54,7 @@
                 <div class="settings-box">
                     <h3>การตั้งค่าระบบ</h3>
                     <div class="settings-group">
-                        <div class="setting-item">
+                        <div class="setting-item" id="question-set-container">
                             <label for="question-set-select">เลือกชุดข้อสอบ (ชุดละ 60 ข้อ):</label>
                             <select id="question-set-select">
                                 <option value="all">โหลดข้อสอบเพื่อแบ่งชุด...</option>
