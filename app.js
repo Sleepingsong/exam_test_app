@@ -214,9 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Prepare questions list based on Mode
         if (state.examMode === 'exam') {
-            // Exam Mode: Shuffle all questions and take exactly 180
+            // Exam Mode: Shuffle all questions and use the entire pool
             const shuffledAll = [...state.questions].sort(() => Math.random() - 0.5);
-            state.shuffledQuestions = shuffledAll.slice(0, Math.min(180, shuffledAll.length));
+            state.shuffledQuestions = shuffledAll;
         } else {
             // Practice Mode: Check selected question subset
             let selectedQuestions = [...state.questions];
