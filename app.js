@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Prepare questions list based on Mode
         if (state.examMode === 'exam') {
-            // Exam Mode: Stratified Random Sampling (180 questions)
+            // Exam Mode: Stratified Random Sampling (185 questions)
             const pools = {
                 'People': { 'Adaptive': [], 'Predictive': [] },
                 'Process': { 'Adaptive': [], 'Predictive': [] },
@@ -256,12 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 2. Draw according to PMP Distribution
             let finalExamSet = [];
-            finalExamSet = finalExamSet.concat(drawFromDomain('People', 59));       // 33% of 180
-            finalExamSet = finalExamSet.concat(drawFromDomain('Process', 74));      // 41% of 180
-            finalExamSet = finalExamSet.concat(drawFromDomain('Business Environment', 47)); // 26% of 180
+            finalExamSet = finalExamSet.concat(drawFromDomain('People', 61));       // 33% of 185
+            finalExamSet = finalExamSet.concat(drawFromDomain('Process', 76));      // 41% of 185
+            finalExamSet = finalExamSet.concat(drawFromDomain('Business Environment', 48)); // 26% of 185
             
             // 3. Fallback if any shortfall
-            let overallShortfall = 180 - finalExamSet.length;
+            let overallShortfall = 185 - finalExamSet.length;
             if (overallShortfall > 0) {
                 let remaining = fallbackPool;
                 Object.values(pools).forEach(d => {
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 finalExamSet = finalExamSet.concat(remaining.splice(0, overallShortfall));
             }
             
-            // Final shuffle of the exactly 180 questions
+            // Final shuffle of the exactly 185 questions
             state.shuffledQuestions = finalExamSet.sort(() => Math.random() - 0.5);
         } else {
             // Practice Mode: Check selected question subset
@@ -299,7 +299,12 @@ document.addEventListener('DOMContentLoaded', () => {
         state.flags = new Array(qCount).fill(false);
         state.timeSpent = new Array(qCount).fill(0);
         state.currentIndex = 0;
-        state.globalSeconds = 0;
+        if (state.examMode === 'exam') {
+            state.globalSeconds = 240 * 60; // 240 minutes in seconds
+        } else {
+            state.globalSeconds = 0;
+        }
+        state.currentQuestionStartTime = Date.now();
         state.quizActive = true;
         
         // Switch view
@@ -549,20 +554,49 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Timers Logic ---
     function startGlobalTimer() {
         if (state.globalTimerInterval) clearInterval(state.globalTimerInterval);
-        state.globalTimerInterval = setInterval(() => {
-            state.globalSeconds++;
-            
-            // Format to hh:mm:ss
+        
+        const labelEl = globalTimer.querySelector('.timer-label');
+        if (labelEl) {
+            labelEl.textContent = state.examMode === 'exam' ? 'เวลาที่เหลืออยู่:' : 'เวลาใช้ไปทั้งหมด:';
+        }
+        
+        const updateDisplay = () => {
             const hrs = Math.floor(state.globalSeconds / 3600).toString().padStart(2, '0');
             const mins = Math.floor((state.globalSeconds % 3600) / 60).toString().padStart(2, '0');
             const secs = (state.globalSeconds % 60).toString().padStart(2, '0');
-            
             globalTimeVal.textContent = `${hrs}:${mins}:${secs}`;
+        };
+        
+        updateDisplay();
+        
+        state.globalTimerInterval = setInterval(() => {
+            if (state.examMode === 'exam') {
+                state.globalSeconds--;
+                if (state.globalSeconds <= 0) {
+                    state.globalSeconds = 0;
+                    clearInterval(state.globalTimerInterval);
+                    updateDisplay();
+                    alert("หมดเวลาทำข้อสอบแล้ว! ระบบจะทำการส่งกระดาษคำตอบให้คุณโดยอัตโนมัติ");
+                    endQuizAndProcessResults();
+                    return;
+                }
+            } else {
+                state.globalSeconds++;
+            }
+            updateDisplay();
         }, 1000);
     }
 
     function resetQuestionTimer() {
         stopQuestionTimer();
+        
+        // If Exam Mode, hide the circular timer and do not start question timer
+        if (state.examMode === 'exam') {
+            if (circularTimer) circularTimer.style.display = 'none';
+            return;
+        } else {
+            if (circularTimer) circularTimer.style.display = '';
+        }
         
         // If already answered in Practice Mode, do not run timer
         if (state.examMode === 'practice' && state.answers[state.currentIndex] !== null) {
@@ -629,10 +663,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveTimeSpent() {
-        // Record seconds spent
-        if (state.timerLimit && state.timeLeft) {
-            const spent = state.timerLimit - state.timeLeft;
-            state.timeSpent[state.currentIndex] += Math.max(0, spent);
+        if (state.currentQuestionStartTime) {
+            const elapsed = Math.max(0, Math.round((Date.now() - state.currentQuestionStartTime) / 1000));
+            state.timeSpent[state.currentIndex] += elapsed;
+            state.currentQuestionStartTime = Date.now();
         }
     }
 
@@ -651,6 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function endQuizAndProcessResults() {
         state.quizActive = false;
+        saveTimeSpent();
         stopQuestionTimer();
         if (state.globalTimerInterval) clearInterval(state.globalTimerInterval);
         
