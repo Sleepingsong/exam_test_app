@@ -214,9 +214,65 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Prepare questions list based on Mode
         if (state.examMode === 'exam') {
-            // Exam Mode: Shuffle all questions and use the entire pool
-            const shuffledAll = [...state.questions].sort(() => Math.random() - 0.5);
-            state.shuffledQuestions = shuffledAll;
+            // Exam Mode: Stratified Random Sampling (180 questions)
+            const pools = {
+                'People': { 'Adaptive': [], 'Predictive': [] },
+                'Process': { 'Adaptive': [], 'Predictive': [] },
+                'Business Environment': { 'Adaptive': [], 'Predictive': [] }
+            };
+            let fallbackPool = [];
+            
+            // 1. Distribute questions into pools
+            [...state.questions].sort(() => Math.random() - 0.5).forEach(q => {
+                const d = q.domain || 'Process';
+                const a = q.approach || 'Predictive';
+                if (pools[d] && pools[d][a]) {
+                    pools[d][a].push(q);
+                } else {
+                    fallbackPool.push(q);
+                }
+            });
+            
+            // Helper to draw from a domain
+            function drawFromDomain(domainName, totalNeeded) {
+                const domainPool = pools[domainName] || { Adaptive: [], Predictive: [] };
+                const adaptiveNeeded = Math.round(totalNeeded * 0.60);
+                const predictiveNeeded = totalNeeded - adaptiveNeeded;
+                
+                let drawn = [];
+                drawn = drawn.concat(domainPool['Adaptive'].splice(0, adaptiveNeeded));
+                drawn = drawn.concat(domainPool['Predictive'].splice(0, predictiveNeeded));
+                
+                const shortfall = totalNeeded - drawn.length;
+                if (shortfall > 0) {
+                    drawn = drawn.concat(domainPool['Adaptive'].splice(0, shortfall));
+                    const stillShort = totalNeeded - drawn.length;
+                    if (stillShort > 0) {
+                        drawn = drawn.concat(domainPool['Predictive'].splice(0, stillShort));
+                    }
+                }
+                return drawn;
+            }
+            
+            // 2. Draw according to PMP Distribution
+            let finalExamSet = [];
+            finalExamSet = finalExamSet.concat(drawFromDomain('People', 59));       // 33% of 180
+            finalExamSet = finalExamSet.concat(drawFromDomain('Process', 74));      // 41% of 180
+            finalExamSet = finalExamSet.concat(drawFromDomain('Business Environment', 47)); // 26% of 180
+            
+            // 3. Fallback if any shortfall
+            let overallShortfall = 180 - finalExamSet.length;
+            if (overallShortfall > 0) {
+                let remaining = fallbackPool;
+                Object.values(pools).forEach(d => {
+                    remaining = remaining.concat(d['Adaptive']).concat(d['Predictive']);
+                });
+                remaining.sort(() => Math.random() - 0.5);
+                finalExamSet = finalExamSet.concat(remaining.splice(0, overallShortfall));
+            }
+            
+            // Final shuffle of the exactly 180 questions
+            state.shuffledQuestions = finalExamSet.sort(() => Math.random() - 0.5);
         } else {
             // Practice Mode: Check selected question subset
             let selectedQuestions = [...state.questions];
