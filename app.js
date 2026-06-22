@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Prepare questions list based on Mode
         if (state.examMode === 'exam') {
-            // Exam Mode: Stratified Random Sampling (185 questions)
+            // Exam Mode: Stratified Random Sampling (180 questions)
             const pools = {
                 'People': { 'Adaptive': [], 'Predictive': [] },
                 'Process': { 'Adaptive': [], 'Predictive': [] },
@@ -256,12 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 2. Draw according to PMP Distribution
             let finalExamSet = [];
-            finalExamSet = finalExamSet.concat(drawFromDomain('People', 61));       // 33% of 185
-            finalExamSet = finalExamSet.concat(drawFromDomain('Process', 76));      // 41% of 185
-            finalExamSet = finalExamSet.concat(drawFromDomain('Business Environment', 48)); // 26% of 185
+            finalExamSet = finalExamSet.concat(drawFromDomain('People', 59));       // 33% of 180
+            finalExamSet = finalExamSet.concat(drawFromDomain('Process', 74));      // 41% of 180
+            finalExamSet = finalExamSet.concat(drawFromDomain('Business Environment', 47)); // 26% of 180
             
             // 3. Fallback if any shortfall
-            let overallShortfall = 185 - finalExamSet.length;
+            let overallShortfall = 180 - finalExamSet.length;
             if (overallShortfall > 0) {
                 let remaining = fallbackPool;
                 Object.values(pools).forEach(d => {
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 finalExamSet = finalExamSet.concat(remaining.splice(0, overallShortfall));
             }
             
-            // Final shuffle of the exactly 185 questions
+            // Final shuffle of the exactly 180 questions
             state.shuffledQuestions = finalExamSet.sort(() => Math.random() - 0.5);
         } else {
             // Practice Mode: Check selected question subset
@@ -713,8 +713,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const total = state.shuffledQuestions.length;
         const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
         
-        // Target pass limit is 65% for PMP
-        const isPass = percentage >= 65;
+        // Target pass limit is 61% for PMP
+        const isPass = percentage >= 61;
         
         // Visual circular display
         resultRadialFg.style.strokeDasharray = `${percentage}, 100`;
