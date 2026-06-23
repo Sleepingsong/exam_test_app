@@ -34,6 +34,88 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- PMP Keywords Dictionary & Analyzer ---
+    const PMP_KEYWORDS = [
+        {
+            words: ['agile', 'scrum', 'iteration', 'iterative', 'adaptive', 'sprint', 'backlog', 'product owner', 'scrum master', 'kanban', 'retrospective', 'stand-up', 'refinement'],
+            label: 'Agile / Adaptive (อไจล์)',
+            guide: 'เน้นความยืดหยุ่น การทำงานเป็นรอบ (Sprints) การตกลงร่วมกันในทีม การบริหาร Backlog และส่งมอบมูลค่าอย่างรวดเร็ว'
+        },
+        {
+            words: ['predictive', 'waterfall', 'traditional', 'milestone', 'wbs', 'scope baseline', 'project management plan'],
+            label: 'Predictive / Waterfall (แผนงานดั้งเดิม)',
+            guide: 'เน้นกระบวนการควบคุมการเปลี่ยนแปลง (Change Control) ทำตามแผนงานและขอบเขตงาน (Scope Baseline) ที่วางไว้แต่แรก'
+        },
+        {
+            words: ['stakeholder', 'sponsor', 'client', 'customer', 'franchise', 'department head', 'executive', 'power', 'influence', 'interest'],
+            label: 'Stakeholder Management (การจัดการผู้มีส่วนได้ส่วนเสีย)',
+            guide: 'วิเคราะห์ระดับความสนใจและอำนาจ (Power/Interest Matrix) สื่อสารเชิงรุก และเจรจาประนีประนอมเมื่อความเห็นขัดแย้ง'
+        },
+        {
+            words: ['risk', 'trigger', 'contingency', 'reserve', 'mitigate', 'avoid', 'transfer', 'exploit', 'share', 'accept', 'threat', 'opportunity'],
+            label: 'Risk Management (การบริหารความเสี่ยง)',
+            guide: 'ประเมินผลกระทบ/โอกาสเกิด ใช้แผนสำรอง (Contingency) เมื่อพบ Trigger และจัดการความเสี่ยงตามความเหมาะสมของสัญญากับงบสำรอง'
+        },
+        {
+            words: ['change request', 'change control', 'ccb', 'scope creep', 'amend', 'baseline change'],
+            label: 'Change Control (การควบคุมการเปลี่ยนแปลง)',
+            guide: 'ต้องประเมินผลกระทบก่อนเป็นอันดับแรก (Analyze Impact) แล้วเสนอขออนุมัติผ่าน CCB ห้ามข้ามขั้นตอนหรือเปลี่ยนงานเองโดยพลการ'
+        },
+        {
+            words: ['conflict', 'disagree', 'clash', 'negotiate', 'collaborate', 'compromise', 'confront', 'withdraw', 'smooth', 'force'],
+            label: 'Conflict Management (การแก้ปัญหาความขัดแย้ง)',
+            guide: 'ให้เน้นการเผชิญหน้าแก้ปัญหาร่วมกัน (Collaborate / Problem Solving) หรือพูดคุยหาจุดประนีประนอมเป็นทางเลือกแรกๆ'
+        },
+        {
+            words: ['spi', 'cpi', 'evm', 'earned value', 'planned value', 'actual cost', 'schedule variance', 'cost variance', 'over budget', 'behind schedule'],
+            label: 'Earned Value Management (การบริหารคุณค่าที่ได้รับ)',
+            guide: 'ดัชนี CPI และ SPI ที่ < 1.0 หมายถึง เกินงบประมาณ (Over budget) หรือช้ากว่าแผนงาน (Behind schedule) ตามลำดับ'
+        },
+        {
+            words: ['critical path', 'float', 'slack', 'fast-track', 'fast-tracking', 'crashing', 'delay', 'schedule compression'],
+            label: 'Schedule Management (การจัดการเวลา)',
+            guide: 'วิเคราะห์ผลกระทบต่อสายงานวิกฤต (Critical Path) บีบอัดเวลาโดย Fast-tracking (ทำควบคู่) หรือ Crashing (อัดงบ/ทรัพยากร)'
+        },
+        {
+            words: ['procurement', 'vendor', 'contract', 'seller', 'buyer', 'bid', 'fixed price', 'cost reimbursable', 't&m', 'time and material', 'sow'],
+            label: 'Procurement (การจัดซื้อจัดจ้าง)',
+            guide: 'ทบทวนประเภทสัญญา (เช่น Fixed Price โอนความเสี่ยงให้ผู้ขาย, Cost Reimbursable ความเสี่ยงอยู่ที่ผู้ซื้อ) และทำตามข้อกำหนดกฎหมาย/สัญญา'
+        },
+        {
+            words: ['quality', 'metrics', 'audit', 'defect', 'standard', 'grade', 'check', 'verification', 'validation'],
+            label: 'Quality Management (การจัดการคุณภาพ)',
+            guide: 'เน้นการป้องกันไม่ให้เกิดความผิดพลาด (QA / Audits) และตรวจสอบความถูกต้อง (QC) ร่วมกับผู้มีส่วนได้เสีย'
+        },
+        {
+            words: ['team', 'resource', 'skill', 'promote', 'storming', 'norming', 'performing', 'forming', 'raci', 'ground rules', 'self-organizing'],
+            label: 'Resource & Team (ทรัพยากรและทีมงาน)',
+            guide: 'ส่งเสริมการทำงานแบบชี้นำตัวเอง (Self-organizing) จัดตั้ง Ground Rules ร่วมกัน และพัฒนาทีมตามวงจร Tuckman\'s Stages'
+        },
+        {
+            words: ['communication', 'information radiator', 'fishbowl', 'mirroring', 'report', 'email', 'feedback', 'meetings', 'vague', 'remote'],
+            label: 'Communications (การสื่อสาร)',
+            guide: 'เลือกช่องทางการสื่อสารที่เหมาะสม และใช้กระดานสารสนเทศ (Information Radiators) เพื่อความโปร่งใสของความก้าวหน้าโครงการ'
+        }
+    ];
+
+    function getPMPKeywords(questionText) {
+        const text = questionText.toLowerCase();
+        const matched = [];
+        PMP_KEYWORDS.forEach(kw => {
+            const hasMatch = kw.words.some(word => {
+                if (word.length <= 4) {
+                    const regex = new RegExp('\\b' + word + '\\b', 'i');
+                    return regex.test(text);
+                }
+                return text.includes(word);
+            });
+            if (hasMatch) {
+                matched.push(kw);
+            }
+        });
+        return matched;
+    }
+
     // --- Application State ---
     let state = {
         questions: [],          // Raw questions loaded
@@ -465,14 +547,45 @@ document.addEventListener('DOMContentLoaded', () => {
         // Set up countdown timer for this question
         resetQuestionTimer();
         updateSidebarStats();
+
+        // Keyword helper panel display logic
+        const keywordHelperPanel = document.getElementById('keyword-helper-panel');
+        const keywordListContent = document.getElementById('keyword-list-content');
+        const quizContainer = document.querySelector('.quiz-container');
+
+        if (state.examMode === 'practice' && keywordHelperPanel && keywordListContent) {
+            keywordHelperPanel.classList.remove('hidden');
+            if (quizContainer) quizContainer.classList.add('has-keywords');
+            
+            const matchedKeywords = getPMPKeywords(q.question);
+            
+            if (matchedKeywords.length > 0) {
+                keywordListContent.innerHTML = matchedKeywords.map(kw => `
+                    <div class="keyword-card-item">
+                        <div class="keyword-card-title">🔍 ${kw.label}</div>
+                        <div class="keyword-card-desc">${kw.guide}</div>
+                    </div>
+                `).join('');
+            } else {
+                keywordListContent.innerHTML = `
+                    <div class="keyword-no-match">
+                        ไม่พบคำสำคัญเฉพาะเจาะจงในข้อนี้<br>
+                        <span style="font-size: 0.75em; color: var(--text-muted)">ควรอ่านโจทย์เน้นที่บริบทผู้มีส่วนได้เสียหรือสถานการณ์จำลอง</span>
+                    </div>
+                `;
+            }
+        } else {
+            if (keywordHelperPanel) keywordHelperPanel.classList.add('hidden');
+            if (quizContainer) quizContainer.classList.remove('has-keywords');
+        }
         
         // Button visibility
         btnPrevQuestion.classList.toggle('disabled', index === 0);
         
         if (index === state.shuffledQuestions.length - 1) {
-            btnNextQuestion.textContent = "ข้ามข้อสุดท้าย";
+            btnNextQuestion.textContent = "ข้อสุดท้าย";
         } else {
-            btnNextQuestion.innerHTML = `ข้ามข้อนี้ <svg class="icon" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>`;
+            btnNextQuestion.innerHTML = `ข้อต่อไป <svg class="icon" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>`;
         }
     }
 

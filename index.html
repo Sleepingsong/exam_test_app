@@ -15,15 +15,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="dark-theme">
+<body class="light-theme">
     <script>
         (function() {
             const savedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (savedTheme === 'light' || (!savedTheme && !systemPrefersDark)) {
-                document.body.className = 'light-theme';
-            } else {
+            if (savedTheme === 'dark') {
                 document.body.className = 'dark-theme';
+            } else {
+                document.body.className = 'light-theme';
             }
         })();
     </script>
@@ -36,7 +35,7 @@
                     <span id="global-time-val" class="timer-val">00:00:00</span>
                 </div>
                 <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-                    <svg class="theme-icon-sun icon hidden" viewBox="0 0 24 24">
+                    <svg class="theme-icon-sun icon" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="5" />
                         <line x1="12" y1="1" x2="12" y2="3" />
                         <line x1="12" y1="21" x2="12" y2="23" />
@@ -47,7 +46,7 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                     </svg>
-                    <svg class="theme-icon-moon icon" viewBox="0 0 24 24">
+                    <svg class="theme-icon-moon icon hidden" viewBox="0 0 24 24">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                     </svg>
                 </button>
@@ -125,7 +124,15 @@
 
         <!-- 2. Quiz Arena Screen -->
         <section id="quiz-screen" class="quiz-container hidden">
-            <!-- Left Panel: Questions and Options -->
+            <!-- Left Panel: PMP Keyword Helper (Practice Mode Only) -->
+            <aside id="keyword-helper-panel" class="keyword-sidebar glass-panel hidden">
+                <h3 class="sidebar-title" style="font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">🔑 คีย์เวิร์ดสำคัญ (PMP Keywords)</h3>
+                <div id="keyword-list-content" class="keyword-list-content" style="margin-top: 1rem;">
+                    <!-- Dynamic keyword guidance will be injected here -->
+                </div>
+            </aside>
+
+            <!-- Middle Panel: Questions and Options -->
             <div class="quiz-main-panel">
                 <div class="card question-card glass-panel">
                     <!-- Progress and Timer Header -->
@@ -183,7 +190,7 @@
                             ปักหมุดทบทวน
                         </button>
                         <button id="btn-next-question" class="btn btn-primary">
-                            ข้ามข้อนี้
+                            ข้อต่อไป
                             <svg class="icon" viewBox="0 0 24 24">
                                 <path d="M9 18l6-6-6-6" />
                             </svg>
