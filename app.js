@@ -1,6 +1,39 @@
 /* PMP Mock Exam APP JavaScript - Modern Interactive Simulation Engine */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Theme Controller ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.querySelector('.theme-icon-sun');
+    const moonIcon = document.querySelector('.theme-icon-moon');
+
+    function updateThemeIcons() {
+        if (document.body.classList.contains('light-theme')) {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+    }
+    
+    // Sync icons on startup
+    if (themeToggle && sunIcon && moonIcon) {
+        updateThemeIcons();
+
+        themeToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('light-theme')) {
+                document.body.classList.remove('light-theme');
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.add('light-theme');
+                document.body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+            updateThemeIcons();
+        });
+    }
+
     // --- Application State ---
     let state = {
         questions: [],          // Raw questions loaded
