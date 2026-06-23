@@ -268,6 +268,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return tempDiv.innerHTML;
     }
 
+    function parseCorrectAnswers(correct) {
+        if (!correct) return [];
+        const trimmed = correct.trim().toLowerCase();
+        
+        // Case 1: Match option pattern like "a. some text" or "a) some text" or "a some text"
+        const match = trimmed.match(/^([a-f])(?:[\.\)\s]|$)/);
+        if (match) {
+            // But check if it's actually a short sequence of multiple answers (e.g. "ac" or "ae")
+            if (trimmed.length <= 4 && /^[a-f]+$/.test(trimmed)) {
+                return trimmed.split('');
+            }
+            return [match[1]];
+        }
+        
+        // Case 2: Short sequence of letters like "ac", "ae", "bc", "de"
+        if (trimmed.length <= 4 && /^[a-f]+$/.test(trimmed)) {
+            return trimmed.split('');
+        }
+        
+        // Case 3: Fallback if starts with letter (e.g. "b recommend...")
+        if (/^[a-f]/.test(trimmed)) {
+            return [trimmed.substring(0, 1)];
+        }
+        
+        return [];
+    }
+
     // --- PMP Question Analysis Generator ---
     function generateQuestionAnalysis(q) {
         const text = q.question.toLowerCase();
@@ -913,7 +940,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showPracticeFeedback(letter, q.correct_answer, q.explanation);
             
             // Play Beep
-            if (q.correct_answer.split('').includes(letter)) {
+            if (parseCorrectAnswers(q.correct_answer).includes(letter)) {
                 playSuccessSound();
             } else {
                 playErrorSound();
@@ -936,7 +963,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showPracticeFeedback(selected, correct, explanation) {
         // Highlight correct/incorrect option cards
-        const correctLetters = correct.split('');
+        const correctLetters = parseCorrectAnswers(correct);
         const isSelectedCorrect = correctLetters.includes(selected);
         
         const selectedBtn = document.getElementById(`option-${selected}`);
@@ -960,7 +987,7 @@ document.addEventListener('DOMContentLoaded', () => {
             explanationStatus.textContent = "ถูกต้อง";
             explanationStatus.className = "explanation-badge correct";
         } else {
-            explanationStatus.textContent = "คำตอบที่ถูกคือ " + correct.toUpperCase().split('').join(', ');
+            explanationStatus.textContent = "คำตอบที่ถูกคือ " + parseCorrectAnswers(correct).map(l => l.toUpperCase()).join(', ');
             explanationStatus.className = "explanation-badge incorrect";
         }
         
@@ -1138,7 +1165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const ans = state.answers[idx];
             if (ans === null || ans === 'timeout') {
                 skipped++;
-            } else if (q.correct_answer.split('').includes(ans)) {
+            } else if (parseCorrectAnswers(q.correct_answer).includes(ans)) {
                 correct++;
             } else {
                 wrong++;
@@ -1203,7 +1230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         state.shuffledQuestions.forEach((q, idx) => {
             const selected = state.answers[idx];
-            const isCorrect = q.correct_answer.split('').includes(selected);
+            const isCorrect = parseCorrectAnswers(q.correct_answer).includes(selected);
             const isFlagged = state.flags[idx];
             
             // Filter evaluation
@@ -1247,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const optText = opt.substring(2).trim();
                         let optClass = 'review-option-item';
                         
-                        if (q.correct_answer.split('').includes(letter)) {
+                        if (parseCorrectAnswers(q.correct_answer).includes(letter)) {
                             optClass += ' correct';
                         } else if (letter === selected) {
                             optClass += ' chosen';
