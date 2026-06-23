@@ -34,86 +34,113 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- PMP Keywords Dictionary & Analyzer ---
-    const PMP_KEYWORDS = [
-        {
-            words: ['agile', 'scrum', 'iteration', 'iterative', 'adaptive', 'sprint', 'backlog', 'product owner', 'scrum master', 'kanban', 'retrospective', 'stand-up', 'refinement'],
-            label: 'Agile / Adaptive (อไจล์)',
-            guide: 'เน้นความยืดหยุ่น การทำงานเป็นรอบ (Sprints) การตกลงร่วมกันในทีม การบริหาร Backlog และส่งมอบมูลค่าอย่างรวดเร็ว'
-        },
-        {
-            words: ['predictive', 'waterfall', 'traditional', 'milestone', 'wbs', 'scope baseline', 'project management plan'],
-            label: 'Predictive / Waterfall (แผนงานดั้งเดิม)',
-            guide: 'เน้นกระบวนการควบคุมการเปลี่ยนแปลง (Change Control) ทำตามแผนงานและขอบเขตงาน (Scope Baseline) ที่วางไว้แต่แรก'
-        },
-        {
-            words: ['stakeholder', 'sponsor', 'client', 'customer', 'franchise', 'department head', 'executive', 'power', 'influence', 'interest'],
-            label: 'Stakeholder Management (การจัดการผู้มีส่วนได้ส่วนเสีย)',
-            guide: 'วิเคราะห์ระดับความสนใจและอำนาจ (Power/Interest Matrix) สื่อสารเชิงรุก และเจรจาประนีประนอมเมื่อความเห็นขัดแย้ง'
-        },
-        {
-            words: ['risk', 'trigger', 'contingency', 'reserve', 'mitigate', 'avoid', 'transfer', 'exploit', 'share', 'accept', 'threat', 'opportunity'],
-            label: 'Risk Management (การบริหารความเสี่ยง)',
-            guide: 'ประเมินผลกระทบ/โอกาสเกิด ใช้แผนสำรอง (Contingency) เมื่อพบ Trigger และจัดการความเสี่ยงตามความเหมาะสมของสัญญากับงบสำรอง'
-        },
-        {
-            words: ['change request', 'change control', 'ccb', 'scope creep', 'amend', 'baseline change'],
-            label: 'Change Control (การควบคุมการเปลี่ยนแปลง)',
-            guide: 'ต้องประเมินผลกระทบก่อนเป็นอันดับแรก (Analyze Impact) แล้วเสนอขออนุมัติผ่าน CCB ห้ามข้ามขั้นตอนหรือเปลี่ยนงานเองโดยพลการ'
-        },
-        {
-            words: ['conflict', 'disagree', 'clash', 'negotiate', 'collaborate', 'compromise', 'confront', 'withdraw', 'smooth', 'force'],
-            label: 'Conflict Management (การแก้ปัญหาความขัดแย้ง)',
-            guide: 'ให้เน้นการเผชิญหน้าแก้ปัญหาร่วมกัน (Collaborate / Problem Solving) หรือพูดคุยหาจุดประนีประนอมเป็นทางเลือกแรกๆ'
-        },
-        {
-            words: ['spi', 'cpi', 'evm', 'earned value', 'planned value', 'actual cost', 'schedule variance', 'cost variance', 'over budget', 'behind schedule'],
-            label: 'Earned Value Management (การบริหารคุณค่าที่ได้รับ)',
-            guide: 'ดัชนี CPI และ SPI ที่ < 1.0 หมายถึง เกินงบประมาณ (Over budget) หรือช้ากว่าแผนงาน (Behind schedule) ตามลำดับ'
-        },
-        {
-            words: ['critical path', 'float', 'slack', 'fast-track', 'fast-tracking', 'crashing', 'delay', 'schedule compression'],
-            label: 'Schedule Management (การจัดการเวลา)',
-            guide: 'วิเคราะห์ผลกระทบต่อสายงานวิกฤต (Critical Path) บีบอัดเวลาโดย Fast-tracking (ทำควบคู่) หรือ Crashing (อัดงบ/ทรัพยากร)'
-        },
-        {
-            words: ['procurement', 'vendor', 'contract', 'seller', 'buyer', 'bid', 'fixed price', 'cost reimbursable', 't&m', 'time and material', 'sow'],
-            label: 'Procurement (การจัดซื้อจัดจ้าง)',
-            guide: 'ทบทวนประเภทสัญญา (เช่น Fixed Price โอนความเสี่ยงให้ผู้ขาย, Cost Reimbursable ความเสี่ยงอยู่ที่ผู้ซื้อ) และทำตามข้อกำหนดกฎหมาย/สัญญา'
-        },
-        {
-            words: ['quality', 'metrics', 'audit', 'defect', 'standard', 'grade', 'check', 'verification', 'validation'],
-            label: 'Quality Management (การจัดการคุณภาพ)',
-            guide: 'เน้นการป้องกันไม่ให้เกิดความผิดพลาด (QA / Audits) และตรวจสอบความถูกต้อง (QC) ร่วมกับผู้มีส่วนได้เสีย'
-        },
-        {
-            words: ['team', 'resource', 'skill', 'promote', 'storming', 'norming', 'performing', 'forming', 'raci', 'ground rules', 'self-organizing'],
-            label: 'Resource & Team (ทรัพยากรและทีมงาน)',
-            guide: 'ส่งเสริมการทำงานแบบชี้นำตัวเอง (Self-organizing) จัดตั้ง Ground Rules ร่วมกัน และพัฒนาทีมตามวงจร Tuckman\'s Stages'
-        },
-        {
-            words: ['communication', 'information radiator', 'fishbowl', 'mirroring', 'report', 'email', 'feedback', 'meetings', 'vague', 'remote'],
-            label: 'Communications (การสื่อสาร)',
-            guide: 'เลือกช่องทางการสื่อสารที่เหมาะสม และใช้กระดานสารสนเทศ (Information Radiators) เพื่อความโปร่งใสของความก้าวหน้าโครงการ'
+    // --- PMP Question Analysis Generator ---
+    function generateQuestionAnalysis(q) {
+        const text = q.question.toLowerCase();
+        const explanation = q.explanation || "";
+        
+        // 1. Identify Domain & Approach
+        const domainText = q.domain || "Process";
+        const approachText = q.approach || "Predictive";
+        const domainThai = domainText === "People" ? "People (บุคคล)" :
+                           domainText === "Process" ? "Process (กระบวนการ)" :
+                           "Business Environment (สภาพแวดล้อมธุรกิจ)";
+        const approachThai = approachText === "Adaptive" ? "Adaptive (Agile/Hybrid)" : "Predictive (Waterfall)";
+        
+        // 2. Determine Core Topic
+        let topic = "การจัดการโครงการทั่วไป (General Project Management)";
+        let icon = "📋";
+        
+        const topicsMap = [
+            { keys: ['change request', 'change control', 'ccb', 'scope creep'], label: "การควบคุมการเปลี่ยนแปลง (Change Control)", icon: "🔄" },
+            { keys: ['risk', 'contingency', 'reserve', 'mitigate', 'avoid', 'threat'], label: "การบริหารความเสี่ยง (Risk Management)", icon: "⚠️" },
+            { keys: ['conflict', 'disagree', 'clash', 'negotiate'], label: "การจัดการความขัดแย้ง (Conflict Management)", icon: "🤝" },
+            { keys: ['stakeholder', 'sponsor', 'franchise', 'department head', 'executive'], label: "การจัดการผู้มีส่วนได้ส่วนเสีย (Stakeholder)", icon: "👥" },
+            { keys: ['agile', 'scrum', 'sprint', 'backlog', 'product owner', 'retrospective'], label: "แนวทางอไจล์ (Agile / Adaptive)", icon: "⚡" },
+            { keys: ['procurement', 'vendor', 'contract', 'seller', 'buyer'], label: "การจัดซื้อจัดจ้าง (Procurement)", icon: "🛒" },
+            { keys: ['quality', 'metrics', 'audit', 'defect'], label: "การจัดการคุณภาพ (Quality Management)", icon: "🎯" },
+            { keys: ['spi', 'cpi', 'evm', 'earned value', 'budget'], label: "การวิเคราะห์มูลค่าและประสิทธิภาพ (EVM / Cost)", icon: "📊" },
+            { keys: ['schedule', 'critical path', 'float', 'slack', 'delay'], label: "การบริหารเวลาและกำหนดการ (Schedule)", icon: "⏳" },
+            { keys: ['team', 'resource', 'skill', 'raci', 'ground rules'], label: "การบริหารทีมและทรัพยากร (Team / Resource)", icon: "💪" }
+        ];
+        
+        for (const t of topicsMap) {
+            if (t.keys.some(k => text.includes(k))) {
+                topic = t.label;
+                icon = t.icon;
+                break;
+            }
         }
-    ];
-
-    function getPMPKeywords(questionText) {
-        const text = questionText.toLowerCase();
-        const matched = [];
-        PMP_KEYWORDS.forEach(kw => {
-            const hasMatch = kw.words.some(word => {
-                if (word.length <= 4) {
-                    const regex = new RegExp('\\b' + word + '\\b', 'i');
-                    return regex.test(text);
-                }
-                return text.includes(word);
-            });
-            if (hasMatch) {
-                matched.push(kw);
+        
+        // 3. Extract Highlights & Context
+        let highlights = [];
+        
+        if (text.includes("what should the project manager do first") || text.includes("do first")) {
+            highlights.push("วิเคราะห์ลำดับขั้นตอนแรกสุด (First Action) ที่ต้องรีบทำ");
+        } else if (text.includes("what should the project manager do next") || text.includes("do next")) {
+            highlights.push("ค้นหาขั้นตอนถัดไป (Next Action) ที่สมเหตุสมผล");
+        } else {
+            highlights.push("เลือกแนวทางแก้ปัญหาที่ตรงจุดและยั่งยืนที่สุดตามหลัก PMP");
+        }
+        
+        if (text.includes("product owner")) {
+            highlights.push("เน้นบทบาท Product Owner ในการบริหารลำดับความสำคัญของงาน (Value)");
+        } else if (text.includes("scrum master") || text.includes("servant leader")) {
+            highlights.push("เน้นบทบาท Servant Leader ช่วยขจัดอุปสรรคและพัฒนาทีม");
+        } else {
+            highlights.push("เน้นบทบาท Project Manager ในการประสานงานและบริหารจัดการ");
+        }
+        
+        if (text.includes("conflict") || text.includes("disagree") || text.includes("unwilling")) {
+            highlights.push("โจทย์มีเรื่องความขัดแย้งของมุมมองและการตกลงร่วมกัน");
+        }
+        if (text.includes("delay") || text.includes("behind schedule") || text.includes("malfunction")) {
+            highlights.push("มีประเด็นความเสียหายหรือแผนงานล่าช้ากว่ากำหนด");
+        }
+        
+        // 4. Extract Cautions (จุดควรระวัง) from Explanation
+        let cautions = [];
+        const lines = explanation.split('\n');
+        
+        lines.forEach(line => {
+            const match = line.match(/^\s*-\s*ตัวเลือก\s*([a-d])\s*ผิด\s*:\s*(.*)/i) || 
+                          line.match(/^\s*-\s*ตัวเลือก\s*([a-d])\s*ผิด\s+(.*)/i);
+            if (match) {
+                let reason = match[2].trim();
+                reason = reason.replace(/^(เพราะ|เนื่องจาก)\s*/, "");
+                cautions.push(reason);
             }
         });
-        return matched;
+        
+        // General fallback rules if explanation is not formatted with - ตัวเลือก a ผิด
+        if (cautions.length === 0) {
+            if (text.includes("change request") || text.includes("change control")) {
+                cautions.push("ระวังการแก้ไขขอบเขตงานหรือแผนงานหลักโดยไม่ผ่านกระบวนการควบคุมการเปลี่ยนแปลง (Change Control) อย่างเป็นทางการ");
+            }
+            if (text.includes("sponsor") || text.includes("escalate")) {
+                cautions.push("หลีกเลี่ยงการส่งต่อปัญหา (Escalate) ให้ Sponsor หรือผู้บริหารในทันที หาก PM ยังไม่ได้พยายามวิเคราะห์ผลกระทบหรือแก้ปัญหาก่อน");
+            }
+            if (text.includes("conflict") || text.includes("disagree")) {
+                cautions.push("หลีกเลี่ยงการใช้อำนาจตัดสินใจคนเดียว (Force) หรือการหลีกเลี่ยงข้อขัดแย้ง (Withdraw) เพราะไม่ใช่การแก้ปัญหาที่ถาวร");
+            }
+            if (text.includes("agile") || text.includes("scrum")) {
+                cautions.push("ระวังการใช้วิธีสั่งการแบบเดิม (Predictive Command-and-Control) กับทีมพัฒนาที่ต้องการความคล่องตัวและอิสระในการทำงาน");
+            }
+            if (text.includes("contract") || text.includes("vendor")) {
+                cautions.push("ระวังการสั่งการเปลี่ยนการทำงานใดๆ ที่กระทบรายละเอียดทางกฎหมายโดยไม่แก้ไขเอกสารสัญญาร่วมกับฝ่ายจัดซื้อจัดจ้าง");
+            }
+        }
+        
+        cautions = [...new Set(cautions)];
+        
+        return {
+            icon,
+            topic,
+            domainThai,
+            approachThai,
+            highlights,
+            cautions
+        };
     }
 
     // --- Application State ---
@@ -569,23 +596,42 @@ document.addEventListener('DOMContentLoaded', () => {
             keywordHelperPanel.classList.remove('hidden');
             if (quizContainer) quizContainer.classList.add('has-keywords');
             
-            const matchedKeywords = getPMPKeywords(q.question);
+            const analysis = generateQuestionAnalysis(q);
             
-            if (matchedKeywords.length > 0) {
-                keywordListContent.innerHTML = matchedKeywords.map(kw => `
-                    <div class="keyword-card-item">
-                        <div class="keyword-card-title">🔍 ${kw.label}</div>
-                        <div class="keyword-card-desc">${kw.guide}</div>
+            let htmlContent = `
+                <div class="analysis-section-box">
+                    <div class="analysis-meta-badge">
+                        <span>🎯 โดเมน:</span> <strong>${analysis.domainThai}</strong>
                     </div>
-                `).join('');
-            } else {
-                keywordListContent.innerHTML = `
-                    <div class="keyword-no-match">
-                        ไม่พบคำสำคัญเฉพาะเจาะจงในข้อนี้<br>
-                        <span style="font-size: 0.75em; color: var(--text-muted)">ควรอ่านโจทย์เน้นที่บริบทผู้มีส่วนได้เสียหรือสถานการณ์จำลอง</span>
+                    <div class="analysis-meta-badge">
+                        <span>⚙️ แนวทาง:</span> <strong>${analysis.approachThai}</strong>
+                    </div>
+                </div>
+                
+                <div class="keyword-card-item topic-card">
+                    <div class="keyword-card-title">${analysis.icon} หัวข้อหลัก: ${analysis.topic}</div>
+                    <div class="keyword-card-desc">
+                        <ul class="analysis-ul">
+                            ${analysis.highlights.map(hl => `<li>🔹 ${hl}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            if (analysis.cautions.length > 0) {
+                htmlContent += `
+                    <div class="keyword-card-item caution-card">
+                        <div class="keyword-card-title warning">⚠️ จุดควรระวัง / วิเคราะห์ตัวลวง</div>
+                        <div class="keyword-card-desc">
+                            <ul class="analysis-ul caution-list">
+                                ${analysis.cautions.map(c => `<li>🔸 ${c}</li>`).join('')}
+                            </ul>
+                        </div>
                     </div>
                 `;
             }
+            
+            keywordListContent.innerHTML = htmlContent;
         } else {
             if (keywordHelperPanel) keywordHelperPanel.classList.add('hidden');
             if (quizContainer) quizContainer.classList.remove('has-keywords');

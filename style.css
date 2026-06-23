@@ -1450,4 +1450,73 @@ h1, h2, h3, h4 {
     }
 }
 
+/* ========================================================
+   6. DYNAMIC QUESTION ANALYSIS SIDEBAR STYLES
+   ======================================================== */
+.analysis-section-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.analysis-meta-badge {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.analysis-meta-badge strong {
+    color: var(--text-primary);
+}
+
+.light-theme .analysis-meta-badge {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.analysis-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.analysis-ul li {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+.caution-card {
+    border-left: 3px solid var(--color-warning) !important;
+}
+
+.keyword-card-title.warning {
+    color: var(--color-warning);
+}
+
+.caution-list li {
+    color: var(--text-primary);
+    background: rgba(245, 158, 11, 0.04);
+    border: 1px dashed rgba(245, 158, 11, 0.15);
+    border-radius: 4px;
+    padding: 0.5rem 0.6rem;
+    margin-bottom: 0.25rem;
+    list-style-type: none;
+}
+
+.light-theme .caution-list li {
+    background: rgba(217, 119, 6, 0.03);
+    border-color: rgba(217, 119, 6, 0.1);
+}
+
+
 
