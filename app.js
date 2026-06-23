@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         examMode: 'practice',   // 'practice' or 'exam'
         timerLimit: 75,         // Seconds per question
         timeLeft: 75,
-        enableTimeoutLock: true,
+        disableTimer: false,
         shuffleEnabled: false,
         quizActive: false,
         globalSeconds: 0,
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeExamLabel = document.getElementById('mode-exam-label');
     
     const perQuestionTimerLimit = document.getElementById('per-question-timer-limit');
-    const enableTimeOutLock = document.getElementById('enable-time-out-lock');
+    const disableQuestionTimer = document.getElementById('disable-question-timer');
     const shuffleQuestions = document.getElementById('shuffle-questions');
     const questionSetSelect = document.getElementById('question-set-select');
     const questionSetContainer = document.getElementById('question-set-container');
@@ -136,6 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (questionSetContainer) questionSetContainer.style.display = 'none';
     }
 
+    if (disableQuestionTimer && perQuestionTimerLimit) {
+        disableQuestionTimer.addEventListener('change', () => {
+            perQuestionTimerLimit.disabled = disableQuestionTimer.checked;
+        });
+    }
+
     // --- Loading JSON Data ---
     async function loadQuestionsData(url) {
         try {
@@ -209,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Config settings
         state.examMode = document.querySelector('input[name="exam-mode"]:checked').value;
         state.timerLimit = parseInt(perQuestionTimerLimit.value, 10) || 75;
-        state.enableTimeoutLock = enableTimeOutLock.checked;
+        state.disableTimer = disableQuestionTimer.checked;
         state.shuffleEnabled = shuffleQuestions.checked;
         
         // Prepare questions list based on Mode
@@ -590,8 +596,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetQuestionTimer() {
         stopQuestionTimer();
         
-        // If Exam Mode, hide the circular timer and do not start question timer
-        if (state.examMode === 'exam') {
+        // If Exam Mode or timer disabled, hide the circular timer and do not start question timer
+        if (state.examMode === 'exam' || state.disableTimer) {
             if (circularTimer) circularTimer.style.display = 'none';
             return;
         } else {
@@ -641,25 +647,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleQuestionTimeout() {
         stopQuestionTimer();
         playErrorSound();
-        
-        const idx = state.currentIndex;
-        if (state.enableTimeoutLock) {
-            state.answers[idx] = "timeout"; // special key for timeout/skipped
-            lockOptions();
-            
-            if (state.examMode === 'practice') {
-                const q = state.shuffledQuestions[idx];
-                showPracticeFeedback("timeout", q.correct_answer, q.explanation);
-            } else {
-                // Exam Mode: Automatically jump to next after timeout
-                setTimeout(() => {
-                    if (state.currentIndex < state.shuffledQuestions.length - 1 && state.currentIndex === idx) {
-                        loadQuestion(state.currentIndex + 1);
-                    }
-                }, 1000);
-            }
-            updateSidebarStats();
-        }
+        // Since timeout lock is removed, the user can still answer normally.
+        // The timer just stops and shows 0, and plays warning/error sound.
     }
 
     function saveTimeSpent() {
@@ -753,6 +742,16 @@ document.addEventListener('DOMContentLoaded', () => {
         reviewQuestionsSection.scrollIntoView({ behavior: 'smooth' });
     });
 
+    function formatTimeSpent(seconds) {
+        if (!seconds || seconds <= 0) return '0 วินาที';
+        if (seconds < 60) {
+            return `${seconds} วินาที`;
+        }
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${mins} นาที ${secs} วินาที`;
+    }
+
     function renderReviewList(filter = 'all') {
         reviewListContainer.innerHTML = '';
         
@@ -787,6 +786,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             '<span class="badge" style="background-color: var(--color-success-glow); color: var(--color-success)">ถูกต้อง</span>' : 
                             '<span class="badge" style="background-color: var(--color-error-glow); color: var(--color-error)">ผิดพลาด</span>'}
                         ${isFlagged ? '<span class="badge" style="background-color: var(--color-warning-glow); color: var(--color-warning)">ปักหมุดไว้</span>' : ''}
+                        <span class="badge" style="background-color: rgba(255, 255, 255, 0.05); color: var(--text-secondary); border-color: rgba(255, 255, 255, 0.1);">
+                            เวลาที่ใช้: ${formatTimeSpent(state.timeSpent[idx])}
+                        </span>
                     </div>
                     <div>
                         ${answerTextHtml}
