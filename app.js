@@ -34,6 +34,240 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- PMP Vocabulary Dictionary ---
+    const pmpDictionary = [
+        { term: "change control board", translation: "คณะกรรมการควบคุมการเปลี่ยนแปลง (CCB)" },
+        { term: "change control boards", translation: "คณะกรรมการควบคุมการเปลี่ยนแปลง (CCB)" },
+        { term: "contingency reserve", translation: "เงินสำรองเผื่อเผชิญความเสี่ยงที่ระบุไว้" },
+        { term: "contingency reserves", translation: "เงินสำรองเผื่อเผชิญความเสี่ยงที่ระบุไว้" },
+        { term: "management reserve", translation: "เงินสำรองเพื่อการจัดการ (สำหรับความเสี่ยงที่ไม่ได้วางแผนไว้)" },
+        { term: "management reserves", translation: "เงินสำรองเพื่อการจัดการ (สำหรับความเสี่ยงที่ไม่ได้วางแผนไว้)" },
+        { term: "earned value management", translation: "การบริหารมูลค่าที่ได้รับ (EVM)" },
+        { term: "schedule performance index", translation: "ดัชนีประสิทธิภาพกำหนดการ (SPI)" },
+        { term: "cost performance index", translation: "ดัชนีประสิทธิภาพต้นทุน (CPI)" },
+        { term: "work breakdown structure", translation: "โครงสร้างการย่อยงาน (WBS)" },
+        { term: "lessons learned register", translation: "ทะเบียนบันทึกบทเรียนที่ได้รับ" },
+        { term: "lessons learned registers", translation: "ทะเบียนบันทึกบทเรียนที่ได้รับ" },
+        { term: "request for proposal", translation: "เอกสารขอข้อเสนอราคาจากผู้ขาย (RFP)" },
+        { term: "requests for proposal", translation: "เอกสารขอข้อเสนอราคาจากผู้ขาย (RFP)" },
+        { term: "statement of work", translation: "รายละเอียดขอบเขตงานแนบท้ายสัญญา (SOW)" },
+        { term: "statements of work", translation: "รายละเอียดขอบเขตงานแนบท้ายสัญญา (SOW)" },
+        { term: "definition of done", translation: "ข้อกำหนดความเสร็จสมบูรณ์ของงาน (DoD)" },
+        { term: "definition of ready", translation: "ข้อกำหนดความพร้อมก่อนเริ่มงาน (DoR)" },
+        { term: "backlog refinement", translation: "การกลั่นกรองและปรับปรุงรายละเอียด Backlog" },
+        { term: "product backlog", translation: "รายการความต้องการของผลิตภัณฑ์ทั้งหมด" },
+        { term: "product backlogs", translation: "รายการความต้องการของผลิตภัณฑ์ทั้งหมด" },
+        { term: "sprint backlog", translation: "รายการงานที่ทีมสัญญากับตัวเองว่าจะทำในสปรินต์นี้" },
+        { term: "sprint backlogs", translation: "รายการงานที่ทีมสัญญากับตัวเองว่าจะทำในสปรินต์นี้" },
+        { term: "emotional intelligence", translation: "ความฉลาดทางอารมณ์ (EQ)" },
+        { term: "active listening", translation: "การฟังอย่างตั้งใจเชิงรุก" },
+        { term: "conflict resolution", translation: "การแก้ไขปัญหาข้อขัดแย้ง" },
+        { term: "quality assurance", translation: "การประกันคุณภาพ (QA) เน้นตรวจสอบกระบวนการ" },
+        { term: "quality control", translation: "การควบคุมคุณภาพ (QC) เน้นตรวจสอบผลลัพธ์งาน" },
+        { term: "root cause analysis", translation: "การวิเคราะห์หาสาเหตุที่แท้จริง" },
+        { term: "variance analysis", translation: "การวิเคราะห์ความเบี่ยงเบนจากแผนอ้างอิง" },
+        { term: "resource calendar", translation: "ปฏิทินแสดงความพร้อมของทรัพยากร" },
+        { term: "resource calendars", translation: "ปฏิทินแสดงความพร้อมของทรัพยากร" },
+        { term: "kick-off meeting", translation: "การประชุมเปิดตัวโครงการ" },
+        { term: "kick-off meetings", translation: "การประชุมเปิดตัวโครงการ" },
+        { term: "project charter", translation: "ใบธรรมนูญโครงการ (เอกสารอนุมัติจัดตั้งโครงการ)" },
+        { term: "project charters", translation: "ใบธรรมนูญโครงการ (เอกสารอนุมัติจัดตั้งโครงการ)" },
+        { term: "business case", translation: "กรณีศึกษาทางธุรกิจ (เอกสารวิเคราะห์ความคุ้มค่า)" },
+        { term: "business cases", translation: "กรณีศึกษาทางธุรกิจ (เอกสารวิเคราะห์ความคุ้มค่า)" },
+        { term: "burn-down chart", translation: "กราฟติดตามงานคงเหลือเทียบกับเวลา" },
+        { term: "burn-down charts", translation: "กราฟติดตามงานคงเหลือเทียบกับเวลา" },
+        { term: "burn-up chart", translation: "กราฟติดตามงานที่ทำเสร็จสะสมเทียบกับแผน" },
+        { term: "burn-up charts", translation: "กราฟติดตามงานที่ทำเสร็จสะสมเทียบกับแผน" },
+        { term: "burndown chart", translation: "กราฟติดตามงานคงเหลือเทียบกับเวลา" },
+        { term: "burndown charts", translation: "กราฟติดตามงานคงเหลือเทียบกับเวลา" },
+        { term: "burnup chart", translation: "กราฟติดตามงานที่ทำเสร็จสะสมเทียบกับแผน" },
+        { term: "burnup charts", translation: "กราฟติดตามงานที่ทำเสร็จสะสมเทียบกับแผน" },
+        { term: "story point", translation: "คะแนนประเมินขนาดและความยากของงาน" },
+        { term: "story points", translation: "คะแนนประเมินขนาดและความยากของงาน" },
+        { term: "scope baseline", translation: "ขอบเขตงานอ้างอิงเพื่อใช้วัดผลความก้าวหน้า" },
+        { term: "scope baselines", translation: "ขอบเขตงานอ้างอิงเพื่อใช้วัดผลความก้าวหน้า" },
+        { term: "fishbowl window", translation: "หน้าต่างวิดีโอคอลสื่อสารที่เปิดค้างไว้ตลอดเวลาของทีมงานรีโมท" },
+        { term: "fishbowl windows", translation: "หน้าต่างวิดีโอคอลสื่อสารที่เปิดค้างไว้ตลอดเวลาของทีมงานรีโมท" },
+        { term: "information radiator", translation: "หน้าจอหรือบอร์ดแสดงข้อมูลความก้าวหน้าของงานที่ทุกคนมองเห็นได้ชัดเจน" },
+        { term: "information radiators", translation: "หน้าจอหรือบอร์ดแสดงข้อมูลความก้าวหน้าของงานที่ทุกคนมองเห็นได้ชัดเจน" },
+        { term: "follow-the-sun", translation: "โมเดลการทำงานส่งต่อระหว่างสาขาตามเขตเวลาทั่วโลกเพื่อรองรับงานตลอด 24 ชั่วโมง" },
+        { term: "scrum of scrums", translation: "การประชุมผู้แทนทีมเพื่อประสานงานระหว่างทีมสกรัมหลายทีม" },
+        { term: "minimum viable product", translation: "ผลิตภัณฑ์ขั้นต่ำที่พอใช้งานได้จริงเพื่อรับฟีดแบ็ก (MVP)" },
+        { term: "minimum marketable features", translation: "คุณลักษณะเด่นขั้นต่ำของผลิตภัณฑ์ที่สามารถนำออกขายทำกำไรได้จริง (MMF)" },
+        { term: "technical debt", translation: "หนี้ทางเทคนิค (งานเขียนโค้ด/ออกแบบลวกๆ ที่ต้องกลับมาแก้ในภายหลัง)" },
+        { term: "change request", translation: "คำขอเปลี่ยนแปลงอย่างเป็นทางการ" },
+        { term: "change requests", translation: "คำขอเปลี่ยนแปลงอย่างเป็นทางการ" },
+        { term: "scope creep", translation: "ขอบเขตงานขยายตัวเพิ่มขึ้นเรื่อยๆ โดยไม่ผ่านการควบคุมการเปลี่ยนแปลง" },
+        { term: "product owner", translation: "ผู้บริหารจัดการและจัดลำดับความต้องการผลิตภัณฑ์ (PO)" },
+        { term: "product owners", translation: "ผู้บริหารจัดการและจัดลำดับความต้องการผลิตภัณฑ์ (PO)" },
+        { term: "scrum master", translation: "ผู้ช่วยเหลือขจัดอุปสรรคและโค้ชทีมสกรัม (SM)" },
+        { term: "scrum masters", translation: "ผู้ช่วยเหลือขจัดอุปสรรคและโค้ชทีมสกรัม (SM)" },
+        { term: "servant leader", translation: "ผู้นำทีมแบบผู้สนับสนุนและคอยบริการขจัดปัญหาให้ทีม" },
+        { term: "servant leaders", translation: "ผู้นำทีมแบบผู้สนับสนุนและคอยบริการขจัดปัญหาให้ทีม" },
+        { term: "stakeholder", translation: "ผู้มีส่วนได้ส่วนเสียในโครงการ" },
+        { term: "stakeholders", translation: "ผู้มีส่วนได้ส่วนเสียในโครงการ" },
+        { term: "sponsor", translation: "ผู้สนับสนุนโครงการ (ผู้จัดสรรทรัพยากรและงบประมาณ)" },
+        { term: "sponsors", translation: "ผู้สนับสนุนโครงการ (ผู้จัดสรรทรัพยากรและงบประมาณ)" },
+        { term: "escalate", translation: "ส่งประเด็นปัญหาต่อขึ้นไปให้ระดับบริหารตัดสินใจ" },
+        { term: "escalated", translation: "ส่งประเด็นปัญหาต่อขึ้นไปให้ระดับบริหารตัดสินใจ" },
+        { term: "escalation", translation: "การส่งประเด็นต่อให้ระดับบริหารตัดสินใจ" },
+        { term: "critical path", translation: "สายงานวิกฤต (ลำดับงานที่ต่อกันยาวที่สุด ซึ่งหากล่าช้าโครงการจะดีเลย์)" },
+        { term: "milestone", translation: "จุดสำคัญเชิงตรวจสอบหรือหลักกิโลเมตรของโครงการ" },
+        { term: "milestones", translation: "จุดสำคัญเชิงตรวจสอบหรือหลักกิโลเมตรของโครงการ" },
+        { term: "procurement", translation: "การจัดซื้อจัดจ้าง" },
+        { term: "vendor", translation: "ผู้ขายหรือผู้ให้บริการภายนอก" },
+        { term: "vendors", translation: "ผู้ขายหรือผู้ให้บริการภายนอก" },
+        { term: "velocity", translation: "ความเร็วเฉลี่ยในการทำงานเสร็จของทีมอไจล์ต่อรอบงาน" },
+        { term: "user story", translation: "ข้อกำหนดความต้องการระบบจากมุมมองผู้ใช้งาน" },
+        { term: "user stories", translation: "ข้อกำหนดความต้องการระบบจากมุมมองผู้ใช้งาน" },
+        { term: "retrospective", translation: "การประชุมทบทวนรอบการทำงานที่ผ่านมาเพื่อหาทางปรับปรุงกระบวนการทำงาน" },
+        { term: "retrospectives", translation: "การประชุมทบทวนรอบการทำงานที่ผ่านมาเพื่อหาทางปรับปรุงกระบวนการทำงาน" },
+        { term: "impediment", translation: "สิ่งกีดขวางหรืออุปสรรคที่ขัดขวางการทำงานของทีม" },
+        { term: "impediments", translation: "สิ่งกีดขวางหรืออุปสรรคที่ขัดขวางการทำงานของทีม" },
+        { term: "lessons learned", translation: "บทเรียนที่ได้รับจากการดำเนินงาน" },
+        { term: "issue log", translation: "บันทึกและติดตามประเด็นปัญหาที่เกิดขึ้นจริง" },
+        { term: "issue logs", translation: "บันทึกและติดตามประเด็นปัญหาที่เกิดขึ้นจริง" },
+        { term: "risk register", translation: "ทะเบียนบันทึกและควบคุมความเสี่ยงของโครงการ" },
+        { term: "risk registers", translation: "ทะเบียนบันทึกและควบคุมความเสี่ยงของโครงการ" },
+        { term: "mvp", translation: "ผลิตภัณฑ์ขั้นต่ำที่พอใช้งานได้จริงเพื่อเก็บข้อมูลความต้องการลูกค้า (Minimum Viable Product)" },
+        { term: "mmf", translation: "คุณลักษณะเด่นขั้นต่ำที่ออกตลาดสร้างรายได้ได้จริง (Minimum Marketable Features)" },
+        { term: "storming", translation: "ระยะขัดแย้งและปรับตัวของสมาชิกทีมโครงการ" },
+        { term: "norming", translation: "ระยะยอมรับกฎกติกาและเริ่มร่วมมือกันทำงานในทีม" },
+        { term: "performing", translation: "ระยะที่ทีมทำงานร่วมกันได้อย่างเต็มประสิทธิภาพสูงสุด" },
+        { term: "forming", translation: "ระยะเริ่มต้นจัดตั้งทีมที่สมาชิยังเรียนรู้นิสัยใจคอกัน" },
+        { term: "overallocated", translation: "การจัดสรรทรัพยากรหรือภาระงานให้เกินกำลังของบุคคลนั้น" },
+        { term: "workaround", translation: "วิธีการแก้ปัญหาเฉพาะหน้าโดยชั่วคราว (เมื่อเกิดความเสี่ยงที่ไม่ได้เตรียมแผนรับมือ)" },
+        { term: "workarounds", translation: "วิธีการแก้ปัญหาเฉพาะหน้าโดยชั่วคราว (เมื่อเกิดความเสี่ยงที่ไม่ได้เตรียมแผนรับมือ)" },
+        { term: "contingency plan", translation: "แผนสำรองฉุกเฉิน (แผนรองรับความเสี่ยงที่ระบุไว้ล่วงหน้า)" },
+        { term: "contingency plans", translation: "แผนสำรองฉุกเฉิน (แผนรองรับความเสี่ยงที่ระบุไว้ล่วงหน้า)" },
+        { term: "mitigate", translation: "การบรรเทาหรือลดผลกระทบ/โอกาสเกิดความเสี่ยง" },
+        { term: "mitigated", translation: "การบรรเทาหรือลดผลกระทบ/โอกาสเกิดความเสี่ยง" },
+        { term: "rfp", translation: "เอกสารขอเสนอราคา/ข้อเสนอจัดซื้อจัดจ้าง (Request for Proposal)" },
+        { term: "sow", translation: "ขอบเขตรายละเอียดของงานในสัญญาจัดซื้อจัดจ้าง (Statement of Work)" },
+        { term: "gold plating", translation: "การเพิ่มของแถมให้โครงการโดยลูกค้าไม่ได้ร้องขอและไม่ได้อยู่ในข้อกำหนด" },
+        { term: "crashing", translation: "การอัดงบเพิ่มทรัพยากรเพื่อเร่งเวลาโครงการ" },
+        { term: "fast tracking", translation: "การจัดให้กิจกรรมดำเนินไปพร้อมๆ กันเพื่อย่นระยะเวลา" },
+        { term: "fast-track", translation: "การจัดกิจกรรมทำคู่ขนานกันเพื่อร่นระยะเวลา" },
+        { term: "predictive", translation: "แนวทางการบริหารโครงการแบบวางแผนคาดการณ์ล่วงหน้า (Waterfall)" },
+        { term: "adaptive", translation: "แนวทางการบริหารโครงการแบบยืดหยุ่นปรับตัวได้ง่าย (Agile)" },
+        { term: "hybrid", translation: "รูปแบบการจัดการผสมผสานระหว่าง Waterfall และ Agile" },
+        { term: "wbs", translation: "การแตกย่อยงานโครงการออกเป็นส่วนย่อยๆ (Work Breakdown Structure)" },
+        { term: "ccb", translation: "คณะกรรมการควบคุมและอนุมัติใบคำขอเปลี่ยนแปลง (Change Control Board)" },
+        { term: "spike", translation: "การศึกษาวิจัยย่อยเพื่อแก้ไขข้อกังวลเชิงเทคนิคก่อนเริ่มพัฒนางานจริง" },
+        { term: "spikes", translation: "การศึกษาวิจัยย่อยเพื่อแก้ไขข้อกังวลเชิงเทคนิคก่อนเริ่มพัฒนางานจริง" },
+        { term: "timeboxing", translation: "การกำหนดระยะเวลาทำงานไว้ล่วงหน้าอย่างคงที่เข้มงวด" },
+        { term: "time-boxing", translation: "การกำหนดระยะเวลาทำงานไว้ล่วงหน้าอย่างคงที่เข้มงวด" },
+        { term: "lead time", translation: "ระยะเวลารวมตั้งแต่เริ่มขั้นตอนจนส่งมอบสำเร็จ" },
+        { term: "lag time", translation: "ระยะเวลาหยุดรอคอยที่บังคับให้เว้นระยะก่อนกิจกรรมถัดไปจะเริ่ม" },
+        { term: "variance", translation: "ความต่างหรือระดับความเบี่ยงเบนระหว่างผลงานจริงกับแผนที่วางไว้" },
+        { term: "benchmarking", translation: "การเปรียบเทียบมาตรฐานเทียบเคียงกับหน่วยงานอื่นที่ดีกว่า" },
+        { term: "facilitator", translation: "ผู้อำนวยความสะดวกในการประชุมเพื่อให้การเจรจาลุล่วง" },
+        { term: "facilitating", translation: "การช่วยกระตุ้นหรืออำนวยความสะดวกกระบวนการเจรจาทำงานร่วมกัน" },
+        // Difficult English vocab
+        { term: "vague", translation: "คลุมเครือ / ไม่ชัดเจน" },
+        { term: "noncommittal", translation: "ไม่แบ่งรับแบ่งสู้ / ไม่ผูกมัด" },
+        { term: "shortfall", translation: "ความขาดแคลน / ส่วนที่ยังไม่ครบ" },
+        { term: "mainstream", translation: "กระแสหลัก / กลุ่มผู้ใช้งานกลุ่มหลัก" },
+        { term: "niche", translation: "กลุ่มเฉพาะ / ตลาดเฉพาะกลุ่ม" },
+        { term: "neglected", translation: "ถูกละเลย / ไม่ได้รับการเหลียวแล" },
+        { term: "fluctuating", translation: "ผันผวน / ขึ้นๆ ลงๆ ไม่คงที่" },
+        { term: "collaborate", translation: "ร่วมมือกันทำงาน" },
+        { term: "collaboration", translation: "การทำงานร่วมกัน" },
+        { term: "spontaneous", translation: "เกิดขึ้นเองตามธรรมชาติ / เกิดขึ้นทันทีโดยไม่ได้วางแผนไว้ล่วงหน้า" },
+        { term: "overlapping", translation: "คาบเกี่ยวกัน / ทับซ้อนกัน" },
+        { term: "sustainable", translation: "ยั่งยืน" },
+        { term: "malfunction", translation: "ทำงานผิดปกติ / ชำรุดเสียหาย" },
+        { term: "prototype", translation: "ผลิตภัณฑ์ต้นแบบสำหรับทดลองใช้งาน" },
+        { term: "fulfillment", translation: "การตอบสนองความสำเร็จ / การบรรลุผลสำเร็จ" },
+        { term: "unwilling", translation: "ไม่เต็มใจ / ปฏิเสธ" },
+        { term: "consultation", translation: "การหารือร่วมกัน / การขอคำปรึกษา" },
+        { term: "refuse", translation: "ปฏิเสธ" },
+        { term: "veto", translation: "สิทธิ์ในการยับยั้ง / การปฏิเสธสิทธิ์ตัดสินใจ" },
+        { term: "unanimous", translation: "เป็นเอกฉันท์" },
+        { term: "consensus", translation: "มติเอกฉันท์ / ความเห็นชอบของส่วนใหญ่" },
+        { term: "re-scope", translation: "ปรับปรุงขอบเขตงานหรือนิยามขอบเขตใหม่" },
+        { term: "downsize", translation: "ลดขนาดองค์กรหรือขนาดทีมทำงานลง" },
+        { term: "outsourcing", translation: "การจ้างหน่วยงานหรือคนนอกทำงานแทน" },
+        { term: "amend", translation: "แก้ไขปรับปรุงสัญญาหรือเอกสารทางการ" },
+        { term: "budgetary", translation: "เกี่ยวกับงบประมาณ" },
+        { term: "compensation", translation: "การชดเชย / ค่าตอบแทนสำหรับความเสียหาย" },
+        { term: "resistance", translation: "การต่อต้าน / ความต้านทานต่อการเปลี่ยนแปลง" },
+        { term: "buy-in", translation: "การได้รับการยอมรับเห็นพ้องร่วมกัน" },
+        { term: "buy in", translation: "การได้รับการยอมรับเห็นพ้องร่วมกัน" },
+        { term: "rework", translation: "การต้องทำงานซ้ำเพื่อแก้ไขความผิดพลาด" },
+        { term: "constraint", translation: "ข้อจำกัด / ปัจจัยควบคุม" },
+        { term: "co-location", translation: "การจัดให้สมาชิกทีมทุกคนนั่งทำงานอยู่ด้วยกันในที่เดียว" },
+        { term: "burn rate", translation: "อัตราการจ่ายเงินทุน / การถลุงงบประมาณโครงการ" },
+        { term: "backlog", translation: "งานคงค้างสะสมที่รอดำเนินการ" },
+        { term: "refine", translation: "ขัดเกลา / ปรับปรุงรายละเอียดงาน" }
+    ];
+
+    // Sort dictionary by term length descending to avoid partial matches on compound terms
+    pmpDictionary.sort((a, b) => b.term.length - a.term.length);
+
+    function escapeRegex(string) {
+        return string.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
+    }
+
+    function highlightTermsInNode(node, dictionary) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            let text = node.nodeValue;
+            for (const entry of dictionary) {
+                const term = entry.term;
+                const regex = new RegExp('\\b(' + escapeRegex(term) + ')\\b', 'i');
+                const match = text.match(regex);
+                if (match) {
+                    const matchedText = match[0];
+                    const index = match.index;
+                    
+                    const beforeText = text.substring(0, index);
+                    const afterText = text.substring(index + matchedText.length);
+                    const parent = node.parentNode;
+                    
+                    if (beforeText) {
+                        parent.insertBefore(document.createTextNode(beforeText), node);
+                    }
+                    
+                    const highlightSpan = document.createElement('span');
+                    highlightSpan.className = 'pmp-highlight';
+                    highlightSpan.textContent = matchedText;
+                    
+                    const tooltipSpan = document.createElement('span');
+                    tooltipSpan.className = 'pmp-tooltip';
+                    tooltipSpan.textContent = entry.translation;
+                    highlightSpan.appendChild(tooltipSpan);
+                    
+                    parent.insertBefore(highlightSpan, node);
+                    
+                    const afterNode = document.createTextNode(afterText);
+                    parent.insertBefore(afterNode, node);
+                    
+                    parent.removeChild(node);
+                    
+                    // Recurse on the remaining text
+                    highlightTermsInNode(afterNode, dictionary);
+                    break;
+                }
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            if (node.classList.contains('pmp-highlight') || node.classList.contains('pmp-tooltip')) {
+                return;
+            }
+            const children = Array.from(node.childNodes);
+            for (const child of children) {
+                highlightTermsInNode(child, dictionary);
+            }
+        }
+    }
+
+    function highlightPMPTerms(text) {
+        if (!text) return "";
+        const tempDiv = document.createElement('div');
+        tempDiv.textContent = text;
+        highlightTermsInNode(tempDiv, pmpDictionary);
+        return tempDiv.innerHTML;
+    }
+
     // --- PMP Question Analysis Generator ---
     function generateQuestionAnalysis(q) {
         const text = q.question.toLowerCase();
@@ -160,7 +394,8 @@ document.addEventListener('DOMContentLoaded', () => {
         globalSeconds: 0,
         timerInterval: null,
         globalTimerInterval: null,
-        enableKeywordHelper: true
+        enableKeywordHelper: true,
+        enableTranslationTooltips: true
     };
 
     // --- DOM Elements ---
@@ -371,6 +606,8 @@ document.addEventListener('DOMContentLoaded', () => {
         state.shuffleEnabled = shuffleQuestions.checked;
         const enableKwCheckbox = document.getElementById('enable-keyword-helper');
         state.enableKeywordHelper = enableKwCheckbox ? enableKwCheckbox.checked : true;
+        const enableTranslationCheckbox = document.getElementById('enable-translation-tooltips');
+        state.enableTranslationTooltips = enableTranslationCheckbox ? enableTranslationCheckbox.checked : true;
         
         // Prepare questions list based on Mode
         if (state.examMode === 'exam') {
@@ -538,8 +775,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update header info
         questionProgressText.textContent = `ข้อที่ ${index + 1} จาก ${state.shuffledQuestions.length}`;
         
-        // Question markup text support
-        questionText.textContent = q.question;
+        // Question markup text support with PMP tooltips
+        if (state.enableTranslationTooltips) {
+            questionText.innerHTML = highlightPMPTerms(q.question);
+        } else {
+            questionText.textContent = q.question;
+        }
         
         // Render Options
         optionsList.innerHTML = '';
@@ -550,7 +791,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.id = `option-${letter}`;
-            btn.innerHTML = `<span class="option-letter">${letter.toUpperCase()}</span><span class="option-text">${text}</span>`;
+            const displayText = state.enableTranslationTooltips ? highlightPMPTerms(text) : text;
+            btn.innerHTML = `<span class="option-letter">${letter.toUpperCase()}</span><span class="option-text">${displayText}</span>`;
             
             btn.addEventListener('click', () => handleOptionSelection(letter));
             optionsList.appendChild(btn);
@@ -998,7 +1240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${answerTextHtml}
                     </div>
                 </div>
-                <p class="review-card-question">${q.question}</p>
+                <p class="review-card-question">${state.enableTranslationTooltips ? highlightPMPTerms(q.question) : q.question}</p>
                 <div class="review-options">
                     ${q.options.map(opt => {
                         const letter = opt.substring(0, 1).toLowerCase();
@@ -1011,7 +1253,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             optClass += ' chosen';
                         }
                         
-                        return `<div class="${optClass}"><strong>${letter.toUpperCase()}</strong> - ${optText}</div>`;
+                        const displayOptText = state.enableTranslationTooltips ? highlightPMPTerms(optText) : optText;
+                        return `<div class="${optClass}"><strong>${letter.toUpperCase()}</strong> - ${displayOptText}</div>`;
                     }).join('')}
                 </div>
                 <div class="explanation-card" style="margin-bottom: 0;">
