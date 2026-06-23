@@ -132,7 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
         quizActive: false,
         globalSeconds: 0,
         timerInterval: null,
-        globalTimerInterval: null
+        globalTimerInterval: null,
+        enableKeywordHelper: true
     };
 
     // --- DOM Elements ---
@@ -229,12 +230,15 @@ document.addEventListener('DOMContentLoaded', () => {
         playBeep(440, 'sine', 0.1); // A4
     }
 
-    // --- Mode Cards Toggle UI ---
     modePractice.addEventListener('change', () => {
         modePracticeLabel.classList.add('active');
         modeExamLabel.classList.remove('active');
         if (questionSetContainer) {
             questionSetContainer.style.display = '';
+        }
+        const kwContainer = document.getElementById('keyword-helper-container');
+        if (kwContainer) {
+            kwContainer.style.display = '';
         }
     });
     
@@ -244,11 +248,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (questionSetContainer) {
             questionSetContainer.style.display = 'none';
         }
+        const kwContainer = document.getElementById('keyword-helper-container');
+        if (kwContainer) {
+            kwContainer.style.display = 'none';
+        }
     });
 
     // Initial display setup for Question Set container based on selected mode
     if (document.querySelector('input[name="exam-mode"]:checked').value === 'exam') {
         if (questionSetContainer) questionSetContainer.style.display = 'none';
+        const kwContainer = document.getElementById('keyword-helper-container');
+        if (kwContainer) kwContainer.style.display = 'none';
     }
 
     if (disableQuestionTimer && perQuestionTimerLimit) {
@@ -332,6 +342,8 @@ document.addEventListener('DOMContentLoaded', () => {
         state.timerLimit = parseInt(perQuestionTimerLimit.value, 10) || 75;
         state.disableTimer = disableQuestionTimer.checked;
         state.shuffleEnabled = shuffleQuestions.checked;
+        const enableKwCheckbox = document.getElementById('enable-keyword-helper');
+        state.enableKeywordHelper = enableKwCheckbox ? enableKwCheckbox.checked : true;
         
         // Prepare questions list based on Mode
         if (state.examMode === 'exam') {
@@ -553,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const keywordListContent = document.getElementById('keyword-list-content');
         const quizContainer = document.querySelector('.quiz-container');
 
-        if (state.examMode === 'practice' && keywordHelperPanel && keywordListContent) {
+        if (state.examMode === 'practice' && state.enableKeywordHelper && keywordHelperPanel && keywordListContent) {
             keywordHelperPanel.classList.remove('hidden');
             if (quizContainer) quizContainer.classList.add('has-keywords');
             
