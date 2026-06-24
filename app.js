@@ -432,8 +432,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const modePractice = document.getElementById('mode-practice');
     const modeExam = document.getElementById('mode-exam');
+    const modeExamPractice = document.getElementById('mode-exam-practice');
     const modePracticeLabel = document.getElementById('mode-practice-label');
     const modeExamLabel = document.getElementById('mode-exam-label');
+    const modeExamPracticeLabel = document.getElementById('mode-exam-practice-label');
     
     const perQuestionTimerLimit = document.getElementById('per-question-timer-limit');
     const disableQuestionTimer = document.getElementById('disable-question-timer');
@@ -522,6 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modePractice.addEventListener('change', () => {
         modePracticeLabel.classList.add('active');
         modeExamLabel.classList.remove('active');
+        if (modeExamPracticeLabel) modeExamPracticeLabel.classList.remove('active');
         if (questionSetContainer) {
             questionSetContainer.style.display = '';
         }
@@ -534,6 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modeExam.addEventListener('change', () => {
         modeExamLabel.classList.add('active');
         modePracticeLabel.classList.remove('active');
+        if (modeExamPracticeLabel) modeExamPracticeLabel.classList.remove('active');
         if (questionSetContainer) {
             questionSetContainer.style.display = 'none';
         }
@@ -543,8 +547,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    if (modeExamPractice) {
+        modeExamPractice.addEventListener('change', () => {
+            if (modeExamPracticeLabel) modeExamPracticeLabel.classList.add('active');
+            modePracticeLabel.classList.remove('active');
+            modeExamLabel.classList.remove('active');
+            if (questionSetContainer) {
+                questionSetContainer.style.display = 'none';
+            }
+            const kwContainer = document.getElementById('keyword-helper-container');
+            if (kwContainer) {
+                kwContainer.style.display = 'none';
+            }
+        });
+    }
+
     // Initial display setup for Question Set container based on selected mode
-    if (document.querySelector('input[name="exam-mode"]:checked').value === 'exam') {
+    const selectedInitialMode = document.querySelector('input[name="exam-mode"]:checked').value;
+    if (selectedInitialMode === 'exam' || selectedInitialMode === 'exam_practice') {
         if (questionSetContainer) questionSetContainer.style.display = 'none';
         const kwContainer = document.getElementById('keyword-helper-container');
         if (kwContainer) kwContainer.style.display = 'none';
@@ -637,7 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
         state.enableTranslationTooltips = enableTranslationCheckbox ? enableTranslationCheckbox.checked : true;
         
         // Prepare questions list based on Mode
-        if (state.examMode === 'exam') {
+        if (state.examMode === 'exam' || state.examMode === 'exam_practice') {
             // Exam Mode: Stratified Random Sampling (180 questions)
             const pools = {
                 'People': { 'Adaptive': [], 'Predictive': [] },
@@ -723,7 +743,7 @@ document.addEventListener('DOMContentLoaded', () => {
         state.flags = new Array(qCount).fill(false);
         state.timeSpent = new Array(qCount).fill(0);
         state.currentIndex = 0;
-        if (state.examMode === 'exam') {
+        if (state.examMode === 'exam' || state.examMode === 'exam_practice') {
             state.globalSeconds = 240 * 60; // 240 minutes in seconds
         } else {
             state.globalSeconds = 0;
@@ -737,7 +757,7 @@ document.addEventListener('DOMContentLoaded', () => {
         globalTimer.classList.remove('hidden');
         
         // Setup Badge Mode
-        quizModeIndicator.textContent = state.examMode === 'practice' ? 'Practice Mode' : 'Exam Mode';
+        quizModeIndicator.textContent = state.examMode === 'practice' ? 'Practice Mode' : state.examMode === 'exam_practice' ? 'Exam Practice Mode' : 'Exam Mode';
         quizModeIndicator.className = `badge ${state.examMode}`;
         
         generateNavigationGrid();
@@ -843,7 +863,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Lock options
             lockOptions();
             
-            if (state.examMode === 'practice') {
+            if (state.examMode === 'practice' || state.examMode === 'exam_practice') {
                 showPracticeFeedback(savedAnswer, q.correct_answer, q.explanation);
             } else {
                 // Exam Mode: Just show selected
@@ -861,7 +881,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const keywordListContent = document.getElementById('keyword-list-content');
         const quizContainer = document.querySelector('.quiz-container');
 
-        if (state.examMode === 'practice' && state.enableKeywordHelper && keywordHelperPanel && keywordListContent) {
+        if ((state.examMode === 'practice' || state.examMode === 'exam_practice') && state.enableKeywordHelper && keywordHelperPanel && keywordListContent) {
             keywordHelperPanel.classList.remove('hidden');
             if (quizContainer) quizContainer.classList.add('has-keywords');
             
@@ -932,7 +952,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const q = state.shuffledQuestions[idx];
         
-        if (state.examMode === 'practice') {
+        if (state.examMode === 'practice' || state.examMode === 'exam_practice') {
             // Stop timer instantly on answer
             stopQuestionTimer();
             
@@ -1036,7 +1056,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const labelEl = globalTimer.querySelector('.timer-label');
         if (labelEl) {
-            labelEl.textContent = state.examMode === 'exam' ? 'เวลาที่เหลืออยู่:' : 'เวลาใช้ไปทั้งหมด:';
+            labelEl.textContent = (state.examMode === 'exam' || state.examMode === 'exam_practice') ? 'เวลาที่เหลืออยู่:' : 'เวลาใช้ไปทั้งหมด:';
         }
         
         const updateDisplay = () => {
@@ -1049,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisplay();
         
         state.globalTimerInterval = setInterval(() => {
-            if (state.examMode === 'exam') {
+            if (state.examMode === 'exam' || state.examMode === 'exam_practice') {
                 state.globalSeconds--;
                 if (state.globalSeconds <= 0) {
                     state.globalSeconds = 0;
@@ -1070,7 +1090,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stopQuestionTimer();
         
         // If Exam Mode or timer disabled, hide the circular timer and do not start question timer
-        if (state.examMode === 'exam' || state.disableTimer) {
+        if (state.examMode === 'exam' || state.examMode === 'exam_practice' || state.disableTimer) {
             if (circularTimer) circularTimer.style.display = 'none';
             return;
         } else {
@@ -1078,7 +1098,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // If already answered in Practice Mode, do not run timer
-        if (state.examMode === 'practice' && state.answers[state.currentIndex] !== null) {
+        if ((state.examMode === 'practice' || state.examMode === 'exam_practice') && state.answers[state.currentIndex] !== null) {
             timerText.textContent = "-";
             timerProgress.style.strokeDasharray = "100, 100";
             circularTimer.className = "circular-timer";

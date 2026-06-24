@@ -426,6 +426,24 @@ h1, h2, h3, h4 {
     border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
+.badge.practice {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.badge.exam {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.badge.exam_practice {
+    background-color: rgba(168, 85, 247, 0.15);
+    color: #d8b4fe;
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
 .hidden {
     display: none !important;
 }
