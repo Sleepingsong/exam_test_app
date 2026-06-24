@@ -33,6 +33,16 @@
                 <div id="global-timer" class="global-timer hidden">
                     <span class="timer-label">เวลาใช้ไปทั้งหมด:</span>
                     <span id="global-time-val" class="timer-val">00:00:00</span>
+                    <button id="btn-pause-exam" class="timer-control-btn hidden" type="button"
+                        aria-label="หยุดเวลาชั่วคราว" title="หยุดเวลาชั่วคราว">
+                        <svg class="pause-icon icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="6" y="4" width="4" height="16" rx="1" />
+                            <rect x="14" y="4" width="4" height="16" rx="1" />
+                        </svg>
+                        <svg class="resume-icon icon hidden" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7 4l13 8-13 8V4z" />
+                        </svg>
+                    </button>
                 </div>
                 <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
                     <svg class="theme-icon-sun icon" viewBox="0 0 24 24">
@@ -53,6 +63,17 @@
             </div>
         </div>
     </header>
+
+    <div id="exam-pause-overlay" class="exam-pause-overlay hidden" role="status" aria-live="polite">
+        <div class="pause-status">
+            <svg class="pause-status-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+            </svg>
+            <h2>หยุดเวลาชั่วคราว</h2>
+            <p>กดปุ่มเล่นที่แถบเวลาเพื่อทำข้อสอบต่อ</p>
+        </div>
+    </div>
 
     <main class="app-main">
         <!-- 1. Launcher Screen -->

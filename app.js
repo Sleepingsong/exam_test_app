@@ -535,6 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
         globalSeconds: 0,
         timerInterval: null,
         globalTimerInterval: null,
+        isPaused: false,
         enableKeywordHelper: true,
         enableTranslationTooltips: true
     };
@@ -563,6 +564,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const globalTimer = document.getElementById('global-timer');
     const globalTimeVal = document.getElementById('global-time-val');
+    const btnPauseExam = document.getElementById('btn-pause-exam');
+    const examPauseOverlay = document.getElementById('exam-pause-overlay');
     
     const quizModeIndicator = document.getElementById('quiz-mode-indicator');
     const questionProgressText = document.getElementById('question-progress-text');
@@ -864,6 +867,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         state.currentQuestionStartTime = Date.now();
         state.quizActive = true;
+        state.isPaused = false;
+        updatePauseControls();
         
         // Switch view
         launcherScreen.classList.add('hidden');
@@ -888,7 +893,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cell.textContent = idx + 1;
             cell.id = `nav-cell-${idx}`;
             cell.addEventListener('click', () => {
-                if (state.quizActive) {
+                if (state.quizActive && !state.isPaused) {
                     saveTimeSpent();
                     loadQuestion(idx);
                 }
@@ -1064,6 +1069,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Handles User Click on Option ---
     function handleOptionSelection(letter) {
+        if (state.isPaused) return;
         const idx = state.currentIndex;
         const q = state.shuffledQuestions[idx];
         if (isAnswerComplete(q, state.answers[idx])) return;
@@ -1115,7 +1121,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Exam Mode: Just mark selected and keep running or show selection
             // Automatically advance to next after 200ms for smooth speed
             setTimeout(() => {
-                if (state.currentIndex < state.shuffledQuestions.length - 1 && state.currentIndex === idx) {
+                if (!state.isPaused && state.currentIndex < state.shuffledQuestions.length - 1 && state.currentIndex === idx) {
                     loadQuestion(state.currentIndex + 1);
                 }
             }, 250);
@@ -1164,6 +1170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Flag / Bookmark Question ---
     btnFlagQuestion.addEventListener('click', () => {
+        if (state.isPaused) return;
         const idx = state.currentIndex;
         state.flags[idx] = !state.flags[idx];
         
@@ -1179,6 +1186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Next & Prev Navigation ---
     btnPrevQuestion.addEventListener('click', () => {
+        if (state.isPaused) return;
         if (state.currentIndex > 0) {
             saveTimeSpent();
             loadQuestion(state.currentIndex - 1);
@@ -1186,6 +1194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnNextQuestion.addEventListener('click', () => {
+        if (state.isPaused) return;
         saveTimeSpent();
         if (state.currentIndex < state.shuffledQuestions.length - 1) {
             loadQuestion(state.currentIndex + 1);
@@ -1197,6 +1206,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Timers Logic ---
+    function isTimedExamMode() {
+        return state.examMode === 'exam' || state.examMode === 'exam_practice';
+    }
+
+    function updatePauseControls() {
+        const canPause = state.quizActive && isTimedExamMode();
+        btnPauseExam.classList.toggle('hidden', !canPause);
+        examPauseOverlay.classList.toggle('hidden', !state.isPaused);
+        document.body.classList.toggle('exam-paused', state.isPaused);
+
+        const pauseIcon = btnPauseExam.querySelector('.pause-icon');
+        const resumeIcon = btnPauseExam.querySelector('.resume-icon');
+        pauseIcon.classList.toggle('hidden', state.isPaused);
+        resumeIcon.classList.toggle('hidden', !state.isPaused);
+
+        const label = state.isPaused ? 'ทำข้อสอบต่อ' : 'หยุดเวลาชั่วคราว';
+        btnPauseExam.setAttribute('aria-label', label);
+        btnPauseExam.setAttribute('title', label);
+    }
+
+    function pauseExam() {
+        if (!state.quizActive || !isTimedExamMode() || state.isPaused) return;
+        saveTimeSpent();
+        state.currentQuestionStartTime = null;
+        state.isPaused = true;
+        updatePauseControls();
+    }
+
+    function resumeExam() {
+        if (!state.quizActive || !state.isPaused) return;
+        state.isPaused = false;
+        state.currentQuestionStartTime = Date.now();
+        updatePauseControls();
+    }
+
+    btnPauseExam.addEventListener('click', () => {
+        if (state.isPaused) {
+            resumeExam();
+        } else {
+            pauseExam();
+        }
+    });
+
     function startGlobalTimer() {
         if (state.globalTimerInterval) clearInterval(state.globalTimerInterval);
         
@@ -1215,6 +1267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisplay();
         
         state.globalTimerInterval = setInterval(() => {
+            if (state.isPaused) return;
             if (state.examMode === 'exam' || state.examMode === 'exam_practice') {
                 state.globalSeconds--;
                 if (state.globalSeconds <= 0) {
@@ -1301,6 +1354,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Submit Paper & Results ---
     btnSubmitExam.addEventListener('click', () => {
+        if (state.isPaused) return;
         const unansweredCount = state.answers.filter((ans, idx) => !isAnswerComplete(state.shuffledQuestions[idx], ans)).length;
         let confirmMsg = "คุณแน่ใจหรือไม่ที่จะส่งคำตอบข้อสอบทั้งหมด?";
         if (unansweredCount > 0) {
@@ -1314,6 +1368,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function endQuizAndProcessResults() {
         state.quizActive = false;
+        state.isPaused = false;
+        updatePauseControls();
         saveTimeSpent();
         stopQuestionTimer();
         if (state.globalTimerInterval) clearInterval(state.globalTimerInterval);

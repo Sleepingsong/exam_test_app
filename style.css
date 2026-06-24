@@ -665,6 +665,77 @@ h1, h2, h3, h4 {
     gap: 0.5rem;
 }
 
+.timer-control-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.timer-control-btn:hover,
+.timer-control-btn:focus-visible {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+    outline: none;
+}
+
+.timer-control-btn .icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    stroke: none;
+}
+
+.exam-pause-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(10, 14, 24, 0.94);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+body.exam-paused {
+    overflow: hidden;
+}
+
+.pause-status {
+    color: #fff;
+    text-align: center;
+}
+
+.pause-status-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1rem;
+    fill: currentColor;
+}
+
+.pause-status h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.6rem;
+}
+
+.pause-status p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.app-header {
+    position: relative;
+    z-index: 100;
+}
+
 .timer-label {
     font-size: 0.8rem;
     color: var(--text-secondary);
@@ -1641,6 +1712,4 @@ h1, h2, h3, h4 {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
-
-
 
