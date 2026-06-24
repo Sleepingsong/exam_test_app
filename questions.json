@@ -110,12 +110,13 @@
     "question": "The quarterly results show that competitors are driving prices down, and the company is losing market share. Which two actions should the project manager take to adapt the project to these new conditions?",
     "options": [
       "a. Fast-track the remainder of the project to deliver the intended scope with less overhead costs.",
-      "b. Re-scope the project to deliver the same features as the competitors to match their pricing. Make a cost/benefit analysis of deliverables to optimize delivery cost and speed.",
-      "c. Incrementally replace local staff by outside expert staff who can work at half the hourly rate or less.",
-      "d. Create an agile track to incrementally maximize value within a fixed budget."
+      "b. Re-scope the project to deliver the same features as the competitors to match their pricing.",
+      "c. Make a cost/benefit analysis of deliverables to optimize delivery cost and speed.",
+      "d. Incrementally replace local staff by outside expert staff who can work at half the hourly rate or less.",
+      "e. Create an agile track to incrementally maximize value within a fixed budget."
     ],
-    "correct_answer": "d",
-    "explanation": "ตัวเลือก d ถูกต้อง: การวิเคราะห์ต้นทุน/ผลตอบแทนของผลลัพธ์โครงการเพื่อเพิ่มความเร็วร่วมกับการจัดทำอไจล์แทร็ก (Agile track) เพื่อส่งมอบงานและสร้างคุณค่าภายใต้งบประมาณที่กำหนด เป็นแนวทางที่ดีที่สุดในการตอบสนองต่อการเปลี่ยนแปลงของคู่แข่งและการลดราคาในตลาด\n- ตัวเลือก a ผิด: การเร่งทำตามแผนงานเดิมทั้งหมด (Fast-tracking) อาจขยายปัญหางานซ้ำซ้อนและไม่ได้ตอบโจทย์การเปลี่ยนแปลงด้านมูลค่าที่ลูกค้าต้องการในปัจจุบัน\n- ตัวเลือก b ผิด: การปรับลดขอบเขตเพื่อให้ตรงกับฟีเจอร์ของคู่แข่งอย่างเดียวนั้นไม่ตอบโจทย์เรื่องความเร็วและการสร้างความแตกต่างในตลาด\n- ตัวเลือก c ผิด: การเปลี่ยนบุคลากรท้องถิ่นออกเป็นการกระทำที่เป็นปัญหากระทบจิตใจพนักงาน และสร้างความเสี่ยงด้านประสิทธิภาพการผลิตแทนที่จะสร้างความได้เปรียบในการปรับตัว",
+    "correct_answer": "ce",
+    "explanation": "ตัวเลือก c และ e ถูกต้อง: การวิเคราะห์ต้นทุน/ผลตอบแทนของผลลัพธ์โครงการเพื่อเพิ่มความเร็วร่วมกับการจัดทำอไจล์แทร็ก (Agile track) เพื่อส่งมอบงานและสร้างคุณค่าภายใต้งบประมาณที่กำหนด เป็นแนวทางที่ดีที่สุดในการตอบสนองต่อการเปลี่ยนแปลงของคู่แข่งและการลดราคาในตลาด\n- ตัวเลือก a ผิด: การเร่งทำตามแผนงานเดิมทั้งหมด (Fast-tracking) อาจขยายปัญหางานซ้ำซ้อนและไม่ได้ตอบโจทย์การเปลี่ยนแปลงด้านมูลค่าที่ลูกค้าต้องการในปัจจุบัน\n- ตัวเลือก b ผิด: การปรับลดขอบเขตเพื่อให้ตรงกับฟีเจอร์ของคู่แข่งอย่างเดียวนั้นไม่ตอบโจทย์เรื่องความเร็วและการสร้างความแตกต่างในตลาด\n- ตัวเลือก d ผิด: การเปลี่ยนบุคลากรท้องถิ่นออกเป็นการกระทำที่เป็นปัญหากระทบจิตใจพนักงาน และสร้างความเสี่ยงด้านประสิทธิภาพการผลิตแทนที่จะสร้างความได้เปรียบในการปรับตัว",
     "domain": "Process",
     "approach": "Adaptive"
   },
@@ -129,8 +130,8 @@
       "c. CPI is calculated as earned value/planned value",
       "d. SPI is calculated as earned value/planned value."
     ],
-    "correct_answer": "b",
-    "explanation": "ตัวเลือก b ถูกต้อง: ดัชนีชี้วัดประสิทธิภาพตามตารางคำนวณ ได้แก่ CPI = EV/AC (Earned Value / Actual Cost) และ SPI = EV/PV (Earned Value / Planned Value) ซึ่งสะท้อนความก้าวหน้าด้านค่าใช้จ่ายและเวลาของโครงการ\n- ตัวเลือก a ผิด: SPI คำนวณจากคุณค่าของงานที่ทำได้หารด้วยงานตามแผนงาน ไม่ใช่การนับจำนวนเรื่องราวที่วางแผน\n- ตัวเลือก c ผิด: สูตรคำนวณ CPI ในตัวเลือกนี้ไม่ถูกต้อง เพราะหารด้วย Planned Value (ซึ่งเป็นสูตรของ SPI)\n- ตัวเลือก d ผิด: การคำนวณ SPI ไม่ถูกต้อง เนื่องจากมีการแยกการคำนวณและข้อความที่ไม่ตรงกับสูตรมาตรฐานของระบบบริหารคุณค่าที่ได้รับ (EVM)",
+    "correct_answer": "bd",
+    "explanation": "ตัวเลือก b และ d ถูกต้อง: ดัชนีชี้วัดประสิทธิภาพตามตารางคำนวณ ได้แก่ CPI = EV/AC (Earned Value / Actual Cost) และ SPI = EV/PV (Earned Value / Planned Value) ซึ่งสะท้อนความก้าวหน้าด้านค่าใช้จ่ายและเวลาของโครงการ\n- ตัวเลือก a ผิด: SPI คำนวณจากคุณค่าของงานที่ทำได้หารด้วยงานตามแผนงาน ไม่ใช่การนับจำนวนเรื่องราวที่วางแผน\n- ตัวเลือก c ผิด: สูตรคำนวณ CPI ในตัวเลือกนี้ไม่ถูกต้อง เพราะหารด้วย Planned Value (ซึ่งเป็นสูตรของ SPI)\n- ตัวเลือก d ถูกต้องเช่นกัน: SPI = EV/PV (Earned Value / Planned Value) ????????????????????? Schedule Performance Index",
     "domain": "Business Environment",
     "approach": "Adaptive"
   },
@@ -1208,7 +1209,7 @@
       "d. The functionality was formally approved, so initiate the change management process."
     ],
     "correct_answer": "a",
-    "explanation": "ตัวเลือก a ถูกต้อง: เมื่อตรวจสอบพบความคลาดเคลื่อนของเอกสารข้อกำหนดขณะที่งานยังไม่ได้ทำโค้ดขึ้นมา การเร่งจัดประชุมประสานความเข้าใจร่วมกับทีมงานและผู้แทนฝ่ายลูกค้าเพื่อหาข้อสรุปเชิงสร้างสรรค์จะช่วยประหยัดเวลาและทรัพยากรการเขียนซอฟต์แวร์\n- ตัวเลือก a ผิด: รายละเอียดตัวเลือกสะท้อนการเจรจาระดมสมองเป็นสิ่งที่ดีที่สุด\n- ตัวเลือก b ผิด: การฝืนเขียนโค้ดต่อไปแล้วหวังให้บั๊กโชว์ในระบบการทดสอบเป็นการประพฤติเชิงประมาทที่ก่อให้เกิดงานรื้อถอนทำซ้ำจำนวนมาก\n- ตัวเลือก c ผิด: การส่งประเด็นปัญหาเล็กน้อยไปให้ผู้อุปถัมภ์โครงการพิจารณาเป็นการโยนภาระและทำให้ข้อตกลงล่าช้าโดยไม่มีความจำเป็น\n- ตัวเลือก d ผิด: การมองว่าเป็นสัญญาระบบแบบผ่านการรับรองแล้วและต้องยื่นฟ้องร้องควบคุมการเปลี่ยนแปลงเป็นการนำระบบโบราณมาขัดขวางอไจล์",
+    "explanation": "ตัวเลือก a ถูกต้อง: เมื่อตรวจสอบพบความคลาดเคลื่อนของเอกสารข้อกำหนดขณะที่งานยังไม่ได้ทำโค้ดขึ้นมา การเร่งจัดประชุมประสานความเข้าใจร่วมกับทีมงานและผู้แทนฝ่ายลูกค้าเพื่อหาข้อสรุปเชิงสร้างสรรค์จะช่วยประหยัดเวลาและทรัพยากรการเขียนซอฟต์แวร์\n- ตัวเลือก a ถูกต้อง: รายละเอียดตัวเลือกสะท้อนการเจรจาระดมสมองเป็นสิ่งที่ดีที่สุด\n- ตัวเลือก b ผิด: การฝืนเขียนโค้ดต่อไปแล้วหวังให้บั๊กโชว์ในระบบการทดสอบเป็นการประพฤติเชิงประมาทที่ก่อให้เกิดงานรื้อถอนทำซ้ำจำนวนมาก\n- ตัวเลือก c ผิด: การส่งประเด็นปัญหาเล็กน้อยไปให้ผู้อุปถัมภ์โครงการพิจารณาเป็นการโยนภาระและทำให้ข้อตกลงล่าช้าโดยไม่มีความจำเป็น\n- ตัวเลือก d ผิด: การมองว่าเป็นสัญญาระบบแบบผ่านการรับรองแล้วและต้องยื่นฟ้องร้องควบคุมการเปลี่ยนแปลงเป็นการนำระบบโบราณมาขัดขวางอไจล์",
     "domain": "People",
     "approach": "Adaptive"
   },
@@ -1372,7 +1373,7 @@
       "c. Schedule meetings with the new stakeholders.",
       "d. Update the assumption log."
     ],
-    "correct_answer": "a",
+    "correct_answer": "ac",
     "explanation": "ตัวเลือก a ถูกต้อง: (เป็นหนึ่งในตัวเลือกที่ถูกต้องร่วมกับตัวเลือก c) การปรับปรุงแผนการมีส่วนร่วมของผู้มีส่วนได้ส่วนเสีย (Stakeholder Engagement Plan) จะกำหนดวิธีปฏิบัติและปฏิสัมพันธ์กับหน่วยงานรัฐเพื่อให้แน่ใจว่าพวกเขามีส่วนร่วมอย่างเหมาะสม การจัดประชุมร่วมกับผู้มีส่วนได้ส่วนเสียใหม่ (ตัวเลือก c) ก็เป็นวิธีเก็บข้อมูลความต้องการโดยตรง\n- ตัวเลือก b ผิด: แผนการจัดการความเสี่ยงบอกขั้นตอนการจัดการความเสี่ยงทั่วไป แต่ไม่ได้ใช้ศึกษาผู้มีส่วนได้ส่วนเสียเฉพาะราย\n- ตัวเลือก c ถูกต้องเช่นกัน: การจัดประชุมจะช่วยให้ผู้จัดการโครงการได้พูดคุยสอบถามและทำความเข้าใจความต้องการรวมถึงความเสี่ยงใหม่ๆ โดยตรง\n- ตัวเลือก d ผิด: สมุดบันทึกสมมติฐานไม่ได้มีไว้ทำความเข้าใจผู้มีส่วนได้ส่วนเสียหรือวิเคราะห์ผู้มีส่วนได้ส่วนเสียโดยละเอียด",
     "domain": "People",
     "approach": "Predictive"
@@ -2627,10 +2628,11 @@
     "file_name": "2026-06-15_21-58-21.png",
     "question": "During work on a government project, stakeholders exert pressure on the project manager to comply with their preferred actions because they have extremely complex regulations and constraints. The project manager wants to build a successful relationship with these stakeholders because the company hopes to win more contracts with the government. Which two approaches should the project manager take? (Choose TWO.)",
     "options": [
-      "a. Invite these stakeholders to team meetings to assure them that the project team takes their work seriously. Send a questionnaire out to this stakeholder group, asking about their needs.",
-      "b. Use servant leadership to build a relationship based on stakeholder needs.",
-      "c. Share the stakeholder engagement matrix with the team.",
-      "d. Assess and categorize these stakeholders using the Salience model."
+      "a. Invite these stakeholders to team meetings to assure them that the project team takes their work seriously.",
+      "b. Send a questionnaire out to this stakeholder group, asking about their needs.",
+      "c. Use servant leadership to build a relationship based on stakeholder needs.",
+      "d. Share the stakeholder engagement matrix with the team.",
+      "e. Assess and categorize these stakeholders using the Salience model."
     ],
     "correct_answer": "ae",
     "explanation": "ตัวเลือก a และ e ถูกต้อง: ในการสร้างความสัมพันธ์ที่ประสบความสำเร็จกับผู้มีส่วนได้ส่วนเสียจากภาครัฐที่มีอำนาจและกฎระเบียบซับซ้อน:\n- การเชิญผู้มีส่วนได้ส่วนเสียเข้าร่วมประชุมทีม (เช่น Sprint Review หรือการประชุมสถานะ) (a) จะช่วยสร้างความโปร่งใสและแสดงให้เห็นว่าทีมใส่ใจกฎระเบียบอย่างจริงจัง\n- การใช้แบบจำลองความเด่นชัด (Salience model) (e) ในการประเมินและจัดประเภทผู้มีส่วนได้ส่วนเสียตามอำนาจ (Power) ความเร่งด่วน (Urgency) และความชอบธรรม (Legitimacy) ช่วยให้ PM สามารถวางกลยุทธ์การจัดการและให้ความสำคัญกับกลุ่มนี้ได้อย่างเหมาะสม\n- ตัวเลือก b ผิด: การส่งแบบสอบถามเป็นการสื่อสารที่เป็นทางการเกินไปและไม่ได้สร้างสัมพันธ์เชิงลึก\n- ตัวเลือก c ผิด: Servant leadership มุ่งเน้นไปที่ทีมงานภายในโครงการเป็นหลัก ไม่ใช่การปฏิบัติต่อสปอนเซอร์หรือผู้มีส่วนได้ส่วนเสียภายนอกที่มีอำนาจสูงโดยตรง\n- ตัวเลือก d ผิด: เมทริกซ์การมีส่วนร่วมของ Stakeholder มักเป็นเอกสารภายในของ PM ไม่ควรนำไปเผยแพร่อย่างสุ่มสี่สุ่มห้าโดยไม่จำเป็น",
@@ -2658,9 +2660,10 @@
     "question": "Members of a virtual agile team are separated by seven (7) time zones. Daily meetings are too long, and the problem is made worse when laptop cameras switch between the speaking members. Which two measures should the project manager take to achieve shorter, more efficient daily meetings? (Choose TWO).",
     "options": [
       "a. Ask the team members to raise blockers off-line.",
-      "b. Use the iteration reviews to discuss the Kanban board. Limit speakers to only members who have made progress.",
-      "c. Place a single webcam to face the Kanban boards and teams.",
-      "d. Require all members to stand during the full meeting."
+      "b. Use the iteration reviews to discuss the Kanban board.",
+      "c. Limit speakers to only members who have made progress.",
+      "d. Place a single webcam to face the Kanban boards and teams.",
+      "e. Require all members to stand during the full meeting."
     ],
     "correct_answer": "de",
     "explanation": "ตัวเลือก d และ e ถูกต้อง: เพื่อให้การประชุมสแตนด์อัพประจำวัน (Daily Standup) ของทีมเสมือน (Virtual team) สั้นลงและมีประสิทธิภาพ:\n- การติดตั้งกล้องเว็บแคมตัวเดียวที่โฟกัสบอร์ดคันบังและทีมฝั่งที่อยู่ร่วมกัน (d) จะลดปัญหากล้องสลับไปมาตามคนพูด ซึ่งลดการรบกวนทางสายตาและความล่าช้าของระบบ\n- การกำหนดให้สมาชิกทุกคนต้องยืนขึ้นในระหว่างประชุม (e) (เป็นที่มาของคำว่า Stand-up meeting) จะเป็นตัวช่วยตามธรรมชาติที่ทำให้สมาชิกไม่พูดยืดเยื้อและกระชับเวลา\n- ตัวเลือก a ผิด: การแจ้งปัญหาติดขัด (blockers) ควรทำในการประชุมสแตนด์อัพเพื่อหาทางช่วยเหลือร่วมกัน ไม่ควรแยกไปทำออฟไลน์ทั้งหมด\n- ตัวเลือก b ผิด: การทบทวนผลงานรอบการวิ่ง (Iteration review) ใช้สาธิตผลงาน ไม่ใช่เวลามาเปิดบอร์ดคันบังไล่ดูงานประจำวัน\n- ตัวเลือก c ผิด: สมาชิกทุกคนควรมีส่วนร่วมในการอัปเดต ไม่ใช่เลือกเฉพาะคนที่งานก้าวหน้าเท่านั้น",
@@ -2718,9 +2721,10 @@
     "question": "The marketing director is displeased that the agile innovation team is producing too many novelty products with too little business value. Which two approaches should the project manager take to correct the team's approach? (Choose TWO.)",
     "options": [
       "a. Survey end users and integrate resulting value rank into the product backlog.",
-      "b. Add a process so the marketing director can approve each story. Increase the story sizes to integrate more valuable features.",
-      "c. Ask the team to take a training course on direct response marketing.",
-      "d. Work with the product owners to tighten value criteria in the Definition of Ready."
+      "b. Add a process so the marketing director can approve each story.",
+      "c. Increase the story sizes to integrate more valuable features.",
+      "d. Ask the team to take a training course on direct response marketing.",
+      "e. Work with the product owners to tighten value criteria in the Definition of Ready."
     ],
     "correct_answer": "ae",
     "explanation": "ตัวเลือก a และ e ถูกต้อง: เมื่อฝ่ายการตลาดพบว่าสินค้าที่ส่งมอบเน้นแต่ของแปลกใหม่แต่ขาดมูลค่าธุรกิจที่แท้จริง:\n- การออกไปทำผลสำรวจผู้ใช้งานจริงและนำความชอบ/มูลค่ามาจัดลำดับความสำคัญใน Backlog (a) จะช่วยปรับปรุงการจัดลำดับความสำคัญของฟีเจอร์ให้ตรงความต้องการตลาด\n- การร่วมมือกับ PO เพื่อขันเกณฑ์ของ \"คุณค่า\" (value criteria) ใน Definition of Ready (DoR) (e) ให้เข้มงวดขึ้น จะช่วยกลั่นกรองและบล็อกไม่ให้เรื่องงานที่ไร้ประโยชน์ผ่านเข้าสู่ขั้นตอนสปรินต์ได้\n- ตัวเลือก b ผิด: การเพิ่มกระบวนการให้ผู้อำวยการอนุมัติทุก user story เป็นการเพิ่มขั้นตอนและขัดต่อการจัดระเบียบตัวเองของอไจล์\n- ตัวเลือก c ผิด: การเพิ่มขนาดของ Story ยิ่งเพิ่มความเสี่ยงและทำลายความยืดหยุ่นในการส่งมอบงาน\n- ตัวเลือก d ผิด: การส่งทีมไปฝึกอบรมด้านการตลาดไม่สอดคล้องกับปัญหาการวางทิศทางผลิตภัณฑ์ของ PO",
@@ -2748,9 +2752,10 @@
     "question": "A consultant has advised an IT director to use a development and operations (DevOps) approach to a migration project. The IT director wants to understand how the necessary speed can be achieved in a safe way. Which two examples could demonstrate how DevOps can reduce incidents and speed up deployment at the same time? (Choose TWO.)",
     "options": [
       "a. Virtualization of all systems and software containers.",
-      "b. Machine Learning-based development and deployment. Automation of operations and development.",
-      "c. Developers test at deployment sites before operations.",
-      "d. Early collaboration between operations and development."
+      "b. Machine Learning-based development and deployment.",
+      "c. Automation of operations and development.",
+      "d. Developers test at deployment sites before operations.",
+      "e. Early collaboration between operations and development."
     ],
     "correct_answer": "ce",
     "explanation": "ตัวเลือก c และ e ถูกต้อง: การใช้ DevOps มุ่งเน้นการส่งมอบระบบอย่างรวดเร็วและปลอดภัยโดย:\n- การทำให้งานด้านพัฒนาและงานด้านระบบปฏิบัติการเป็นไปอย่างอัตโนมัติ (Automation of operations and dev) (c) เช่น การทดสอบและ deploy อัตโนมัติ (CI/CD) ช่วยลดความผิดพลาดจากฝีมือมนุษย์และเพิ่มความเร็วอย่างมาก\n- การสร้างความร่วมมืออย่างใกล้ชิดระหว่างทีมพัฒนาและทีมระบบตั้งแต่เนิ่น ๆ (Early collaboration) (e) ช่วยให้สามารถระบุสถาปัตยกรรมและประเด็นความมั่นคงปลอดภัยได้ตั้งแต่เริ่มต้น ทำให้การ deploy ราบรื่น\n- ตัวเลือก a ผิด: การทำ Virtualization เป็นเพียงเทคโนโลยีสนับสนุน ไม่ใช่แก่นกระบวนการ DevOps ที่ลดอุบัติการณ์ร่วมกับการทำงานที่รวดเร็ว\n- ตัวเลือก b ผิด: การใช้ Machine learning ยังไม่ใช่วิธีการมาตรฐานหลักในการแก้ปัญหาความเร็วและเสถียรภาพของการ deploy\n- ตัวเลือก d ผิด: การให้ Developer ไปทดสอบที่หน้างานก่อนฝ่ายปฏิบัติการเป็นการแยกหน้าที่กันทำงานแบบเดิม ซึ่งไม่ใช่แนวคิด DevOps ที่เน้นระบบอัตโนมัติและการทำงานรวมกัน",
@@ -2780,7 +2785,8 @@
       "a. Ensure that the impact of the shortage of required resources is fully documented.",
       "b. Engage in negotiations for more resources.",
       "c. Review the bounds of the negotiations for stakeholder agreement.",
-      "d. Re-evaluate the project objectives, review the planned activities, and recalculate the resource needs. Determine the project's ultimate objectives after carefully evaluating project priorities."
+      "d. Re-evaluate the project objectives, review the planned activities, and recalculate the resource needs.",
+      "e. Determine the project's ultimate objectives after carefully evaluating project priorities."
     ],
     "correct_answer": "ce",
     "explanation": "ตัวเลือก c และ e ถูกต้อง: เมื่อเกิดความลังเลเกี่ยวกับความเพียงพอของทรัพยากรเมื่อเทียบกับวัตถุประสงค์ของโครงการ:\n- การทบทวนขอบเขตข้อจำกัดของการเจรจา (Review bounds of negotiations) (c) ช่วยให้ทราบว่า PM มีอำนาจในการเจรจาขอสิ่งใดหรือปรับเปลี่ยนแผนได้มากน้อยเพียงใด\n- การประเมินเพื่อหาวัตถุประสงค์สูงสุดและแท้จริงของโครงการ (Determine ultimate objectives) (e) ร่วมกับลำดับความสำคัญ ช่วยให้ PM ทราบว่าหากต้องประนีประนอมหรือตัดฟังก์ชันบางส่วนออก ฟังก์ชันใดที่มีความสำคัญวิกฤตที่สุด\n- ตัวเลือก a ผิด: การบันทึกปัญหาทรัพยากรขาดแคลนเป็นการบันทึกประเด็นเฉย ๆ ไม่ใช่แนวทางถัดไปในการรับมือเชิงกลยุทธ์ร่วมกับ Stakeholder\n- ตัวเลือก b ผิด: การรีบกระโจนเข้าสู่การเจรจาทรัพยากรโดยไม่วิเคราะห์ข้อมูลขอบเขตข้อจำกัดและเป้าหมายสูงสุดก่อนจะทำให้เจรจาล้มเหลว\n- ตัวเลือก d ผิด: การคำนวณใหม่เพียงอย่างเดียวไม่ช่วยให้ตกลงกับความเห็นขัดแย้งของ Stakeholder ที่ห่วงเรื่องความสมเหตุสมผลของวัตถุประสงค์โครงการได้",
@@ -2795,7 +2801,8 @@
       "a. Ensure that the impact of the shortage of required resources is fully documented.",
       "b. Engage in negotiations for more resources.",
       "c. Review the bounds of the negotiations for stakeholder agreement.",
-      "d. Re-evaluate the project objectives, review the planned activities, and recalculate the resource needs. Determine the project's ultimate objectives after carefully evaluating project priorities."
+      "d. Re-evaluate the project objectives, review the planned activities, and recalculate the resource needs.",
+      "e. Determine the project's ultimate objectives after carefully evaluating project priorities."
     ],
     "correct_answer": "ce",
     "explanation": "ตัวเลือก c และ e ถูกต้อง: เมื่อเกิดความลังเลเกี่ยวกับความเพียงพอของทรัพยากรเมื่อเทียบกับวัตถุประสงค์ของโครงการ (คำถามข้อนี้ซ้ำกับข้อก่อนหน้าเพื่อความคงเส้นคงวาของระบบจำลอง):\n- การทบทวนขอบเขตข้อจำกัดของการเจรจา (Review bounds of negotiations) (c) ช่วยให้ทราบว่า PM มีอำนาจในการเจรจาขอสิ่งใดหรือปรับเปลี่ยนแผนได้มากน้อยเพียงใด\n- การประเมินเพื่อหาวัตถุประสงค์สูงสุดและแท้จริงของโครงการ (Determine ultimate objectives) (e) ร่วมกับลำดับความสำคัญ ช่วยให้ PM ทราบว่าหากต้องประนีประนอมหรือตัดฟังก์ชันบางส่วนออก ฟังก์ชันใดที่มีความสำคัญวิกฤตที่สุด\n- ตัวเลือก a ผิด: การบันทึกปัญหาทรัพยากรขาดแคลนเป็นการบันทึกประเด็นเฉย ๆ ไม่ใช่แนวทางถัดไปในการรับมือเชิงกลยุทธ์ร่วมกับ Stakeholder\n- ตัวเลือก b ผิด: การรีบกระโจนเข้าสู่การเจรจาทรัพยากรโดยไม่วิเคราะห์ข้อมูลขอบเขตข้อจำกัดและเป้าหมายสูงสุดก่อนจะทำให้เจรจาล้มเหลว\n- ตัวเลือก d ผิด: การคำนวณใหม่เพียงอย่างเดียวไม่ช่วยให้ตกลงกับความเห็นขัดแย้งของ Stakeholder ที่ห่วงเรื่องความสมเหตุสมผลของวัตถุประสงค์โครงการได้",
@@ -2823,9 +2830,10 @@
     "question": "The atmosphere is tense in the sprint planning review. The agile team members are visibly unhappy—one of them kicks a chair and shouts at the product owner, \"\"Thatjust doesn't make sense!\"\" Which two actions should the project manager take in this situation? (Choose TWO.)",
     "options": [
       "a. Calm all present by asking them to call on their emotional intelligence.",
-      "b. Remind the team of the product owner's responsibilities and authority. Intervene, giving one uninterrupted minute to each person present to state their",
-      "c. Reprimand the member who kicked the chair with a warning.",
-      "d. Facilitate by asking the team to suggest ways to resolve the points of dispute."
+      "b. Remind the team of the product owner's responsibilities and authority.",
+      "c. Intervene, giving one uninterrupted minute to each person present to state their case.",
+      "d. Reprimand the member who kicked the chair with a warning.",
+      "e. Facilitate by asking the team to suggest ways to resolve the points of dispute."
     ],
     "correct_answer": "ce",
     "explanation": "ตัวเลือก c และ e ถูกต้อง: ในสถานการณ์ขัดแย้งรุนแรงระหว่างสปรินต์แพลนรูปธรรม:\n- การแทรกแซงและกำหนดเวลาให้ทุกคนพูดแบบไม่มีการขัดจังหวะคนละ 1 นาที (c) ช่วยลดอุณหภูมิความโกรธของทุกคนลงทันที และเปิดให้ทุกคนระบายมุมมองของตนอย่างเป็นระเบียบ\n- การอำนวยความสะดวกให้ทีมเป็นผู้เสนอแนวทางในการประนีประนอมแก้ไขความเห็นที่ขัดแย้งเชิงเทคนิค (e) เป็นวิธีการแบบอไจล์ที่เคารพความคิดของทีมและได้ข้อสรุปที่เกิดจากการยอมรับร่วมกัน\n- ตัวเลือก a ผิด: การสั่งให้ทุกคนเรียกใช้ความฉลาดทางอารมณ์ไม่ช่วยคลี่คลายอารมณ์ที่ปะทุไปแล้ว\n- ตัวเลือก b ผิด: การสั่งตักเตือนบทบาทของ PO เป็นการสร้างอำนาจบาตรใหญ่และไม่ช่วยลดความตึงเครียดของสถานการณ์\n- ตัวเลือก d ผิด: การเตือนหรือลงโทษเป็นทางการทันทีอาจทำให้บรรยากาศเสียไปมากกว่าเดิมและปิดกั้นการมีส่วนร่วม (ควรแยกไปพูดคุยแบบส่วนตัวหลังจบการประชุม)",
@@ -2867,10 +2875,11 @@
     "file_name": "2026-06-16_22-33-53.png",
     "question": "A new resource joins a working project team and is assigned to a small project that is critical to a larger program milestone. Unfortunately, the new resource is under-skilled and very nervous. The team dynamic has become awkward, and work has slowed on the small project Which are two possible ways for the project manager to handle this situation? (Choose TWO.)",
     "options": [
-      "a. Assess the new resource's communication skills to evaluate their ability to perform acceptably as part of the project team. Meet with the functional manager of the new resource to understand their background better.",
-      "b. Privately ask the project management office (PMO) to assign a different resource with better skills.",
-      "c. Solicit the team about integrating and coaching the new team member.",
-      "d. Talk with the new resource about their skills and then determine how they can contribute to the project."
+      "a. Assess the new resource's communication skills to evaluate their ability to perform acceptably as part of the project team.",
+      "b. Meet with the functional manager of the new resource to understand their background better.",
+      "c. Privately ask the project management office (PMO) to assign a different resource with better skills.",
+      "d. Solicit the team about integrating and coaching the new team member.",
+      "e. Talk with the new resource about their skills and then determine how they can contribute to the project."
     ],
     "correct_answer": "de",
     "explanation": "ตัวเลือก d และ e ถูกต้อง: ในการจัดการพนักงานใหม่ที่ทักษะยังน้อยและมีความตื่นตระหนกเพื่อฟื้นฟูระบบทีม:\n- การชักชวนทีมในการโอบรับและช่วยสอนงาน (coaching) แก่พนักงานใหม่ (d) ช่วยปรับปรุงบรรยากาศและยกระดับความสามารถของสมาชิก\n- การเปิดอกคุยแบบส่วนตัวกับพนักงานใหม่เกี่ยวกับระดับทักษะจริง (e) เพื่อทำความเข้าใจประเด็นและวางบทบาทการทำงานที่สอดคล้องกับความสามารถของเขาเพื่อเพิ่มความมั่นใจ\n- ตัวเลือก a ผิด: การประเมินทักษะการสื่อสารเพียงอย่างเดียวไม่ได้ช่วยลดช่องว่างเรื่องทักษะการปฏิบัติงานที่ขาดแคลน\n- ตัวเลือก b ผิด: การไปคุยกับผู้จัดการสายงานควรเป็นขั้นตอนรองลงไปจากการพยายามปรับและทำความเข้าใจตรงกับพนักงานก่อน\n- ตัวเลือก c ผิด: การขอเปลี่ยนตัวพนักงานทันทีเป็นการแก้ปัญหาที่ขัดแย้งกับหลักการเป็นผู้นำรับใช้ที่เน้นการพัฒนาและช่วยเหลือผู้ร่วมงาน",
@@ -2913,10 +2922,11 @@
     "file_name": "2026-06-16_22-43-18.png",
     "question": "A project manager is preparing the charter for a project to automate 30% of product testing. The project sponsor advises assigning senior test engineers to identify the tests for automation. However, the test department manager is NOT cooperative, believing the project will lead to downsizing. Which two actions are suitable in this scenario? (Choose",
     "options": [
-      "a. Present data-driven, cost-benefit evidence of test automation to the test department manager. Raise the risk that the senior testing engineers will NOT be available for the testing.",
-      "b. Request the project sponsor provide a rationale for test automation.",
-      "c. Meet with the test department manager to discuss mutual expectations.",
-      "d. Work with the project sponsor to create a project charter that will not be perceived as threatening."
+      "a. Present data-driven, cost-benefit evidence of test automation to the test department manager.",
+      "b. Raise the risk that the senior testing engineers will NOT be available for the testing.",
+      "c. Request the project sponsor provide a rationale for test automation.",
+      "d. Meet with the test department manager to discuss mutual expectations.",
+      "e. Work with the project sponsor to create a project charter that will not be perceived as threatening."
     ],
     "correct_answer": "de",
     "explanation": "ตัวเลือก d และ e ถูกต้อง: ในการแก้ไขความขัดแย้งกับผู้จัดการแผนกทดสอบที่กลัวว่าการทำงานอัตโนมัติจะทำให้เกิดการเลย์ออฟ:\n- การพบปะพูดคุยโดยตรงกับผู้จัดการแผนก (d) เพื่อทำความเข้าใจความคาดหวังที่ร่วมกันและรับฟังความกังวลของเขาเป็นก้าวแรกที่สำคัญ\n- การปรับปรุงร่างโครงโครงการ (Project charter) ร่วมกับสปอนเซอร์ (e) เพื่อปรับแนวคิดและเป้าหมายไม่ให้ถูกมองว่าเป็นการคุกคามตำแหน่งงานของพนักงาน แต่เน้นที่การเพิ่มประสิทธิภาพและการยกระดับบทบาทหน้าที่ของทีมทดสอบ\n- ตัวเลือก a ผิด: การส่งหลักฐานข้อมูลตัวเลขความคุ้มค่าทางการเงินอาจไม่สามารถแก้ปัญหาระดับอารมณ์ความรู้สึกเรื่องความมั่นคงปลอดภัยในหน้าที่การงานของพนักงานได้\n- ตัวเลือก b ผิด: การบันทึกความเสี่ยงเชิงลบไว้ในเอกสารไม่ได้ช่วยคลี่คลายปัญหาการร่วมมือและการต่อต้านในทางปฏิบัติ\n- ตัวเลือก c ผิด: การขอให้สปอนเซอร์เป็นคนอธิบายเป็นการเลี่ยงงานแก้ปัญหาความสัมพันธ์ของ PM",
@@ -2929,9 +2939,10 @@
     "question": "An agile team member solved a problem that had blocked work for several weeks. After the release of the software, it appears that the solution caused a function to fail. The quality director demands an explanation. In which two ways should the project manager react? (Choose TWO.)",
     "options": [
       "a. Respond to the director that mistakes are inevitable but will be remedied.",
-      "b. Work with the team to identify gaps in the Definition of Done. Work with the team to identify gaps in the Definition of Ready.",
-      "c. Issue a warning to the team member about not taking risky initiatives.",
-      "d. Ask the team member to present their rationale and lessons learned."
+      "b. Work with the team to identify gaps in the Definition of Done.",
+      "c. Work with the team to identify gaps in the Definition of Ready.",
+      "d. Issue a warning to the team member about not taking risky initiatives.",
+      "e. Ask the team member to present their rationale and lessons learned."
     ],
     "correct_answer": "be",
     "explanation": "ตัวเลือก b และ e ถูกต้อง: เมื่อมีผลลัพธ์การทำงานพลาดหลังการปล่อยซอฟต์แวร์จากการแก้ไขปัญหาของพนักงาน:\n- การอัปเดตและปรับปรุง Definition of Done (DoD) ของทีม (b) ร่วมกัน เพื่อดูว่ามีช่องโหว่ด้านการทดสอบจุดใดที่ทำให้เกิดการหลุดรอดของข้อผิดพลาด\n- การเปิดโอกาสให้สมาชิกทีมผู้แก้ปัญหาได้นำเสนอแนวคิดและบทเรียนที่ได้รับ (e) เพื่อสร้างสภาพแวดล้อมแห่งการเรียนรู้ (blameless environment) และแบ่งปันบทเรียนร่วมกัน\n- ตัวเลือก a ผิด: การชี้แจงกับฝ่ายบริหารเพียงว่าความผิดพลาดหลีกเลี่ยงไม่ได้ ไม่ใช่วิธีการแก้ไขเชิงวิชาชีพเชิงระบบ\n- ตัวเลือก c ผิด: Definition of Ready เป็นเงื่อนไขในการเริ่มงาน ไม่เกี่ยวข้องกับความบกพร่องในระบบทดสอบความถูกต้องก่อนปล่อยงาน\n- ตัวเลือก d ผิด: การตักเตือนพนักงานที่พยายามทำสิ่งที่ท้าทายจะสร้างความกลัวและขัดแย้งกับหลักการสร้างความกระตือรือร้นของทีมอไจล์",
@@ -3244,9 +3255,10 @@
     "question": "A cross-functional team on Project B reports a delay in developing a prototype. The project manager believes that the cause is a lack of knowledge in a specific, required skill on the team. In which three ways can the project manager prevent this situation on future projects? (Choose THREE.)",
     "options": [
       "a. Ask the team leader to recommend a solution.",
-      "b. Identify required skills and organize the team based on the strength of those skills. Make a list of required, specific skills for the project.",
-      "c. Outsource the task to a skilled expert.",
-      "d. Identify the skill deficiency as a project risk."
+      "b. Identify required skills and organize the team based on the strength of those skills.",
+      "c. Make a list of required, specific skills for the project.",
+      "d. Outsource the task to a skilled expert.",
+      "e. Identify the skill deficiency as a project risk."
     ],
     "correct_answer": "bce",
     "explanation": "ตัวเลือก b, c, และ e ถูกต้อง: ในการป้องกันปัญหาความล่าช้าจากทักษะขาดแคลนในโครงการอนาคต:\n- การจัดทำรายการทักษะเฉพาะด้านที่จำเป็นสำหรับโครงการ (c) จะช่วยชี้ชัดความต้องการทรัพยากรล่วงหน้า\n- การประเมินและจัดสรรทีมตามระดับความถนัดในทักษะนั้น ๆ (b) ทำให้มั่นใจว่าคนทำงานมีทักษะสอดคล้องกับงานจริง\n- การบันทึกปัญหาทักษะขาดแคลนเป็นความเสี่ยงของโครงการ (e) เพื่อสร้างแผนการสำรองและการอบรมรองรับ\n- ตัวเลือก a และ d ผิด: การขอให้หัวหน้าทีมเสนอวิธีแก้ไข (a) และการจ้างผู้เชี่ยวชาญภายนอก (d) เป็นการแก้ไขปัญหาเฉพาะหน้า (reactive corrective actions) สำหรับโครงการปัจจุบัน ไม่ใช่การป้องกันเชิงรับสำหรับโครงการในอนาคต",
@@ -3259,9 +3271,10 @@
     "question": "A multi-year, hybrid pharmaceutical project adds new fixed-date activities for the team to run Machine Learning (ML) processing of medical scans. The output from the ML analysis is used by an agile team of doctors to determine next steps in a patient case. The project manager has updated the scope statement and schedule. In which three other documents should the project manager record this new process? (Choose THREE.)",
     "options": [
       "a. Resource Management Plan",
-      "b. Stakeholder Register Sprint Backlog",
-      "c. Definition of Ready",
-      "d. Risk Register"
+      "b. Stakeholder Register",
+      "c. Sprint Backlog",
+      "d. Definition of Ready",
+      "e. Risk Register"
     ],
     "correct_answer": "ade",
     "explanation": "ตัวเลือก a, d, และ e ถูกต้อง: เมื่อมีการเพิ่มกระบวนการใหม่ เช่น การรันระบบประมวลผลทางการแพทย์ด้วย AI/ML ในโครงการไฮบริด:\n- Resource Management Plan (a): ต้องได้รับการอัปเดตเพื่อบันทึกบทบาท หน้าที่ความรับผิดชอบ และการจัดการทรัพยากรใหม่\n- Definition of Ready (DoR) (d): ในส่วนอไจล์ ผลผลิตจาก ML เป็นข้อมูลนำเข้าที่ทีมแพทย์ต้องใช้อ้างอิง จึงต้องถูกระบุใน DoR ว่าข้อเท็จจริงทางการแพทย์ต้องรันผ่านระบบเสร็จก่อนที่จะเริ่มวางแผนเคสผู้ป่วยได้\n- Risk Register (e): ต้องถูกอัปเดตเพื่อบันทึกความเสี่ยงใหม่ ๆ ที่อาจเกิดขึ้นจากเทคโนโลยี ML และการเชื่อมโยงระบบที่มีวันที่ที่ถูกกำหนดตายตัว (fixed-date activities)\n- ตัวเลือก b ผิด: ทะเบียนผู้มีส่วนได้ส่วนเสียไม่ได้ใช้บันทึกกระบวนการทำงานหรือขั้นตอนเทคนิคการปฏิบัติงาน\n- ตัวเลือก c ผิด: Sprint Backlog เป็นของทีมในช่วงเวลานั้น ไม่ใช่เอกสารของโครงการระดับสูงที่ผู้จัดการโครงการจะอัปเดตเพื่อบันทึกกระบวนการหลัก",
@@ -3274,9 +3287,10 @@
     "question": "A project manager experienced in predictive methods is taking on an agile project for the first time. To help in making a successful transition, the project manager makes a list of situations that may arise from inadequate action as a servant leader. Which three situations would be on this list? (Choose HREE.)",
     "options": [
       "a. Project stakeholders express skepticism of agile methods.",
-      "b. Team members avoid direct communication with other departments. High performers in the team move to more senior positions.",
-      "c. Team members avoid taking on challenging tasks.",
-      "d. Team members raise impediments they are unable to eliminate."
+      "b. Team members avoid direct communication with other departments.",
+      "c. High performers in the team move to more senior positions.",
+      "d. Team members avoid taking on challenging tasks.",
+      "e. Team members raise impediments they are unable to eliminate."
     ],
     "correct_answer": "bde",
     "explanation": "ตัวเลือก b, d, และ e ถูกต้อง: เมื่อผู้จัดการโครงการแบบดั้งเดิมขาดบทบาทการเป็น Servant Leader ในโปรเจกต์อไจล์:\n- การหลีกเลี่ยงการติดต่อโดยตรงกับแผนกอื่น (b) จะเกิดขึ้นเนื่องจากขาดผู้คอยประสานและเอื้ออำนวยความสะดวกในการทลายกำแพงระหว่างแผนก\n- การหลีกเลี่ยงภารกิจที่ท้าทาย (d) เกิดจากสภาพแวดล้อมที่ขาดความปลอดภัยทางใจ (psychological safety) ที่ทำให้พนักงานกลัวความผิดพลาด\n- การแจ้งปัญหาติดขัดที่พนักงานช่วยเหลือตัวเองไม่ได้ (e) หาก PM ไม่ได้ทำหน้าที่ช่วยเหลือขจัดอุปสรรคเหล่านี้ให้สำเร็จ ปัญหาเหล่านั้นจะยังคงค้างคาและทีมจะระบุแต่จุดติดขัดโดยไม่ได้รับการแก้ไข\n- ตัวเลือก a ผิด: ความคลางแคลงใจของ Stakeholder เกิดจากการเปลี่ยนผ่านระเบียบวิธีขององค์กรมากกว่าจะสะท้อนความบกพร่องในรายละเอียดบทบาทผู้นำรับใช้ระดับทีมโครงการ\n- ตัวเลือก c ผิด: การเลื่อนตำแหน่งของคนทำงานที่มีศักยภาพสูงเป็นเรื่องน่ายินดีและเป็นธรรมชาติของการพัฒนาบุคลากร ไม่ใช่เรื่องล้มเหลวจากผู้นำ",
@@ -3304,9 +3318,10 @@
     "question": "The project sponsor is NOT convinced that an agile track should be used in a new R&D project because the company needs to be certain that specific features will be ready for mass production by a specific date. Which three agile methods can ensure that the sponsor's needs can be fulfilled in a hybrid project approach? (Choose THREE.)",
     "options": [
       "a. Stories can be broken down into granular epics.",
-      "b. Incremental development reduces risk of quality delays. Requirement priorities are confirmed at each iteration.",
-      "c. Impact mapping can be used to group related stories.",
-      "d. A product roadmap can provide a detailed breakdown."
+      "b. Incremental development reduces risk of quality delays.",
+      "c. Requirement priorities are confirmed at each iteration.",
+      "d. Impact mapping can be used to group related stories.",
+      "e. A product roadmap can provide a detailed breakdown."
     ],
     "correct_answer": "bce",
     "explanation": "ตัวเลือก b, c, และ e ถูกต้อง: ในโครงการประเภทวิจัยและพัฒนา (R&D) ที่เปลี่ยนผ่านสู่สายการผลิตจริง:\n- การพัฒนาแบบสะสมทีละส่วน (b) ช่วยลดความล่าช้าด้านคุณภาพโดยหาจุดผิดปกติเจอได้ตั้งแต่เนิ่น ๆ\n- การให้ทวนสอบลำดับความสำคัญของข้อกำหนดงาน (c) ทุก ๆ วงรอบช่วยให้สปอนเซอร์วางใจได้ว่าฟีเจอร์การผลิตขั้นวิกฤตจะได้รับการทำก่อนและเสร็จสิ้นตามกำหนด\n- การใช้แผนภาพโรดแมปผลิตภัณฑ์ (e) เป็นตัวแสดงโครงข่ายภาพรวมระดับมหภาคและทิศทางการเปิดตัว ช่วยให้สปอนเซอร์คาดการณ์ได้อย่างมีประสิทธิภาพ\n- ตัวเลือก a ผิด: คอนเซ็ปต์ของอไจล์คือการย่อย Epic ขนาดใหญ่ลงไปสู่ Story ย่อยที่ใช้งานได้จริง ไม่ใช่การนำ Story ไปประกอบเป็น Epic ที่สับสน\n- ตัวเลือก d ผิด: แผนผังผลกระทบ (Impact mapping) เป็นเทคนิคระดมสมองหารูปแบบแนวคิด ไม่ได้ช่วยวางกำหนดการความมั่นใจต่อเวลาปล่อยสายการผลิตให้กับสปอนเซอร์ได้โดยตรง",
