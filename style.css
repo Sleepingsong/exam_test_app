@@ -1557,6 +1557,17 @@ h1, h2, h3, h4 {
     color: var(--color-warning, #f59e0b);
 }
 
+.pmp-highlight:focus-visible {
+    outline: 2px solid var(--color-warning, #f59e0b);
+    outline-offset: 2px;
+    background-color: var(--color-warning-glow, rgba(245, 158, 11, 0.22));
+}
+
+.pmp-highlight.pmp-acronym {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
 .pmp-highlight .pmp-tooltip {
     visibility: hidden;
     width: 250px;
@@ -1607,6 +1618,10 @@ h1, h2, h3, h4 {
     border-color: var(--color-warning, #f59e0b) transparent transparent transparent;
 }
 
+.pmp-highlight.pmp-acronym .pmp-tooltip::before {
+    content: "คำย่อ PMP:";
+}
+
 /* Theme adaptation for Light Theme */
 .light-theme .pmp-highlight .pmp-tooltip {
     background-color: var(--bg-secondary, #ffffff);
@@ -1620,12 +1635,12 @@ h1, h2, h3, h4 {
 }
 
 /* Hover trigger state */
-.pmp-highlight:hover .pmp-tooltip {
+.pmp-highlight:hover .pmp-tooltip,
+.pmp-highlight:focus .pmp-tooltip {
     visibility: visible;
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
-
 
 
 

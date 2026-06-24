@@ -202,8 +202,99 @@ document.addEventListener('DOMContentLoaded', () => {
         { term: "refine", translation: "ขัดเกลา / ปรับปรุงรายละเอียดงาน" }
     ];
 
+    const pmpAcronymDictionary = [
+        { term: "AC", translation: "Actual Cost — ต้นทุนจริงที่เกิดขึ้นจากงานโครงการ" },
+        { term: "AI", translation: "Artificial Intelligence — ปัญญาประดิษฐ์" },
+        { term: "ATDD", translation: "Acceptance Test-Driven Development — การพัฒนาโดยกำหนดการทดสอบการยอมรับไว้ก่อน" },
+        { term: "BAC", translation: "Budget at Completion — งบประมาณรวมเมื่อโครงการเสร็จสมบูรณ์" },
+        { term: "BDD", translation: "Behavior-Driven Development — การพัฒนาที่ขับเคลื่อนด้วยพฤติกรรมที่ระบบควรแสดง" },
+        { term: "CCB", translation: "Change Control Board — คณะกรรมการพิจารณาและอนุมัติคำขอเปลี่ยนแปลง" },
+        { term: "CFD", translation: "Cumulative Flow Diagram — แผนภาพการไหลสะสม ใช้ดูงานค้างและคอขวด" },
+        { term: "CI", translation: "Continuous Integration — การรวมและทดสอบโค้ดอย่างต่อเนื่อง" },
+        { term: "CEO", translation: "Chief Executive Officer — ประธานเจ้าหน้าที่บริหาร" },
+        { term: "COO", translation: "Chief Operating Officer — ประธานเจ้าหน้าที่ฝ่ายปฏิบัติการ" },
+        { term: "CPAF", translation: "Cost Plus Award Fee — สัญญาต้นทุนบวกค่าตอบแทนตามการประเมินผลงาน" },
+        { term: "CPI", translation: "Cost Performance Index — ดัชนีประสิทธิภาพต้นทุน (EV ÷ AC)" },
+        { term: "CPIF", translation: "Cost Plus Incentive Fee — สัญญาต้นทุนบวกค่าตอบแทนจูงใจ" },
+        { term: "CV", translation: "Cost Variance — ผลต่างต้นทุน (EV − AC)" },
+        { term: "DMAIC", translation: "Define, Measure, Analyze, Improve, Control — วงจรปรับปรุงกระบวนการของ Six Sigma" },
+        { term: "DoD", translation: "Definition of Done — เกณฑ์ที่ใช้ยืนยันว่างานเสร็จสมบูรณ์" },
+        { term: "DoR", translation: "Definition of Ready — เกณฑ์ความพร้อมก่อนนำงานเข้าสู่การพัฒนา" },
+        { term: "EAC", translation: "Estimate at Completion — ประมาณการต้นทุนรวมเมื่อโครงการเสร็จ" },
+        { term: "EEF", translation: "Enterprise Environmental Factors — ปัจจัยสภาพแวดล้อมขององค์กร" },
+        { term: "EMV", translation: "Expected Monetary Value — มูลค่าทางการเงินที่คาดหวัง (ความน่าจะเป็น × ผลกระทบ)" },
+        { term: "EV", translation: "Earned Value — มูลค่าตามงบประมาณของงานที่ทำเสร็จจริง" },
+        { term: "EVM", translation: "Earned Value Management — การบริหารมูลค่าที่ได้รับ" },
+        { term: "EU", translation: "European Union — สหภาพยุโรป" },
+        { term: "FDD", translation: "Feature-Driven Development — การพัฒนาที่ขับเคลื่อนด้วยคุณลักษณะของผลิตภัณฑ์" },
+        { term: "FF", translation: "Finish-to-Finish — ความสัมพันธ์ที่กิจกรรมถัดไปจะเสร็จได้เมื่อกิจกรรมก่อนหน้าเสร็จ" },
+        { term: "FFP", translation: "Firm Fixed Price — สัญญาราคาคงที่แน่นอน" },
+        { term: "FPIF", translation: "Fixed Price Incentive Fee — สัญญาราคาคงที่พร้อมค่าตอบแทนจูงใจ" },
+        { term: "FS", translation: "Finish-to-Start — ความสัมพันธ์ที่กิจกรรมถัดไปเริ่มได้เมื่อกิจกรรมก่อนหน้าเสร็จ" },
+        { term: "GDPR", translation: "General Data Protection Regulation — กฎหมายคุ้มครองข้อมูลส่วนบุคคลของสหภาพยุโรป" },
+        { term: "HR", translation: "Human Resources — ฝ่ายทรัพยากรบุคคล" },
+        { term: "IRR", translation: "Internal Rate of Return — อัตราผลตอบแทนภายในของการลงทุน" },
+        { term: "IOT", translation: "Internet of Things — เครือข่ายอุปกรณ์ที่เชื่อมต่อและแลกเปลี่ยนข้อมูลผ่านอินเทอร์เน็ต" },
+        { term: "IT", translation: "Information Technology — เทคโนโลยีสารสนเทศ" },
+        { term: "JIT", translation: "Just in Time — การจัดหา ผลิต หรือส่งมอบให้พอดีกับเวลาที่ต้องใช้" },
+        { term: "KPI", translation: "Key Performance Indicator — ตัวชี้วัดผลการดำเนินงานหลัก" },
+        { term: "ML", translation: "Machine Learning — การเรียนรู้ของเครื่อง" },
+        { term: "MMF", translation: "Minimum Marketable Feature — คุณลักษณะขั้นต่ำที่พร้อมสร้างคุณค่าหรือออกสู่ตลาด" },
+        { term: "MOSCOW", translation: "Must have, Should have, Could have, Won't have — เทคนิคจัดลำดับความสำคัญของความต้องการ" },
+        { term: "MVP", translation: "Minimum Viable Product — ผลิตภัณฑ์ขั้นต่ำที่ใช้งานได้เพื่อทดสอบสมมติฐานและรับ Feedback" },
+        { term: "NPV", translation: "Net Present Value — มูลค่าปัจจุบันสุทธิของกระแสเงินสด" },
+        { term: "OPA", translation: "Organizational Process Assets — สินทรัพย์กระบวนการขององค์กร" },
+        { term: "PDCA", translation: "Plan, Do, Check, Act — วงจรการปรับปรุงอย่างต่อเนื่อง" },
+        { term: "PERT", translation: "Program Evaluation and Review Technique — เทคนิคประมาณการสามจุดแบบถ่วงน้ำหนัก" },
+        { term: "PM", translation: "Project Manager — ผู้จัดการโครงการ" },
+        { term: "PMBOK", translation: "Project Management Body of Knowledge — องค์ความรู้ด้านการบริหารโครงการของ PMI" },
+        { term: "PMI", translation: "Project Management Institute — สถาบันการจัดการโครงการ" },
+        { term: "PMIS", translation: "Project Management Information System — ระบบสารสนเทศเพื่อการบริหารโครงการ" },
+        { term: "PMO", translation: "Project Management Office — สำนักงานบริหารโครงการ" },
+        { term: "PMP", translation: "Project Management Professional — ใบรับรองผู้เชี่ยวชาญด้านการบริหารโครงการของ PMI" },
+        { term: "PO", translation: "Product Owner — ผู้รับผิดชอบคุณค่าผลิตภัณฑ์และการจัดลำดับ Product Backlog" },
+        { term: "PV", translation: "Planned Value — มูลค่าตามงบประมาณของงานที่ควรเสร็จตามแผน" },
+        { term: "QA", translation: "Quality Assurance — การประกันคุณภาพ โดยเน้นความถูกต้องของกระบวนการ" },
+        { term: "QC", translation: "Quality Control — การควบคุมคุณภาพ โดยตรวจสอบผลลัพธ์หรือ Deliverable" },
+        { term: "RACI", translation: "Responsible, Accountable, Consulted, Informed — ตารางกำหนดบทบาทและความรับผิดชอบ" },
+        { term: "RAM", translation: "Responsibility Assignment Matrix — ตารางเชื่อมโยงงานกับผู้รับผิดชอบ" },
+        { term: "RCA", translation: "Root Cause Analysis — การวิเคราะห์หาสาเหตุรากของปัญหา" },
+        { term: "ROI", translation: "Return on Investment — ผลตอบแทนจากการลงทุน" },
+        { term: "RPA", translation: "Robotic Process Automation — การใช้ซอฟต์แวร์อัตโนมัติทำงานตามกระบวนการซ้ำ ๆ" },
+        { term: "RTM", translation: "Requirements Traceability Matrix — ตารางติดตามความเชื่อมโยงของข้อกำหนด" },
+        { term: "SIPOC", translation: "Suppliers, Inputs, Process, Outputs, Customers — แผนภาพภาพรวมกระบวนการ" },
+        { term: "SLA", translation: "Service Level Agreement — ข้อตกลงระดับการให้บริการ" },
+        { term: "SF", translation: "Start-to-Finish — ความสัมพันธ์ที่กิจกรรมถัดไปจะเสร็จได้เมื่อกิจกรรมก่อนหน้าเริ่ม" },
+        { term: "SM", translation: "Scrum Master — ผู้เอื้ออำนวยกระบวนการ Scrum และช่วยขจัดอุปสรรค" },
+        { term: "SME", translation: "Subject Matter Expert — ผู้เชี่ยวชาญเฉพาะด้าน" },
+        { term: "SOW", translation: "Statement of Work — เอกสารรายละเอียดและขอบเขตของงาน" },
+        { term: "SPI", translation: "Schedule Performance Index — ดัชนีประสิทธิภาพกำหนดการ (EV ÷ PV)" },
+        { term: "SS", translation: "Start-to-Start — ความสัมพันธ์ที่กิจกรรมถัดไปเริ่มได้เมื่อกิจกรรมก่อนหน้าเริ่ม" },
+        { term: "SV", translation: "Schedule Variance — ผลต่างกำหนดการ (EV − PV)" },
+        { term: "SWOT", translation: "Strengths, Weaknesses, Opportunities, Threats — การวิเคราะห์จุดแข็ง จุดอ่อน โอกาส และอุปสรรค" },
+        { term: "TCPI", translation: "To-Complete Performance Index — ดัชนีประสิทธิภาพต้นทุนที่ต้องทำให้ได้สำหรับงานส่วนที่เหลือ" },
+        { term: "TDD", translation: "Test-Driven Development — การพัฒนาโดยเขียนการทดสอบก่อนเขียนโค้ด" },
+        { term: "TM", translation: "Time and Materials — สัญญาคิดค่าจ้างตามเวลาและวัสดุที่ใช้จริง" },
+        { term: "UI", translation: "User Interface — ส่วนติดต่อผู้ใช้งาน" },
+        { term: "US", translation: "United States — สหรัฐอเมริกา" },
+        { term: "VP", translation: "Vice President — รองประธานหรือผู้บริหารระดับรองประธาน" },
+        { term: "VSM", translation: "Value Stream Mapping — การทำแผนที่สายธารคุณค่าเพื่อค้นหาความสูญเปล่า" },
+        { term: "WBS", translation: "Work Breakdown Structure — โครงสร้างการแบ่งย่อยงาน" },
+        { term: "WIP", translation: "Work in Progress — งานที่กำลังดำเนินการและยังไม่เสร็จ" },
+        { term: "XP", translation: "Extreme Programming — แนวทาง Agile ที่เน้นคุณภาพโค้ดและ Feedback อย่างรวดเร็ว" }
+    ].map(entry => ({
+        ...entry,
+        caseSensitive: true,
+        tooltipLabel: "คำย่อ PMP"
+    }));
+
+    pmpDictionary.push(...pmpAcronymDictionary);
+
     // Sort dictionary by term length descending to avoid partial matches on compound terms
-    pmpDictionary.sort((a, b) => b.term.length - a.term.length);
+    pmpDictionary.sort((a, b) =>
+        (b.term.length - a.term.length) ||
+        (Number(Boolean(b.caseSensitive)) - Number(Boolean(a.caseSensitive)))
+    );
 
     function escapeRegex(string) {
         return string.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -214,7 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let text = node.nodeValue;
             for (const entry of dictionary) {
                 const term = entry.term;
-                const regex = new RegExp('\\b(' + escapeRegex(term) + ')\\b', 'i');
+                const regexFlags = entry.caseSensitive ? '' : 'i';
+                const regex = new RegExp('\\b(' + escapeRegex(term) + ')\\b', regexFlags);
                 const match = text.match(regex);
                 if (match) {
                     const matchedText = match[0];
@@ -230,10 +322,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     const highlightSpan = document.createElement('span');
                     highlightSpan.className = 'pmp-highlight';
+                    if (entry.caseSensitive) {
+                        highlightSpan.classList.add('pmp-acronym');
+                    }
+                    highlightSpan.tabIndex = 0;
+                    highlightSpan.setAttribute('aria-label', `${matchedText}: ${entry.translation}`);
                     highlightSpan.textContent = matchedText;
                     
                     const tooltipSpan = document.createElement('span');
                     tooltipSpan.className = 'pmp-tooltip';
+                    tooltipSpan.dataset.label = entry.tooltipLabel || "คำศัพท์ PMP";
+                    tooltipSpan.setAttribute('role', 'tooltip');
                     tooltipSpan.textContent = entry.translation;
                     highlightSpan.appendChild(tooltipSpan);
                     
