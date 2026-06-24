@@ -394,6 +394,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return [];
     }
 
+    function normalizeAnswerSelection(selection) {
+        if (!selection || selection === 'timeout') return selection;
+        return [...new Set(String(selection).toLowerCase().split(''))].sort().join('');
+    }
+
+    function isExactAnswer(selected, correct) {
+        if (!selected || selected === 'timeout') return false;
+        return normalizeAnswerSelection(selected) === normalizeAnswerSelection(parseCorrectAnswers(correct).join(''));
+    }
+
+    function isAnswerComplete(question, selected) {
+        if (!selected || selected === 'timeout') return selected === 'timeout';
+        return normalizeAnswerSelection(selected).length >= parseCorrectAnswers(question.correct_answer).length;
+    }
+
     // --- PMP Question Analysis Generator ---
     function generateQuestionAnalysis(q) {
         const text = q.question.toLowerCase();
@@ -887,7 +902,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let answered = 0;
         let flagged = 0;
         
-        state.shuffledQuestions.forEach((_, idx) => {
+        state.shuffledQuestions.forEach((q, idx) => {
             const cell = document.getElementById(`nav-cell-${idx}`);
             if (!cell) return;
             
@@ -898,7 +913,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cell.classList.add('current');
             }
             
-            if (state.answers[idx] !== null) {
+            if (isAnswerComplete(q, state.answers[idx])) {
                 cell.classList.add('answered');
                 answered++;
             } else if (state.flags[idx]) {
@@ -958,7 +973,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedAnswer = state.answers[index];
         explanationBox.classList.add('hidden');
         
-        if (savedAnswer !== null) {
+        if (savedAnswer !== null && isAnswerComplete(q, savedAnswer)) {
             // Lock options
             lockOptions();
             
@@ -966,9 +981,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 showPracticeFeedback(savedAnswer, q.correct_answer, q.explanation);
             } else {
                 // Exam Mode: Just show selected
-                const selBtn = document.getElementById(`option-${savedAnswer}`);
-                if (selBtn) selBtn.classList.add('selected');
+                normalizeAnswerSelection(savedAnswer).split('').forEach(letter => {
+                    const selBtn = document.getElementById(`option-${letter}`);
+                    if (selBtn) selBtn.classList.add('selected');
+                });
             }
+        } else if (savedAnswer !== null) {
+            normalizeAnswerSelection(savedAnswer).split('').forEach(letter => {
+                const selBtn = document.getElementById(`option-${letter}`);
+                if (selBtn) selBtn.classList.add('selected');
+            });
         }
         
         // Set up countdown timer for this question
@@ -1043,32 +1065,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Handles User Click on Option ---
     function handleOptionSelection(letter) {
         const idx = state.currentIndex;
-        if (state.answers[idx] !== null) return; // Locked already
-        
-        state.answers[idx] = letter;
+        const q = state.shuffledQuestions[idx];
+        if (isAnswerComplete(q, state.answers[idx])) return;
+
+        const correctLetters = parseCorrectAnswers(q.correct_answer);
+        const isMultipleAnswer = correctLetters.length > 1;
+        const currentLetters = state.answers[idx] && state.answers[idx] !== 'timeout'
+            ? normalizeAnswerSelection(state.answers[idx]).split('')
+            : [];
+        const selectedSet = new Set(currentLetters);
+
+        if (isMultipleAnswer && selectedSet.has(letter)) {
+            selectedSet.delete(letter);
+        } else {
+            selectedSet.add(letter);
+        }
+
+        const selected = normalizeAnswerSelection([...selectedSet].join(''));
+        state.answers[idx] = selected || null;
+
+        q.options.forEach(opt => {
+            const optionLetter = opt.substring(0, 1).toLowerCase();
+            const optionButton = document.getElementById(`option-${optionLetter}`);
+            if (optionButton) optionButton.classList.toggle('selected', selectedSet.has(optionLetter));
+        });
+
+        if (!isAnswerComplete(q, state.answers[idx])) {
+            updateSidebarStats();
+            return;
+        }
+
         saveTimeSpent();
         lockOptions();
-        
-        const q = state.shuffledQuestions[idx];
         
         if (state.examMode === 'practice' || state.examMode === 'exam_practice') {
             // Stop timer instantly on answer
             stopQuestionTimer();
             
             // Show Feedback Visuals
-            showPracticeFeedback(letter, q.correct_answer, q.explanation);
+            showPracticeFeedback(state.answers[idx], q.correct_answer, q.explanation);
             
             // Play Beep
-            if (parseCorrectAnswers(q.correct_answer).includes(letter)) {
+            if (isExactAnswer(state.answers[idx], q.correct_answer)) {
                 playSuccessSound();
             } else {
                 playErrorSound();
             }
         } else {
             // Exam Mode: Just mark selected and keep running or show selection
-            const selBtn = document.getElementById(`option-${letter}`);
-            if (selBtn) selBtn.classList.add('selected');
-            
             // Automatically advance to next after 200ms for smooth speed
             setTimeout(() => {
                 if (state.currentIndex < state.shuffledQuestions.length - 1 && state.currentIndex === idx) {
@@ -1083,20 +1127,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function showPracticeFeedback(selected, correct, explanation) {
         // Highlight correct/incorrect option cards
         const correctLetters = parseCorrectAnswers(correct);
-        const isSelectedCorrect = correctLetters.includes(selected);
-        
-        const selectedBtn = document.getElementById(`option-${selected}`);
-        if (selectedBtn) {
-            if (isSelectedCorrect) {
-                selectedBtn.classList.add('correct');
-            } else {
-                selectedBtn.classList.add('incorrect');
+        const selectedLetters = normalizeAnswerSelection(selected).split('');
+        const isSelectedCorrect = isExactAnswer(selected, correct);
+
+        selectedLetters.forEach(letter => {
+            const selectedBtn = document.getElementById(`option-${letter}`);
+            if (selectedBtn) {
+                if (correctLetters.includes(letter)) {
+                    selectedBtn.classList.add('correct');
+                } else {
+                    selectedBtn.classList.add('incorrect');
+                }
             }
-        }
+        });
         
         // Highlight correct answers that were not selected (or all correct if selected is wrong)
         correctLetters.forEach(letter => {
-            if (letter !== selected) {
+            if (!selectedLetters.includes(letter)) {
                 const btn = document.getElementById(`option-${letter}`);
                 if (btn) btn.classList.add('unanswered-correct');
             }
@@ -1197,7 +1244,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // If already answered in Practice Mode, do not run timer
-        if ((state.examMode === 'practice' || state.examMode === 'exam_practice') && state.answers[state.currentIndex] !== null) {
+        const currentQuestion = state.shuffledQuestions[state.currentIndex];
+        if ((state.examMode === 'practice' || state.examMode === 'exam_practice') && isAnswerComplete(currentQuestion, state.answers[state.currentIndex])) {
             timerText.textContent = "-";
             timerProgress.style.strokeDasharray = "100, 100";
             circularTimer.className = "circular-timer";
@@ -1253,7 +1301,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Submit Paper & Results ---
     btnSubmitExam.addEventListener('click', () => {
-        const unansweredCount = state.answers.filter(ans => ans === null).length;
+        const unansweredCount = state.answers.filter((ans, idx) => !isAnswerComplete(state.shuffledQuestions[idx], ans)).length;
         let confirmMsg = "คุณแน่ใจหรือไม่ที่จะส่งคำตอบข้อสอบทั้งหมด?";
         if (unansweredCount > 0) {
             confirmMsg = `คุณยังไม่ได้ทำข้อสอบอีก ${unansweredCount} ข้อ! ยืนยันที่จะส่งคำตอบทั้งหมดหรือไม่?`;
@@ -1282,9 +1330,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         state.shuffledQuestions.forEach((q, idx) => {
             const ans = state.answers[idx];
-            if (ans === null || ans === 'timeout') {
+            if (!isAnswerComplete(q, ans)) {
                 skipped++;
-            } else if (parseCorrectAnswers(q.correct_answer).includes(ans)) {
+            } else if (isExactAnswer(ans, q.correct_answer)) {
                 correct++;
             } else {
                 wrong++;
@@ -1349,7 +1397,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         state.shuffledQuestions.forEach((q, idx) => {
             const selected = state.answers[idx];
-            const isCorrect = parseCorrectAnswers(q.correct_answer).includes(selected);
+            const isCorrect = isExactAnswer(selected, q.correct_answer);
             const isFlagged = state.flags[idx];
             
             // Filter evaluation
@@ -1395,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         if (parseCorrectAnswers(q.correct_answer).includes(letter)) {
                             optClass += ' correct';
-                        } else if (letter === selected) {
+                        } else if (normalizeAnswerSelection(selected || '').includes(letter)) {
                             optClass += ' chosen';
                         }
                         
